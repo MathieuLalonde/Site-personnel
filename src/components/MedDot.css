@@ -1,0 +1,9 @@
+/* BigDot */
+
+.meddot {
+  width: 80%;
+  position: absolute;
+  padding: 6rem 20%;
+  /* z-index: -1; */
+}
+

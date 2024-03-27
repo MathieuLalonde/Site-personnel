@@ -1,0 +1,171 @@
+html, body {
+  height: 100%;
+  /* position: relative; */
+}
+
+#root {
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: scroll; */
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #e7ebee;
+    margin: 0;
+
+    background: radial-gradient(circle, #303030 0%, #252525 60%, #1b1917 100%); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#main {
+    /* works for single-column layout... */
+
+    max-width: 1000px;
+    padding: 0 1rem ;
+    margin-inline: auto;
+}
+
+
+/* .centre {
+    text-align: center;
+} */
+
+/* Marges pour tous les elements non-centres */
+/* p, h1, h2, h3, h4, ol, ul {
+    margin-left: 5%;  
+    margin-right: 5%; 
+} */
+
+li {
+    padding-top: 0.4rem;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.postlist {
+    width: 100%;
+}
+
+/* Stuff for responsiveness */
+img {
+    /* display: block; */
+    max-width: 100%;
+}
+
+.blogphoto {
+    border-radius: 0.8rem;
+    max-width: 100%; /* p.s. rendre plus gros sur telephones... */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100vh;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Glitch */
+/* 
+h1 {
+    color: rgba(0, 255, 0, 0.60);
+}
+
+h1:before, h1:after {
+    content: "Accueil";
+    position: absolute;
+    left: 5%;
+}
+
+@keyframes glitch {
+    2%, 64% {
+        transform: translate(3px, 0) skew(0deg);
+    }
+    4%, 60% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+    62% {
+        transform: translate(0, 0) skew(5deg);
+    }
+}
+
+h1:before {
+    animation: glitchTop 1s linear infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    color: rgba(255, 0, 255, 0.5);
+    transform: translate(-3px, 0);
+    animation: glitch 1s linear infinite;
+}
+
+h1::after {
+    color: rgba(0, 255, 255, 0.5);
+        transform: translate(3px, 0);
+} */
+
+
+
+/* Titres de sections */
+h1, h2, h3, h4 {
+    /* font-weight: lighter; */
+    letter-spacing: 0.5rem;
+}
+
+/* h1 {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    padding-top: 1rem;
+}
+*/
+
+/* .littledot {
+  position:relative;
+  right: 3rem;
+  top: 3rem;
+  z-index: -1;
+  width: 5rem;
+  opacity: 33%;
+} */
+
+
+/* h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    padding-top: 4rem;
+} */
+
+
+
+/* Citations */
+.citation, .source {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.citation {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1em;
+    padding: 4rem 0 0;
+    display: block;
+    width: 99%;     /* Evite d'avoir une barre de defillement en bas */
+    transform: rotate(-1deg);
+}
+
+.source {
+    font-size: 1.2rem;
+    text-align: right;
+    padding-right: 15%;
+}
+
+.guillemets {
+    font-family: 'Times New Roman', serif;
+    font-size: 3.5em;
+    padding: 0 1.3rem;
+    vertical-align: -0.4em
+}
