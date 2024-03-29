@@ -9,12 +9,14 @@ const HomePage = () => {
         <>
             <PageTitle></PageTitle>
 
-            <div className='en_tete_home' >
+            <div className='headercontainer' >
+                <div className='headercontents'>
                 <h1>
                     Developpeur
                     <br/>
                     Logiciel
-                </h1>
+                    </h1>
+                </div>
             </div>
 
             <div id="main">
@@ -78,7 +80,7 @@ const HomePage = () => {
                 </p>
                 
             </div>
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 };
