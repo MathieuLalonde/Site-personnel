@@ -8,7 +8,7 @@ const NavBar = () => {
     <>
       <div className='en_tete' >
         <NavLink to="/" className="nav-link">
-          <img src={Logo} className='head-logo' />
+          <img src={Logo} className='head-logo' alt="Le super logo de Mathieu Lalonde"/>
         </NavLink>
       </div>
       <nav

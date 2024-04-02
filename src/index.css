@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
 html, body {
   height: 100%;
   /* position: relative; */
 }
 
 #root {
+    --rouge-mjl: #990303;
+
     /* height: 100%; */
     display: flex;
     flex-direction: column;
@@ -11,7 +15,8 @@ html, body {
 }
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* Cabin + Humanist font stack */
+    font-family: Cabin, Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
     color: #e7ebee;
     margin: 0;
 
@@ -27,6 +32,8 @@ body {
     padding: 0 1rem ;
     margin-inline: auto;
 }
+
+
 
 
 /* .centre {
@@ -68,6 +75,8 @@ img {
     max-height: 100vh;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+
+    box-shadow: 0 0 10px 0px #0004;
 }
 
 /* Glitch */
@@ -115,12 +124,12 @@ h1, h2, h3, h4 {
     letter-spacing: 0.5rem;
 }
 
-/* h1 {
+h1 {
     font-size: 2rem;
     letter-spacing: 0.5rem;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
 }
-*/
+
 
 /* .littledot {
   position:relative;

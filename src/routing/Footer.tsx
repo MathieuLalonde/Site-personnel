@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <NavLink to="/">
-        <img src={Logo} />
+        <img src={Logo} alt="Le petit logo de Mathieu Lalonde" />
       </NavLink>
       <br />
       {/* About Contact
