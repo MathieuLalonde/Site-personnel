@@ -1,0 +1,132 @@
+/* For VHS-style Play screen */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #3c32ff;
+  background: radial-gradient(circle, #3429ff 0%, #3c32ff 60%, #6932ff 100%)
+}
+
+@keyframes wait_start {
+  0% {
+    opacity: 0%;
+  }
+  90% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 90%;
+  }
+}
+
+@keyframes glitch {
+  10% {
+    transform: translate(-0.5px, 0) skew(0deg);
+  }
+  27% {
+    transform: translate(1px, 0) skew(1deg);
+  }
+  30% {
+    transform: translate(-1px, 0) skew(1deg);
+  }
+  47% {
+    transform: translate(0.5px, 0) skew(0.5deg);
+  }
+  50% {
+    transform: translate(-0.5px, 0) skew(0.5deg);
+  }
+  67% {
+    transform: translate(0px, 0) skew(0deg);
+  }
+  70% {
+    transform: translate(-0.5px, 0) skew(0.5deg);
+  }
+  87% {
+    transform: translate(1px, 0) skew(1deg);
+  }
+  90% {
+    transform: translate(-2px, 0) skew(2deg);
+  }
+  100% {
+    transform: translate(1px, 0) skew(1deg);
+  }
+}
+
+@keyframes jitter {
+  10% {
+    width: calc(50% + 1px);
+  }
+  28% {
+    width: calc(50% - 1px);
+  }
+  30% {
+    width: calc(50% + 2px);
+  }
+  48% {
+    width: 50%;
+  }
+  50% {
+    width: calc(50% + 3px);
+  }
+  68% {
+    width: calc(50% - 1px);
+  }
+  70% {
+    width: calc(50% + 2px);
+  }
+  88% {
+    width: 50%;
+  }
+  90% {
+    width: calc(50% + 2px);
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+.vhs_play {
+  width: max(10vw, 20vh);
+  padding: 6%;
+  opacity: 90%;
+
+  /* animation: glitch 1s linear infinite alternate; */
+  animation-name: glitch, wait_start;
+  animation-duration: 1s, 0.5s;
+  animation-timing-function: steps(59.976);
+  animation-iteration-count: infinite, 1;
+  animation-iteration-count: alternate, steps(29.97);
+}
+
+.vhs_halfline {
+  position: absolute;
+  top: calc(100% - 3px);
+  right: 0;
+  width: 50%;
+  height: 5px;
+  background: rgb(0, 0, 0);
+
+  animation: jitter 0.5s steps(29.97) infinite alternate;
+}
+
+
+
+/* Adapted from scanlines at https://codepen.io/meduzen/pen/zxbwRV */
+
+ .scanlines:after {
+	 display: block;
+	 pointer-events: none;
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 z-index: 2147483648;
+	 background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, .15) 51%);
+	 background-size: 100% 4px;
+}
+
+
+
