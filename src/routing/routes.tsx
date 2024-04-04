@@ -10,18 +10,22 @@ import Developpeur from "./Developpeur";
 
 
 const router = createBrowserRouter([
-    { index: true, element: <HomePage /> }, // or path: ''
+    // { index: true, element: <HomePage /> }, // or path: ''
     {
         path: '/',
         element: <Layout />,
         errorElement: <ErrorPage />,
         children: [
+            { index: true, element: <HomePage /> },
             { path: 'dev', element: <Developpeur /> },
             { path: 'video', element: <Video /> },
             { path: 'blog', element: <BlogPage />}, 
             { path: 'blog/:id', element: <BlogTemplatePage /> },
         ]
     },
+
+
+    
 
     // { path: '/contact', element: <ContactPage /> },
 ]);
