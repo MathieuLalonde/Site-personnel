@@ -5,7 +5,7 @@ body {
   margin: 0;
   height: 100%;
   background-color: #3c32ff;
-  background: radial-gradient(circle, #3429ff 0%, #3c32ff 60%, #6932ff 100%)
+  background: radial-gradient(circle, #0000ff 0%, #2119c4 60%, #280970 100%)
 }
 
 @keyframes wait_start {

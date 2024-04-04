@@ -6,13 +6,32 @@ const Developpeur = () => {
       <PageTitle>Developpeur</PageTitle>
       
       <h1>Developpeur...</h1>
-      <p>Texte intro</p>
-      <p>CV</p>
-      <p>Quelques logiciels</p>
-      <p>Liens vers blog ?</p>
+      <h3>Texte intro</h3>
+      <p>
+        Je patauge dans l'informatique depuis un très bas âge.
+      </p>
+      <h3>Résumé</h3>
+      <p>
+        Lire mon résumé de dev
+      </p>
+
+      <h3>Quelques exemples logiciels</h3>
+
+      <h3>Sur le blog en ce moment</h3>
+
+
       <p>Lien vers github</p>
       <p>LinkedIn</p>
-      <p>Contact</p>
+
+      <h3>Contact</h3>
+      <p>
+        Mathieu Lalonde <br/>
+        5793, 2e avenue <br />
+        Montréal, Qc <br />
+        CANADA <br />
+        514 842-7178 <br />
+        moi@mathieulalonde.com <br />
+      </p>
     </>
   );
 };

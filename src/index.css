@@ -40,11 +40,6 @@ body {
     text-align: center;
 } */
 
-/* Marges pour tous les elements non-centres */
-/* p, h1, h2, h3, h4, ol, ul {
-    margin-left: 5%;  
-    margin-right: 5%; 
-} */
 
 li {
     padding-top: 0.4rem;
@@ -64,6 +59,7 @@ a {
 img {
     /* display: block; */
     max-width: 100%;
+    font-style: italic; /* In case alt-text is shown instead */
 }
 
 .blogphoto {
@@ -119,15 +115,9 @@ h1::after {
 
 
 /* Titres de sections */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     /* font-weight: lighter; */
-    letter-spacing: 0.5rem;
-}
-
-h1 {
-    font-size: 2rem;
-    letter-spacing: 0.5rem;
-    /* padding-top: 1rem; */
+    letter-spacing: 0.35rem;
 }
 
 

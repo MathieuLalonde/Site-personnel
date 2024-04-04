@@ -15,7 +15,7 @@ const BlogPage = () => {
 
     return (
         <>
-            <PageTitle></PageTitle>
+            <PageTitle>Blog</PageTitle>
 
             <h1>Blog</h1>
             <p>

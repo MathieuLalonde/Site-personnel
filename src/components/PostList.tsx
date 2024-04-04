@@ -62,45 +62,6 @@ const PostList = ({ label = "" }: Props) => {
         </>
       )}
 
-
-
-      {/* {postlist.length &&
-        postlist.map((post, i) => {
-
-
-        if (!label || post.labels.includes(label.toLowerCase())) {
-          const cleanContent = post.content.replace('<VideoPlayer', '<span hidden')
-          return (
-            // p.s. using i as the key is considered bad practice.
-            <div key={i} className="post-card">
-
-              <h2>
-                <Link className="links" to={`/blog/${post.id}`}>{post.title}</Link>
-              </h2>
-              <Labels>{post.labels}</Labels>
-
-              <small>
-                Publié le {post.date} par {post.author}
-              </small>
-
-              <Markdown>
-                {cleanContent.split(" ").slice(0, 20).join(" ") + "..."}
-              </Markdown>
-
-              <small>
-                  <Link className="links" to={`/blog/${post.id}`}>Read more</Link>
-                </small>
-
-              <hr />
-            </div>
-          )
-        }
-
-        })
-      
-      } */}
-
-
     </div>
   )
 }

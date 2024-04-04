@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "title": "Le jour où je n’ai pas pu plonger (bande annonce)",
+    "date": "2019-04-13",
+    "labels": ["documentaire", "bande-annonce", "montage"],
+    "network": "",
+    "platform": "youtube",
+    "platform_id": "S9uIVSWPfIQ",
+
+    "full_url": "https://ici.radio-canada.ca/tele/doc-humanite/site/episodes/431324/sylvie-bernier-plonger-eau-noyade-neveu"
+  },
+  {
+    "id": 2,
+    "title": "12 Heures plus tôt",
+    "date": "2020-07-06",
+    "labels": ["fiction", "montage", "réalisation"],
+    "network": "",
+    "platform": "vimeo",
+    "platform_id": "435790574?h=ea81dacb22",
+
+    "url": "https://player.vimeo.com/video/435790574?h=ea81dacb22",
+    "thumb": "https://i.vimeocdn.com/video/920120194-132f77d763648dfd9b32db8f0064de742b4752de9ac0a66ca766688bd213833f-d_295x166"
+  },
+  {
+    "id": 3,
+    "title": "Par-dessus le marché: Un panier 100% québécois",
+    "date": "",
+    "labels": ["magasine", "montage"],
+    "network": "TVA",
+    "platform": "youtube",
+    "platform_id": "z2tYAKsPyi0"
+  },
+  {
+    "id": 4,
+    "title": "Par-dessus le marché: melloukhia",
+    "date": "",
+    "labels": ["magasine", "montage"],
+    "network": "TVA",
+    "platform": "youtube",
+    "platform_id": "79DuTMoTgsU"
+  },
+  {
+    "id": 5,
+    "title": "Par-dessus le marché: Comment organiser votre glacière",
+    "date": "",
+    "labels": ["magasine", "montage"],
+    "network": "TVA",
+    "platform": "youtube",
+    "platform_id": "ITnvkr4CDV8"
+  },
+  {
+    "id": 6,
+    "title": "L'éternité, c'est long (extrait)",
+    "date": "",
+    "labels": ["fiction", "montage"],
+    "network": "",
+    "platform": "vimeo",
+    "platform_id": "79714884?h=a9b5549dcb"
+  }
+]
