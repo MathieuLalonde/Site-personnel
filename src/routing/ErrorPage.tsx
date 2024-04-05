@@ -10,7 +10,7 @@ const ErrorPage = () => {
   //p.s. add <meta name="robots" content="noindex"> to header
 
   let errorName = isRouteErrorResponse(useRouteError())
-    ? '404: Page non-existante'
+    ? 'Erreur 404: Page non-existante'
     : 'Erreur inattendue'
   
   return (

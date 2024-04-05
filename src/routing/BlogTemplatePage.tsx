@@ -19,8 +19,8 @@ const BlogTemplatePage = () => {
     let fetchedPost = {
         title: "",
         author: "",
-        date: "",
-        labels: [""],
+        postDate: "",
+        categories: [""],
         content: "",
     }
 
@@ -32,8 +32,8 @@ const BlogTemplatePage = () => {
         if (validId === post.id) {
             fetchedPost.title = (post.title ? post.title : "No title given");
             fetchedPost.author = (post.author ? post.author : "No title given");
-            fetchedPost.date = (post.date ? post.date : "No title given");
-            fetchedPost.labels = (post.labels ? post.labels : ["No title given"]);
+            fetchedPost.postDate = (post.postDate ? post.postDate : "No title given");
+            fetchedPost.categories = (post.categories ? post.categories : ["No title given"]);
             fetchedPost.content = (post.content ? post.content : "No title given");
             postFound = true;
             break;
@@ -49,9 +49,9 @@ const BlogTemplatePage = () => {
         <>
             <PageTitle>{fetchedPost.title}</PageTitle>
             
-            <div className='smallprint'>{fetchedPost.date}</div>
+            <div className='smallprint'>{fetchedPost.postDate}</div>
             <h1>{fetchedPost.title}</h1>
-            <Labels>{fetchedPost.labels}</Labels>
+            <Labels>{fetchedPost.categories}</Labels>
             <Markdown>{fetchedPost.content}</Markdown>
         </>
     );

@@ -22,15 +22,18 @@ const getPosts = () => {
       return console.log("Failed to list contents of directory: " + err);
     }
 
-    files.forEach((file, i) => {
+    // Replaced forEach with a for loop
+    // to force files to be processed sequentially -mjl
+    let i = 0;
+    for (const file of files) {
       let obj = {};
       let post;
 
       fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
 
-        const getMetadataIndices = (acc, elem, i) => {
+        const getMetadataIndices = (acc, elem, j) => {
           if (/^---/.test(elem)) {
-            acc.push(i);
+            acc.push(j);
           }
           return acc;
         };
@@ -56,20 +59,24 @@ const getPosts = () => {
         const metadataIndices = lines.reduce(getMetadataIndices, []);
         const metadata = parseMetadata({ lines, metadataIndices });
         const content = parseContent({ lines, metadataIndices });
-        const date = new Date(metadata.date);
-        const labels = metadata.labels.trim().toLowerCase().split(", ");
-        const timestamp = date.getTime() / 1000;
-        
+        const postDate = new Date(metadata.postDate); // TODO: verifier son utilisation vs la chaine texte...
+        const categories = metadata.categories.trim().toLowerCase().split(", ");
+        const timestamp = postDate.getTime() / 1000;
+    
         post = {
           id: timestamp,
           title: metadata.title ? metadata.title : "No title given",
           author: metadata.author ? metadata.author : "No author given",
-          date: metadata.date ? metadata.date : "No date given",
-          labels: metadata.labels ? labels : ["No label given"],
+          abstract: metadata.abstract ? metadata.abstract : "",
+          postDate: metadata.postDate ? metadata.postDate : "No date given",
+          categories: metadata.categories ? categories : ["No label given"],
           content: content ? content : "No content given",
         };
 
-        postlist.push(post);
+        if (metadata.postStatus.toLowerCase() != "draft" &&
+            timestamp) {
+          postlist.push(post);
+        }
 
         if (i === files.length - 1) {
           const sortedList = postlist.sort((a, b) => {
@@ -79,12 +86,14 @@ const getPosts = () => {
           let data = JSON.stringify(sortedList);
           fs.writeFileSync(blogOutputFile, data);
           
-          console.log(sortedList);
-          console.log("\n" + files.length + " files processed \n");
+          // console.log(sortedList);
+          console.log("\n" + files.length + " files processed");
+          console.log(sortedList.length + " entries saved \n");
         }
-
+        
+        i++;
       });
-    });
+    };
   });
   return;
 };

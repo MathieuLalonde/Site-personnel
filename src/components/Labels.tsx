@@ -8,7 +8,7 @@ interface Props {
 const Labels = ({ children }: Props) => {
   return (
     <div className='labels'>
-      {children.length && children.map((label, i) => {
+      {children.length && children.sort().map((label, i) => {
         return (
           // p.s. using i as the key is considered bad practice.
           <span key={i}>

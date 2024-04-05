@@ -13,11 +13,10 @@ interface Props {
 // https://github.com/willjw3/react-markdown-blog/blob/master/src/components/postlist.js
 const PostList = ({ label = "" }: Props) => {
 
-
   const search = () => {
     return postlist.filter(
       (post) =>
-        post.labels.includes(label.toLowerCase())
+        post.categories.includes(label.toLowerCase())
     )
   }
 
@@ -37,10 +36,10 @@ const PostList = ({ label = "" }: Props) => {
               <h2>
                 <Link className="links" to={`/blog/${post.id}`}>{post.title}</Link>
               </h2>
-              <Labels>{post.labels}</Labels>
+              <Labels>{post.categories}</Labels>
 
               <small>
-                Publié le {post.date} par {post.author}
+                Publié le {post.postDate} par {post.author}
               </small>
 
               <MarkdownToJsx
@@ -58,7 +57,7 @@ const PostList = ({ label = "" }: Props) => {
       ) : (
         <>
             <hr />
-            Aucun article correspond à la recherche
+            Aucun article correspond à la recherche.
         </>
       )}
 
