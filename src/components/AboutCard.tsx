@@ -1,13 +1,15 @@
+import { IconContext } from "react-icons";
+
 // import { BiCameraMovie } from "react-icons/bi";
 import {
     FaGithub,
     FaImdb,
     FaLinkedin,
-    // FaLocationDot,
+    FaLocationDot,
     FaPhone,
     FaVimeo,
     FaYoutube
-} from "react-icons/fa6"
+} from "react-icons/fa6";
 // import { FiExternalLink } from "react-icons/fi";
 // import { Gi3DGlasses } from "react-icons/gi"
 import { IoMdMail } from "react-icons/io";
@@ -17,28 +19,62 @@ import { IoMdMail } from "react-icons/io";
 import './AboutCard.css'
 
 const AboutCard = () => {
-  return (
-      <div className='about_card'>
-          <img src='/selfie.jpg' className='selfie'></img>
-          <h5>
-              Mathieu Lalonde 
-          </h5>
-          Développeur logiciel (et monteur télévisuel)
-          <hr />
-          <IoMdMail /> moi@mathieulalonde.com<br />
-          <FaPhone /> 514 842-7178<br />
-          <br />
-          <FaLinkedin /> &nbsp;&nbsp;&nbsp;
-          {/* linkedin.com/in/mathieu-lalonde */}
-          
-          <FaGithub /> &nbsp;&nbsp; <FaImdb /> &nbsp;&nbsp; <FaYoutube /> &nbsp;&nbsp; <FaVimeo /> 
-          {/* github.com/MathieuLalonde */}
-          <br />
-          {/* <FaLocationDot />
-          <Gi3DGlasses />  */}
+    return (
+        <div className='about_card'>
+            <img src='/selfie.jpg' className='selfie' alt="Photo de Mathieu"></img>
+            <h5>
+                Mathieu Lalonde
+            </h5>
+            Développeur logiciel (et monteur télévisuel)
+            <hr />
+            <div className="about_coordonnes">
+                <div className="about_coor_icon">
+                    <IoMdMail size="15" title="Courriel" />
+                </div>
+                <div>
+                    moi@mathieulalonde.com
+                </div>
 
-      </div>
-  )
+                <div className="about_coor_icon">
+                    <FaPhone size="13" title="Téléphone" />
+                </div>
+                <div>
+                    514 842-7178
+                </div>
+
+                <div className="about_coor_icon">
+                    <FaLocationDot size="15" title="Adresse" />
+                </div>
+                <div>
+                    Montréal, QC <br />
+                </div>
+
+                
+            </div>
+
+            <IconContext.Provider value={{ size: "25" }}>
+            <div className="about_link_icon_flex">
+                    <a href="https://linkedin.com/in/mathieu-lalonde" target="_blank">
+                        <FaLinkedin className="about_link_icon" title="LinkedIn" />
+                    </a>
+                    <a href="https://github.com/MathieuLalonde" target="_blank">
+                        <FaGithub className="about_link_icon" title="GitHub" />
+                    </a>
+                    <a href="https://imdb.com/name/nm7324790/" target="_blank">
+                        <FaImdb className="about_link_icon" title="IMDB" />
+                    </a>
+                    <a href="https://youtube.com/@mathieulalonde" target="_blank">
+                        <FaYoutube className="about_link_icon" title="Youtube" />
+                    </a>
+                    <a href="https://vimeo.com/levraimathieulalonde" target="_blank">
+                        <FaVimeo className="about_link_icon" title="Vimeo" />
+                    </a>
+                    {/*  <Gi3DGlasses />  */}
+                </div>
+            </IconContext.Provider>
+
+        </div>
+    )
 }
 
 export default AboutCard

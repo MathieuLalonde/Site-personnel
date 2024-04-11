@@ -19,6 +19,7 @@ body {
 
 #root {
   --rouge-mjl: #990303;
+  --accent_color: #555555;
 
   height: 100vh; /* needed to keep footer at bottom*/
   display: flex;

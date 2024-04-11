@@ -54,15 +54,12 @@ const BlogTemplatePage = () => {
                 <div />
 
                 <div className='content_grid'>
-                    <div>
-                    {/* <Labels>{fetchedPost.categories}</Labels> */}
-                    </div>
+                    <div/>
 
                     <div className='blog_header'>
-                        <Labels>{fetchedPost.categories}</Labels>
                         <div className='smallprint'>{fetchedPost.postDate}</div>
                         <h1>{fetchedPost.title}</h1>
-                        
+                        <Labels>{fetchedPost.categories}</Labels>
                     </div>
 
 
