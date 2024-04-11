@@ -2,9 +2,9 @@ import './VideoPlayer.css'
 import './VideoCard.css'
 import Dot from '../assets/dot.svg'
 
-interface Props {
-    children: JSX.Element | JSX.Element[];
-}
+// interface Props {
+//     children: JSX.Element | JSX.Element[];
+// }
 
 // src: string;
 // thumb: string;
@@ -14,7 +14,8 @@ interface Props {
 // network ?: string;
 // external ?: boolean;
 
-const VideoCard = ({ children }: Props) => {
+// const VideoCard = ({ children }: Props) => {
+const VideoCard = () => {
 
     // get thumbnail
 

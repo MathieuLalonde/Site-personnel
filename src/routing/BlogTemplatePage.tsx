@@ -3,12 +3,13 @@
 import { Navigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-import './BlogTemplatePage.css'
+import AboutCard from '../components/AboutCard';
 import Labels from '../components/Labels';
 import Markdown from '../components/Markdown';
 import PageTitle from '../components/PageTitle';
 
 import postList from '../posts.json';
+import './BlogTemplatePage.css'
 
 
 const BlogTemplatePage = () => {
@@ -48,11 +49,38 @@ const BlogTemplatePage = () => {
     return (
         <>
             <PageTitle>{fetchedPost.title}</PageTitle>
-            
-            <div className='smallprint'>{fetchedPost.postDate}</div>
-            <h1>{fetchedPost.title}</h1>
-            <Labels>{fetchedPost.categories}</Labels>
-            <Markdown>{fetchedPost.content}</Markdown>
+
+            <div className='outer_grid'>
+                <div />
+
+                <div className='content_grid'>
+                    <div>
+                    {/* <Labels>{fetchedPost.categories}</Labels> */}
+                    </div>
+
+                    <div className='blog_header'>
+                        <Labels>{fetchedPost.categories}</Labels>
+                        <div className='smallprint'>{fetchedPost.postDate}</div>
+                        <h1>{fetchedPost.title}</h1>
+                        
+                    </div>
+
+
+                    <div className='blog_content'>
+                        {/* <div className='smallprint'>{fetchedPost.postDate}</div>
+                        <h1>{fetchedPost.title}</h1> */}
+                        {/* <Labels>{fetchedPost.categories}</Labels> */}
+                        <Markdown>{fetchedPost.content}</Markdown>
+                    </div>
+
+                    <div className='blog_about_card'>
+                        <AboutCard />
+                    </div>
+
+                    
+                </div>
+            </div >
+
         </>
     );
 };

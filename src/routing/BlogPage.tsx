@@ -17,12 +17,11 @@ const BlogPage = () => {
         <>
             <PageTitle>Blog</PageTitle>
 
-            <h1>Blog</h1>
+            <h1>Le blog de Mathieu...</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Incidunt, mollitia!                
+                Un appercu de mes projets personnels actuels et des trucs qui me passent par la tête.   
             </p>
-            <br/>
+            <br />
             <PostList label={label}></PostList>
         </>
     );

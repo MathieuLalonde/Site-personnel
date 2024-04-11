@@ -47,7 +47,7 @@ const PostList = ({ label = "" }: Props) => {
                 options={{ overrides: { VideoPlayer: Blank, }, }} />
 
               <small>
-                <Link className="links" to={`/blog/${post.id}`}>Read more</Link>
+                <Link className="links" to={`/blog/${post.id}`}>Lire la suite</Link>
               </small>
 
               <hr />

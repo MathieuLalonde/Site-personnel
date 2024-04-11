@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import VideoCard from "./VideoCard";
+// import { Link } from "react-router-dom"
+// import VideoCard from "./VideoCard";
 import videostore from "../videos.json"
 
 interface Props {
@@ -23,6 +23,8 @@ const VideoStore = ({ label = "" }: Props) => {
 
       {results.length ? (
         results.map((video, i) => {
+          
+            console.log(video)
 
           return (
             // p.s. using i as the key is considered bad practice.

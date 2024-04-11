@@ -1,0 +1,19 @@
+.about_card {
+    background-color: #333333;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    /* float: left; */
+    /* margin: 1rem; */
+    /* max-width: 30ch; */
+    margin-left: auto;
+}
+
+.selfie {
+    border-radius: 50%;
+    border: 0.5rem solid #555555;
+    max-width: 10rem;
+    padding: 0.6rem;
+    margin: 0 0.5rem 1rem 0;
+
+}
+

@@ -5,7 +5,7 @@ import BlogTemplatePage from "./BlogTemplatePage";
 import ErrorPage from "./ErrorPage";
 import HomePage from "./HomePage";
 import Layout from "./Layout";
-import Video from "./Montage"
+import Montage from "./Montage"
 import Developpeur from "./Developpeur";
 
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         children: [
             { index: true, element: <HomePage /> },
             { path: 'dev', element: <Developpeur /> },
-            { path: 'video', element: <Video /> },
+            { path: 'montage', element: <Montage /> },
             { path: 'blog', element: <BlogPage />}, 
             { path: 'blog/:id', element: <BlogTemplatePage /> },
         ]

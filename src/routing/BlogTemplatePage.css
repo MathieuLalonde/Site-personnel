@@ -5,3 +5,33 @@
 }
 
 
+.blog_header,
+.blog_content,
+.blog_about_card {
+  width: 100%;
+  max-width: 82ch;  /* Assez large pour permettre d'insérer du code de 80ch... */
+  margin-inline: auto;
+}
+
+.blog_content,
+.blog_about_card {
+  margin-bottom: 5rem;
+}
+
+
+.outer_grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto) ;
+}
+
+@media (min-width: 82em) {
+        .content_grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: auto auto ;
+    }
+
+    .blog_about_card {
+        grid-row: 2;
+    }
+}
