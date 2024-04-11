@@ -9,6 +9,7 @@ const blogOutputFile = "src/posts.json";
 
 const path = require("path");
 const fs = require("fs");
+const slugify = require('slugify');
 
 const dirPath = path.join(__dirname, blogSourceFolder);
 // const dirPathPages = path.join(__dirname, postSourceFolder);
@@ -59,12 +60,13 @@ const getPosts = () => {
         const metadataIndices = lines.reduce(getMetadataIndices, []);
         const metadata = parseMetadata({ lines, metadataIndices });
         const content = parseContent({ lines, metadataIndices });
-        const postDate = new Date(metadata.postDate); // TODO: verifier son utilisation vs la chaine texte...
         const categories = metadata.categories.trim().toLowerCase().split(", ");
-        const timestamp = postDate.getTime() / 1000;
+        // const postDate = new Date(metadata.postDate); // TODO: verifier son utilisation vs la chaine texte...
+        // const timestamp = postDate.getTime() / 1000;
     
         post = {
-          id: timestamp,
+          // id: timestamp,
+          id: slugify(metadata.title).toLowerCase(),
           title: metadata.title ? metadata.title : "No title given",
           author: metadata.author ? metadata.author : "No author given",
           abstract: metadata.abstract ? metadata.abstract : "",
@@ -74,16 +76,16 @@ const getPosts = () => {
         };
 
         if (metadata.postStatus.toLowerCase() != "draft" &&
-            timestamp) {
+            metadata.title) {
           postlist.push(post);
         }
 
         if (i === files.length - 1) {
           const sortedList = postlist.sort((a, b) => {
-            return a.id < b.id ? 1 : -1;
+            return a.postDate < b.postDate ? 1 : -1;
           });
 
-          let data = JSON.stringify(sortedList);
+          let data = JSON.stringify(sortedList, null, 2);
           fs.writeFileSync(blogOutputFile, data);
           
           // console.log(sortedList);
