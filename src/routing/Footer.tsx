@@ -10,14 +10,7 @@ const Footer = () => {
         <img src={Logo} alt="Le petit logo de Mathieu Lalonde" />
       </NavLink>
       <br />
-      {/* About Contact
-      Github
-      LinkedIn
-      IMDB */}
-      {/* YouTube
-            Vimeo */}
-      <br />
-      © Mathieu Lalonde
+      {/* © Mathieu Lalonde */}
     </footer>
   );
 };

@@ -9,7 +9,7 @@
 .blog_content,
 .blog_about_card {
   width: 100%;
-  max-width: 82ch;  /* Assez large pour permettre d'insérer du code de 80ch... */
+  max-width: 70ch;  /* Assez large pour permettre d'insérer du code de 80ch... */
   margin-inline: auto;
 }
 
@@ -35,4 +35,43 @@
         /* width: 25ch; */
         max-width: 30ch;
     }
+
+    /* Pour le AboutCard... déplacer ?*/
+    .selfie {
+    max-width: 10rem;
+  }
+}
+
+
+/* Formatage du texte */
+p {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+code {
+  color:#6cb8e6;
+}
+
+
+/* Exemples de code */
+.codesnippet {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+pre {
+  overflow: hidden;
+  border-radius: 0.8rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  pre {
+    max-width: 99%;
+  }
 }

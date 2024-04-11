@@ -1,9 +1,9 @@
 import { IconContext } from "react-icons";
 
 // import { BiCameraMovie } from "react-icons/bi";
+import { FaImdb } from "react-icons/fa"
 import {
     FaGithub,
-    FaImdb,
     FaLinkedin,
     FaLocationDot,
     FaPhone,
@@ -21,7 +21,9 @@ import './AboutCard.css'
 const AboutCard = () => {
     return (
         <div className='about_card'>
+
             <img src='/selfie.jpg' className='selfie' alt="Photo de Mathieu"></img>
+
             <h5>
                 Mathieu Lalonde
             </h5>
@@ -48,29 +50,28 @@ const AboutCard = () => {
                 <div>
                     Montréal, QC <br />
                 </div>
-
-                
             </div>
+
 
             <IconContext.Provider value={{ size: "25" }}>
             <div className="about_link_icon_flex">
-                    <a href="https://linkedin.com/in/mathieu-lalonde" target="_blank">
-                        <FaLinkedin className="about_link_icon" title="LinkedIn" />
-                    </a>
-                    <a href="https://github.com/MathieuLalonde" target="_blank">
-                        <FaGithub className="about_link_icon" title="GitHub" />
-                    </a>
-                    <a href="https://imdb.com/name/nm7324790/" target="_blank">
-                        <FaImdb className="about_link_icon" title="IMDB" />
-                    </a>
-                    <a href="https://youtube.com/@mathieulalonde" target="_blank">
-                        <FaYoutube className="about_link_icon" title="Youtube" />
-                    </a>
-                    <a href="https://vimeo.com/levraimathieulalonde" target="_blank">
-                        <FaVimeo className="about_link_icon" title="Vimeo" />
-                    </a>
-                    {/*  <Gi3DGlasses />  */}
-                </div>
+                <a href="https://linkedin.com/in/mathieu-lalonde" target="_blank">
+                    <FaLinkedin className="about_link_icon" title="LinkedIn" />
+                </a>
+                <a href="https://github.com/MathieuLalonde" target="_blank">
+                    <FaGithub className="about_link_icon" title="GitHub" />
+                </a>
+                <a href="https://imdb.com/name/nm7324790/" target="_blank">
+                    <FaImdb className="about_link_icon" title="IMDB" />
+                </a>
+                <a href="https://youtube.com/@mathieulalonde" target="_blank">
+                    <FaYoutube className="about_link_icon" title="Youtube" />
+                </a>
+                <a href="https://vimeo.com/levraimathieulalonde" target="_blank">
+                    <FaVimeo className="about_link_icon" title="Vimeo" />
+                </a>
+                {/*  <Gi3DGlasses />  */}
+            </div>
             </IconContext.Provider>
 
         </div>
