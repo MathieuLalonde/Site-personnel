@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 // import { redirect } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import AboutCard from '../components/AboutCard';
 import Labels from '../components/Labels';
@@ -13,7 +13,7 @@ import './BlogTemplatePage.css'
 
 
 const BlogTemplatePage = () => {
-    // const params = useParams();
+    const params = useParams();
 
     let postFound = false;
     let fetchedPost = {
@@ -25,13 +25,15 @@ const BlogTemplatePage = () => {
     }
 
     for (const post of postList) {
-        fetchedPost.title = (post.title ? post.title : "No title given");
-        fetchedPost.author = (post.author ? post.author : "No title given");
-        fetchedPost.postDate = (post.postDate ? post.postDate : "No title given");
-        fetchedPost.categories = (post.categories ? post.categories : ["No title given"]);
-        fetchedPost.content = (post.content ? post.content : "No title given");
-        postFound = true;
-        break;
+        if (params.id === post.id) {
+            fetchedPost.title = (post.title ? post.title : "No title given");
+            fetchedPost.author = (post.author ? post.author : "No title given");
+            fetchedPost.postDate = (post.postDate ? post.postDate : "No title given");
+            fetchedPost.categories = (post.categories ? post.categories : ["No title given"]);
+            fetchedPost.content = (post.content ? post.content : "No title given");
+            postFound = true;
+            break;
+        }
     }
 
     if (!postFound) {
