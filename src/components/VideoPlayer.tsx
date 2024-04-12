@@ -10,7 +10,7 @@ const VideoPlayer = ({ src }: Props) => {
         <div className='videocontainer'>
             <iframe
                 className="videoplayer"
-                src={src + "&rel=0"}
+                src={src + "&vq=hd1080p&rel=0"}
                 title="Streaming video player"
                 allowFullScreen
             />

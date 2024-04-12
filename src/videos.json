@@ -4,9 +4,10 @@
     "title": "Le jour où je n’ai pas pu plonger (bande annonce)",
     "date": "2019-04-13",
     "labels": ["documentaire", "bande-annonce", "montage"],
-    "network": "",
+    "network": "SRC/RDI",
     "platform": "youtube",
     "platform_id": "S9uIVSWPfIQ",
+    "cote": 1,
 
     "full_url": "https://ici.radio-canada.ca/tele/doc-humanite/site/episodes/431324/sylvie-bernier-plonger-eau-noyade-neveu"
   },
@@ -14,10 +15,11 @@
     "id": 2,
     "title": "12 Heures plus tôt",
     "date": "2020-07-06",
-    "labels": ["fiction", "montage", "réalisation"],
+    "labels": ["fiction", "montage", "réalisation", "court-métrage"],
     "network": "",
     "platform": "vimeo",
     "platform_id": "435790574?h=ea81dacb22",
+    "cote": 2,
 
     "url": "https://player.vimeo.com/video/435790574?h=ea81dacb22",
     "thumb": "https://i.vimeocdn.com/video/920120194-132f77d763648dfd9b32db8f0064de742b4752de9ac0a66ca766688bd213833f-d_295x166"
@@ -29,7 +31,8 @@
     "labels": ["magasine", "montage"],
     "network": "TVA",
     "platform": "youtube",
-    "platform_id": "z2tYAKsPyi0"
+    "platform_id": "z2tYAKsPyi0",
+    "cote": 3
   },
   {
     "id": 4,
@@ -38,7 +41,8 @@
     "labels": ["magasine", "montage"],
     "network": "TVA",
     "platform": "youtube",
-    "platform_id": "79DuTMoTgsU"
+    "platform_id": "79DuTMoTgsU",
+    "cote": 3
   },
   {
     "id": 5,
@@ -47,15 +51,17 @@
     "labels": ["magasine", "montage"],
     "network": "TVA",
     "platform": "youtube",
-    "platform_id": "ITnvkr4CDV8"
+    "platform_id": "ITnvkr4CDV8",
+    "cote": 3
   },
   {
     "id": 6,
     "title": "L'éternité, c'est long (extrait)",
     "date": "",
-    "labels": ["fiction", "montage"],
+    "labels": ["fiction", "montage", "court-métrage"],
     "network": "",
     "platform": "vimeo",
-    "platform_id": "79714884?h=a9b5549dcb"
+    "platform_id": "79714884?h=a9b5549dcb",
+    "cote": 2
   }
 ]
