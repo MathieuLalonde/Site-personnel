@@ -2,10 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom';
 import 'normalize.css' // important: import before any other css
-import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap.css'
 import router from './routing/routes'
 import PageTitle from './components/PageTitle';
-import './index.css'
+import './sass/main.scss'
+import './style.scss'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

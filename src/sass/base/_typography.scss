@@ -1,0 +1,9 @@
+/**
+ * Basic typography style for copy text
+ */
+@use '../abstracts' as abst;
+
+body {
+  color: abst.$text-color;
+  font: normal 125% / 1.4 abst.$text-font-stack;
+}
