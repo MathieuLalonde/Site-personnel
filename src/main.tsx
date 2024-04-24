@@ -6,7 +6,6 @@ import { RouterProvider } from 'react-router-dom';
 import router from './routing/routes'
 import PageTitle from './components/PageTitle';
 import './sass/main.scss'
-import './style.scss'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
