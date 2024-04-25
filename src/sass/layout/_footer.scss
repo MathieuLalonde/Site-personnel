@@ -1,3 +1,20 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+@use '../abstracts' as *;
+
+footer {
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 0.7rem;
+    width: 100%;
+    
+    bottom: 0;
+    margin-top: auto;   
+    padding-bottom: 2rem;
+
+    & img {
+        margin-inline: auto;
+    }
+}
+

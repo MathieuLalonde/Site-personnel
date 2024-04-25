@@ -1,78 +1,5 @@
-@charset 'utf-8';
 
 
-html,
-body {
-  height: 100vh;
-  width: 100vw; /* avoids screen resize for existence of scrollbar */
-}
-
-body {
-  /* Cabin + Humanist font stack */
-  font-family: Cabin, Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
-  color: #e7ebee;
-  margin: 0;
-
-  background: radial-gradient(circle, #303030 0%, #252525 60%, #1b1917 100%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-#root {
-  --rouge-mjl: #990303;
-  --accent_color: #555555;
-
-  height: 100vh; /* needed to keep footer at bottom*/
-  display: flex;
-  flex-direction: column;
-  /* overflow-y: scroll; */
-}
-
-#main {
-  /* works for single-column layout... */
-  width: 100%;
-  /* max-width: 75ch; */
-  padding: 0 1rem;
-  margin-inline: auto;
-}
-
-a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* .centre {
-    text-align: center;
-} */
-
-/* li {
-  padding-top: 0.4rem;
-} */
-
-/* .postlist {
-  width: 100%;
-} */
-
-/* Stuff for responsiveness */
-img {
-  /* display: block; */
-  max-width: 100%;
-  font-style: italic; /* In case alt-text is shown instead */
-}
-
-.blogphoto {
-  border-radius: 0.8rem;
-  max-width: 100%; /* p.s. rendre plus gros sur telephones... */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 100vh;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-
-  box-shadow: 0 0 10px 0px #0004;
-}
 
 /* Glitch */
 /* 
@@ -111,52 +38,7 @@ h1::after {
         transform: translate(3px, 0);
 } */
 
-/* Titres de sections */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* font-weight: lighter; */
-  letter-spacing: 0.1rem; 
-  /* letter-spacing: 0.35rem;  */
-}
 
-h1 {
-  font-size: 5rem; /* was 6rem (96px) */
-}
-
-h2 {
-  font-size: 3rem; /* 48px; */
-  margin-block-start: 0;
-}
-
-h3 {
-  font-size: 2rem; /* 32px; */
-}
-
-h4 {
-  font-size: 1.5rem; /* 24px; */
-}
-
-h5 {
-  font-size: 1rem; /* 16px; */
-}
-
-h6 {
-  font-size: 0.875rem; /* 14px; */
-}
-
-.tiny {
-  font-size: 0.7rem; /* 12px; */
-}
-.small {
-  font-size: 0.875rem; /* 14px; */
-}
-.medium {
-  font-size: 1.125rem; /* 18px; */
-}
 
 /* .littledot {
   position:relative;
@@ -167,43 +49,3 @@ h6 {
   opacity: 33%;
 } */
 
-/* h2 {
-    font-size: 1.5rem;
-    letter-spacing: 0.5rem;
-    padding-top: 4rem;
-} */
-
-/* Citations */
-.citation,
-.source {
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-style: italic;
-  font-weight: bolder;
-}
-
-.citation {
-  font-size: 2rem;
-  text-align: center;
-  line-height: 1em;
-  padding: 4rem 0 0;
-  display: block;
-  width: 99%; /* Evite d'avoir une barre de defillement en bas */
-  transform: rotate(-1deg);
-}
-
-.source {
-  font-size: 1.2rem;
-  text-align: right;
-  padding-right: 15%;
-}
-
-.guillemets {
-  font-family: "Times New Roman", serif;
-  font-size: 3.5em;
-  padding: 0 1.3rem;
-  vertical-align: -0.4em;
-}
-
-.bluet {
-  font-size: 0;
-}

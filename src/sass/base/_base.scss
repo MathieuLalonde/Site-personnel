@@ -3,24 +3,64 @@
 // -----------------------------------------------------------------------------
 @use '../abstracts' as abst;
 
-// /**
-//  * Set up a decent box model on the root element
-//  */
-// html {
-//   box-sizing: border-box;
-// }
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
 
-// /**
-//  * Make all elements from the DOM inherit from the parent box-sizing
-//  * Since `*` has a specificity of 0, it does not override the `html` value
-//  * making all elements inheriting from the root box-sizing value
-//  * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-//  */
-// *,
-// *::before,
-// *::after {
-//   box-sizing: inherit;
-// }
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw; /* avoids screen resize for existence of scrollbar */
+}
+
+body {
+  margin: 0;
+
+  background: radial-gradient(circle, #303030 0%, #252525 60%, #1b1917 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#root {
+  --rouge-mjl: #990303;
+  --accent_color: #555555;
+
+  height: 100vh; /* needed to keep footer at bottom*/
+  display: flex;
+  flex-direction: column;
+  /* overflow-y: scroll; */
+}
+
+
+
+
+.blogphoto {
+  border-radius: 0.8rem;
+  max-width: 100%; /* p.s. rendre plus gros sur telephones... */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100vh;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+
+  box-shadow: 0 0 10px 0px #0004;
+}
 
 // /**
 //  * Basic styles for links
