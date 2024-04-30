@@ -7,27 +7,34 @@ import HomePage from "./HomePage";
 import Layout from "./Layout";
 import Montage from "./Montage"
 import Developpeur from "./Developpeur";
+import StyleGuide from "./StyleGuide";
 
 
 const router = createBrowserRouter([
-    // { index: true, element: <HomePage /> }, // or path: ''
+
     {
         path: '/',
+        element: <HomePage />,
+        errorElement: <ErrorPage />,
+    }, 
+    {
         element: <Layout />,
         errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <HomePage /> },
+            // { index: true, element: <HomePage /> }, // or path: ''
             { path: 'dev', element: <Developpeur /> },
             { path: 'montage', element: <Montage /> },
-            { path: 'blog', element: <BlogPage />}, 
+            { path: 'blog', element: <BlogPage /> },
             { path: 'blog/:id', element: <BlogTemplatePage /> },
+            // { path: '/contact', element: <ContactPage /> },
+
+            { path: 'styleguide', element: <StyleGuide /> },
         ]
-    },
+    }, 
 
 
     
 
-    // { path: '/contact', element: <ContactPage /> },
 ]);
 
 export default router;
