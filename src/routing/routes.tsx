@@ -8,6 +8,11 @@ import Layout from "./Layout";
 import Montage from "./Montage"
 import Developpeur from "./Developpeur";
 import StyleGuide from "./StyleGuide";
+import Satellite from "./travaux/Satellite";
+import Respiration from "./travaux/Respiration";
+import Vaisseau from "./travaux/Vaisseau";
+import Cerveau from "./travaux/Cerveau";
+import Portfolio from "./PortfolioPage";
 
 
 const router = createBrowserRouter([
@@ -29,6 +34,20 @@ const router = createBrowserRouter([
       // { path: '/contact', element: <ContactPage /> },
 
       { path: 'styleguide', element: <StyleGuide /> },
+
+      {
+        path: 'portfolio',
+        element: <Portfolio />,
+        children: [
+          { index: true, element: <Vaisseau /> }, // or path: ''
+          { path: 'cerveau', element: <Cerveau /> },
+          { path: 'relaxation', element: <Respiration /> },
+          { path: 'satellite', element: <Satellite /> },
+          { path: 'vaisseau', element: <Vaisseau /> },
+        ]
+      },
+
+
     ]
   },
 

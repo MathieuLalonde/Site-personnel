@@ -10,6 +10,10 @@
       <filter id="blur">
          <feGaussianBlur in="SourceGraphic" stdDeviation="20, 0" />
       </filter>
+
+      <filter id='shadow' color-interpolation-filters="sRGB">
+         <feDropShadow dx="-15" dy="0" stdDeviation="3" flood-opacity="1" flood-color="red"/>
+      </filter>
       
    </defs>
 

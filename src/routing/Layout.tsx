@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import Header from './Header';
@@ -9,6 +9,9 @@ const Layout = () => {
       <Header></Header>
       <NavBar />
       <div id="main">
+        
+        {/* Note: ScrollRestoration directs links to the top of each page */}
+        <ScrollRestoration />
         <Outlet />
       </div>
       <Footer />

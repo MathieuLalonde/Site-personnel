@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import PageTitle from '../components/PageTitle';
 import Footer from './Footer';
@@ -34,7 +34,7 @@ const HomePage = () => {
       </div>
       <div className='splashfade'>
         <div className='container'>
-          <h1>Introduction.</h1>
+          <h1 id='intro'>Introduction.</h1>
           <p>
             Bonjour, c'est moi Mathieu. Je suis un passionné de technologie; développeur logiciel, vidéaste,
             et parfois photographe et graphiste sur les bords...
@@ -59,6 +59,10 @@ const HomePage = () => {
           aussi bien en équipe que de manière autonome, à résoudre des problèmes, à gérer projets, exigences
           et échéanciers.
         </p>
+
+        <h3>Quelques exemples logiciels...</h3>
+        <p>Jetez un coup d’œil à mon portfolio pour voir quelques petits projets sur lesquels j'ai eu la
+          chance de travailler</p>
       </div>
 
       <div className='container'>

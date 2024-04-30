@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1024mm"
+   height="1024mm"
+   viewBox="0 0 1024 1024"
+   version="1.1"
+   id="svg5"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1694">
+      <stop
+         style="stop-color:#cccccc;stop-opacity:1;"
+         offset="0"
+         id="stop1690" />
+      <stop
+         style="stop-color:#808080;stop-opacity:1;"
+         offset="1"
+         id="stop1692" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1663">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1659" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="1"
+         id="stop1661" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1562">
+      <stop
+         style="stop-color:#ea3030;stop-opacity:1;"
+         offset="0"
+         id="stop1560" />
+    </linearGradient>
+    <radialGradient
+       xlink:href="#linearGradient1663"
+       id="radialGradient1665"
+       cx="503.19379"
+       cy="565.08084"
+       fx="503.19379"
+       fy="565.08084"
+       r="384.04675"
+       gradientTransform="matrix(1.3366443,0,0,1.3331197,-160.59132,-241.32038)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       xlink:href="#linearGradient1694"
+       id="radialGradient1696"
+       cx="514.55968"
+       cy="508.97759"
+       fx="514.55968"
+       fy="508.97759"
+       r="521.70519"
+       gradientTransform="matrix(1.0365215,0,0,1.0341361,-21.352272,-14.352279)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1">
+    <rect
+       style="fill:url(#radialGradient1696);fill-opacity:1;stroke:url(#radialGradient1665);stroke-width:10.58333333;stroke-miterlimit:0;stroke-dasharray:none;paint-order:fill markers stroke;stroke-linejoin:miter;stroke-linecap:square"
+       id="rect1657"
+       width="1026.6682"
+       height="1023.9606"
+       x="-1.3341137"
+       y="0.019679131"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:91.9263px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold';fill:#0000ef;fill-opacity:1;stroke-width:153.211;stroke-dasharray:none;paint-order:fill markers stroke"
+       x="527.88177"
+       y="499.01837"
+       id="text1752"
+       transform="scale(0.91868719,1.0885098)"><tspan
+         id="tspan1750"
+         style="fill:#0000ef;fill-opacity:1;stroke-width:153.211"
+         x="527.88177"
+         y="499.01837">A</tspan></text>
+  </g>
+</svg>

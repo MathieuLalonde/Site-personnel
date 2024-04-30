@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="1024" height="1024" 
+        viewBox="0 0 1 1"
+        preserveAspectRatio="xMidYMid">
+
+  <!-- Éléments réutilisables -->
+  <defs>
+    <g id="oeil">
+      <circle
+          style="fill:#ffffff;stroke-width:0.00186681"
+          cx="0.36435801"
+          cy="0.44665056"
+          r="0.044889607" />
+      <circle
+          style="fill:#000000;stroke-width:0.00186681"
+          cx="0.37047917"
+          cy="0.4690952"
+          r="0.024485243" />
+    </g>
+  </defs>
+
+  <!-- Arrière-plan sous forme d'image -->
+  <image
+    width="1"
+    height="1"
+    href="/travaux/svg_respiration/ciel.jpg"
+    x="0"
+    y="0" />
+
+  <!-- Corps -->
+  <ellipse
+      id="corps"
+      style="fill:#008080;
+        fill-opacity:0.8;"
+      cx="0.5"
+      cy="0.9"
+      rx="0.52"
+      ry="0.61519176" />
+  
+  <!-- Visage (Yeux et Sourire) -->
+  <g id="visage" transform="translate(0,0)">
+    <use
+      href="#oeil"
+      id="oeil1" />
+    <use
+      href="#oeil"
+      id="oeil2"
+      transform=
+        "translate(0.27,0)
+        rotate(45,0.36435801,0.44665056)" />
+    <path
+        style=
+          "fill:none;
+          stroke:#ffffff;
+          stroke-width:0.00968037;
+          stroke-dasharray:none"
+        d="m 0.36435795,0.59764293 c 0.05,0.05 0.0996534,0.0884371 0.15015468,0.0875862 0.0505013,-8.5086e-4 0.101674,-0.0467676 0.15285018,-0.0926873"
+        id="bouche" />
+  </g>
+
+  <!-- Texte 1 : Inspirez -->
+  <text
+      id="inspirez"
+      xml:space="preserve"
+      style="font-size:0.145482px;
+        font-weight:bold;
+        font-family:'Arial Bold';
+        fill:#ffffff;
+        fill-opacity:0;
+        stroke-width:0.00705562"
+        x="0.14944237"
+        y="0.14944237">INSPIREZ
+  </text>
+    
+  <!-- Texte 2 : Expirez -->
+  <text
+      id="expirez"
+      xml:space="preserve"
+      style="font-size:0.145482px;
+        font-weight:bold;
+        font-family:'Arial Bold';
+        fill:#ffffff;
+        fill-opacity:0;
+        stroke-width:0.00705562"
+        x="0.14944237"
+        y="0.14944237">EXPIREZ
+  </text>
+
+  <!-- Animation (Texte) -->
+  <animate
+    id="inspirezFadeIn"
+    xlink:href="#inspirez"
+    attributeName="fill-opacity"
+    from="0"
+    to="1"
+    begin="4s; animCorpsH.end + 4s"
+    dur="1s"
+    fill="freeze" />
+  <animate
+    id="inspirezFadeOut"
+    xlink:href="#inspirez"
+    attributeName="fill-opacity"
+    from="1"
+    to="0"
+    begin="animCorpsH.begin + 4s"
+    dur="1s"
+    fill="freeze" />
+
+  <animate
+    id="expirezFadeIn"
+    xlink:href="#expirez"
+    attributeName="fill-opacity"
+    from="0"
+    to="1"
+    begin="animCorpsH.begin + 9s"
+    dur="1s"
+    fill="freeze" />
+  <animate
+    id="expirezFadeOut"
+    xlink:href="#expirez"
+    attributeName="fill-opacity"
+    from="1"
+    to="0"
+    begin="animCorpsH.begin + 14s"
+    dur="1s"
+    fill="freeze" />
+
+  <!-- Animation (Corps et Visage) -->
+  <animate
+    id="animCorpsH"
+    xlink:href="#corps"
+    attributeName="cy"
+    values="0.9;0.86;0.86;0.9"
+    begin="inspirezFadeIn.end"
+    dur="15s"
+    fill="freeze" />
+  <animate
+    id="animCorpsW"
+    xlink:href="#corps"
+    attributeName="rx"
+    values="0.52;0.6;0.6;0.52"
+    begin="animCorpsH.begin"
+    dur="15s"
+    fill="freeze" />
+
+  <animateTransform
+    id="animVisageMonte"
+    xlink:href="#visage"
+    attributeName="transform"
+    type="translate"
+    from="0 0"
+    to="0 -0.05"
+    begin="animCorpsH.begin"
+    dur="5s"
+    fill="freeze" />
+  <animateTransform
+    id="animVisageDescend"
+    xlink:href="#visage"
+    attributeName="transform"
+    type="translate"
+    from="0 -0.05"
+    to="0 0"
+    begin="animCorpsH.begin + 10s"
+    dur="5s"
+    fill="freeze" />  
+</svg>
+
+<!-- Note : inspiration: 5s, pause: 5s, expiration: 5s, pause: 5s-->

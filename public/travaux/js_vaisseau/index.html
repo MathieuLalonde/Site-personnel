@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        // Testé sur Google Chrome 106
+
+        let canvas;    // Objet DOM correspondant au canvas
+        let graphics;  // Contexte de graphique 2d pour dessiner sur la canvas
+
+        // Variable pour la position des étoiles
+        let constellations = [];
+
+        // Propriétés de la ville
+        const cityLength = 64;
+        const buildingWidth = 0.1;
+        let farBuildingsHeights = [];
+        let middleBuildingsHeights = [];
+        let closeBuildingsHeights = [];
+        let farBuildingsPos = [];
+        let middleBuildingsPos = [];
+        let closeBuildingsPos = [];
+        const far_building_color = "rgb(75, 75, 75)";
+        const middle_building_color = "rgb(100, 100, 100)";
+        const close_build_color = "rgb(150, 150, 150)";
+
+        // Propriétés du vaisseau
+        let vesselPos = {x:0, y:0};
+        let speed = -10; // pixels per millisecond
+        const maxSpeed = -25;
+        const minSpeed = -10;
+
+        function generate_constellations(){
+
+            // Génération des constellations
+            let dispersion = 0.1;
+            for (let i=0; i < 1/dispersion; i++) {
+                for (let j=0; j < 1/dispersion; j++){
+                    let n_stars = Math.floor(1 + Math.random() * 7);
+                    let cx = (i + 0.5) * dispersion + (Math.random()-0.5) * dispersion / 2;
+                    let cy = (j + 0.5) * dispersion + (Math.random()-0.5) * dispersion / 2;
+
+                    let stars = [];
+                    for (let k=0; k < n_stars; k++) {
+                        let pos = {x: cx + dispersion * (Math.random() - 0.5), y: cy + dispersion * (Math.random() - 0.5)};
+                        stars.push(pos);
+                    }
+                    constellations.push(stars);
+                }
+            }
+        }
+
+        function generate_city() {
+
+            // Génération des imeubles
+            let buildingXPos = 0;
+
+            for (let i=0; i < cityLength; i++) {
+                farBuildingsHeights.push(Math.floor(Math.random() * 6));
+                middleBuildingsHeights.push(Math.floor(Math.random() * 5));
+                closeBuildingsHeights.push(Math.floor(Math.random() * 4));
+
+                farBuildingsPos.push(buildingXPos);
+                middleBuildingsPos.push(buildingXPos);
+                closeBuildingsPos.push(buildingXPos);
+
+                buildingXPos += buildingWidth;
+            }
+        }
+
+        function draw_smog() {
+            graphics.save();
+
+            // Creation d'un gradient vertical semi-transparent
+            var smog = graphics.createLinearGradient(canvas.width/2, 0, canvas.width/2, canvas.height);
+            smog.addColorStop(0, "rgba(200, 70, 80, 0.5)");
+            smog.addColorStop(1, "rgba(255, 100, 0, 0)");
+
+            graphics.fillStyle = smog;
+            graphics.fillRect(0, 0, canvas.width, canvas.height);
+
+            graphics.restore();
+        }
+
+        function draw() {
+
+            // On nettoie le canvas avant de redessiner
+            graphics.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Dessine le background
+            draw_background();
+
+            // On dessine la ville
+            draw_city();
+
+            // On dessine le vaisseau
+            draw_vessel();
+
+            // On dessine le smog
+            draw_smog();
+        }
+
+        function draw_vessel(){
+            graphics.save();
+
+            // Positionnement du vaisseau au centre de l'ecran et translation selon vesselPos
+            graphics.translate(canvas.width/2 + vesselPos.x, canvas.height/2 + vesselPos.y);
+
+            // Vaisseau concu dans InkScape:
+
+            // chasis
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(204, 204, 204)';
+            graphics.moveTo(23.713730, -0.000005);
+            graphics.lineTo(50.654111, 0.534683);
+            graphics.lineTo(100.060390, 17.929888);
+            graphics.lineTo(95.144126, 28.919176);
+            graphics.lineTo(10.121714, 31.811094);
+            graphics.lineTo(10.446293, 9.392822);
+            graphics.closePath();
+            graphics.fill();
+            
+            // aile
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(153, 153, 153)';
+            graphics.moveTo(17.351509, 21.055681);
+            graphics.lineTo(52.343720, 21.055681);
+            graphics.lineTo(60.730286, 22.790832);
+            graphics.lineTo(60.730286, 27.707093);
+            graphics.lineTo(53.211295, 30.309823);
+            graphics.lineTo(17.351509, 30.309823);
+            graphics.closePath();
+            graphics.fill();
+        
+            
+            // ligne noir sur l'aile
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(26, 26, 26)';
+            graphics.rect(21.978575, 24.525984, 34.124634, 2.313534);
+            graphics.fill();
+            
+            // fenetre
+            graphics.lineWidth = 1;
+            graphics.strokeStyle = "gray";
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(0, 255, 255)';
+            graphics.moveTo(52.054526, 3.759488);
+            graphics.lineTo(88.781886, 15.905539);
+            graphics.lineTo(52.054526, 14.170388);
+            graphics.closePath();
+            graphics.fill();
+            graphics.stroke();
+                            
+            // etiquette jaune
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(200, 150, 0)';
+            graphics.rect(34.992210, 6.073027, 12.435248, 1.445959);
+            graphics.fill();
+            
+            // ventilation
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(179, 179, 179)';
+            graphics.rect(16.194742, 10.121711, 8.675755, 4.337877);
+            graphics.fill();
+
+            // texte
+            graphics.fillStyle = 'rgb(0, 0, 0)';
+            graphics.font = "bold 3.175px 'Arial Rounded MT Bold'";
+            graphics.fillText("LALM-14", 65.935738, 21.110998);
+            
+            // reacteur
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(153, 153, 153)';
+            graphics.moveTo(0, 5.205453);
+            graphics.lineTo(10.650882, 9.254140);
+            graphics.lineTo(10.650882, 31.521914);
+            graphics.lineTo(0, 36.438175);
+            graphics.closePath();
+            graphics.fill();
+            
+
+            // Plasma (taille variable en fonction de la vitesse):
+            graphics.transform(speed, 0, 0, 1, 0, 0)
+            graphics.shadowBlur = 15;
+
+            // plasma bleu
+            graphics.shadowColor = 'rgb(0, 255, 255)';
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(0, 255, 255)';
+            graphics.moveTo(4, 21.689388);
+            graphics.lineTo(0, 7.518988);
+            graphics.lineTo(0, 35.570588);
+            graphics.closePath();
+            graphics.fill();
+
+            // plasma blanc
+            graphics.shadowColor = "white";
+            graphics.beginPath();
+            graphics.fillStyle = 'rgb(255, 255, 255)';
+            graphics.moveTo(2, 21.345042);
+            graphics.lineTo(0, 12.579847);
+            graphics.lineTo(0, 29.931350);
+            graphics.closePath();
+            graphics.fill();
+
+            graphics.restore();
+        }
+
+        function draw_background(){
+            graphics.save();
+
+            // Dessine le ciel
+            graphics.fillStyle = "#000080";
+            graphics.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Couleur a utiliser pour les etoies
+            graphics.fillStyle = 'white';
+
+            // Taille et couleur des lignes pointillees
+            graphics.lineWidth = 2;
+            graphics.setLineDash([2, 2]);
+            graphics.strokeStyle = "rgba(255, 255, 255, 0.33";
+
+            var rayon = 3;
+            
+            for (let i=0; i < constellations.length; i++) {
+                let stars = constellations[i];
+
+                // Dessine les etoiles
+                for (let j=0; j < stars.length ; j++) {
+                    var posX = stars[j].x * canvas.width;
+                    var posY = stars[j].y * canvas.height;
+
+                    graphics.beginPath();
+                    graphics.arc(posX, posY, rayon, 0, Math.PI * 2, false);
+                    
+                    graphics.fill();
+                    graphics.stroke();
+                }
+
+                // Trace les lignes pointillees
+                graphics.beginPath();
+                for (let j=0; j < stars.length ; j++) {
+                    var posX = stars[j].x * canvas.width;
+                    var posY = stars[j].y * canvas.height;
+
+                    graphics.lineTo(posX, posY);                   
+                }
+                graphics.stroke();
+            }
+            graphics.restore();
+        }
+
+        function draw_city(){
+            graphics.save();
+
+            // Adapte la taille de la ville selon la taille du canvas
+            graphics.transform(canvas.width, 0, 0, canvas.height, 0, 0);
+
+            graphics.fillStyle = far_building_color;
+            let min = 0.55;
+            let step = 0.07;
+            for (let i = 0; i < cityLength; i++){ 
+                // N'affiche que les batiments visibles
+                if (farBuildingsPos[i] <= 1){
+                    graphics.fillRect(farBuildingsPos[i], min - farBuildingsHeights[i] * step, buildingWidth, 1);
+                }
+            }
+            
+            graphics.fillStyle = middle_building_color;
+            min = 0.75;
+            step = 0.07;
+            for (let i = 0; i < cityLength; i++){
+                // N'affiche que les batiments visibles
+                if (middleBuildingsPos[i] <= 1){
+                graphics.fillRect(middleBuildingsPos[i], min - middleBuildingsHeights[i] * step, buildingWidth, 1);
+                }
+            }
+            
+            graphics.fillStyle = close_build_color;
+            min = 0.95;
+            step = 0.10;
+            for (let i = 0; i < cityLength; i++){
+                // N'affiche que les batiments visibles
+                if (closeBuildingsPos[i] <= 1){
+                graphics.fillRect(closeBuildingsPos[i], min - closeBuildingsHeights[i] * step, buildingWidth, 1);
+                }
+            }
+
+            graphics.restore();
+        }
+
+        function updateVesselPosition(e){
+
+            if ( e.keyCode == 87 ) { // W (haut)
+                if (vesselPos.y > (canvas.height * -0.45)){
+                vesselPos.y -= 10;
+                }    
+            }
+
+            if ( e.keyCode == 83 ) { // S (bas)
+                if (vesselPos.y < (canvas.height * 0.4)){
+                    vesselPos.y += 10;
+                }
+            }
+
+            if ( e.keyCode == 65 ) { // A (gauche)
+                if (vesselPos.x > (canvas.width * -0.45)){
+                    vesselPos.x -= 10;
+                }
+            }                     
+
+            if ( e.keyCode == 68 ) { // D (droite)
+                if (vesselPos.x < (canvas.width * 0.45)){
+                    vesselPos.x += 10;
+                }
+            }
+
+            if ( e.keyCode == 32 ){ // Space (acceleration)
+                if (speed > maxSpeed){
+                    speed -= 1;
+                }
+            }
+        }
+
+        function releaseSpace(e){
+            if (e.keyCode == 32){
+                speed = minSpeed;
+            }
+        }
+
+        function init() {
+
+            // Initialisation du dessin. Il s'affiche sur toute la fenêtre
+            canvas = document.getElementById("theCanvas");
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            window.addEventListener("keydown", updateVesselPosition, true);
+            window.addEventListener("keyup", releaseSpace, true);
+            graphics = canvas.getContext("2d");
+
+            // Initialisation
+            generate_constellations();
+            generate_city();
+            requestAnimationFrame(update);
+        }
+
+        function update(){
+
+            // Mise a jour de la taille du canvas pour premettre de redimentionner la fenetre
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Mise à jour de la position des édifices: 
+
+            let increment = speed / canvas.width;
+
+            for (let i=0; i < cityLength; i++) {
+                farBuildingsPos[i] += increment /3;
+                middleBuildingsPos[i] += increment /2;
+                closeBuildingsPos[i] += increment;
+
+                if (farBuildingsPos[i] < (-buildingWidth)) {
+                    farBuildingsPos[i] += cityLength * (buildingWidth);
+                }
+
+                if (middleBuildingsPos[i] < (-buildingWidth)) {
+                    middleBuildingsPos[i] += cityLength * (buildingWidth);
+                }
+
+                if (closeBuildingsPos[i] < (-buildingWidth)) {
+                    closeBuildingsPos[i] += cityLength * (buildingWidth);
+                }
+            }
+
+            // On dessine et on passe au prochain frame
+            draw();
+            requestAnimationFrame(update);
+        }
+    </script>
+</head>
+    <body onload="init()">
+        <canvas id="theCanvas"></canvas>
+    </body>
+</html>
