@@ -1,30 +1,29 @@
 /* ErrorPage */
 .errortextbloc {
-    padding: 2rem;
-    width: 90%;
-    margin-top: 5%;
+  padding: 2rem;
+  width: 90%;
+  margin-top: 5%;
 
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 /* BigDot */
 body {
-    overflow-x: hidden; /* Seulement necessaire si la fenetre est tres petite*/
+  overflow-x: hidden; /* Seulement necessaire si la fenetre est tres petite*/
 }
 
 .bigdot {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    background: url(../assets/dot.svg) left top no-repeat;
-    background-size: 160%;
-    background-position-x: -20%;
-    background-position-y: 6rem;
+  background: url(../assets/dot.svg) left top no-repeat;
+  background-size: 160%;
+  background-position-x: -20%;
+  background-position-y: 6rem;
 
-    width: 100vw;
-    height: 100vh;
-    left: 20%;
-    top: 6rem;
+  width: 100vw;
+  height: 100vh;
+  left: 20%;
+  top: 6rem;
 }

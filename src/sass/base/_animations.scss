@@ -1,3 +1,42 @@
 // -----------------------------------------------------------------------------
 // Contains the @keyframes definitions of all animations.
 // -----------------------------------------------------------------------------
+
+@keyframes splash__static_image {
+  0% {
+    background-image: url("../assets/tvsnow/tvsnow007.jpg");
+  }
+  14% {
+    background-image: url("../assets/tvsnow/tvsnow001.jpg");
+  }
+  28% {
+    background-image: url("../assets/tvsnow/tvsnow002.jpg");
+  }
+  42% {
+    background-image: url("../assets/tvsnow/tvsnow003.jpg");
+  }
+  55% {
+    background-image: url("../assets/tvsnow/tvsnow004.jpg");
+  }
+  72% {
+    background-image: url("../assets/tvsnow/tvsnow005.jpg");
+  }
+  86% {
+    background-image: url("../assets/tvsnow/tvsnow006.jpg");
+  }
+  100% {
+    background-image: url("../assets/tvsnow/tvsnow007.jpg");
+  }
+}
+
+@keyframes splash__static__position {
+  0% {
+    background-position: center;
+  }
+  33% {
+    background-position: top;
+  }
+  66% {
+    background-position: bottom;
+  }
+}

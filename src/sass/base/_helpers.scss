@@ -52,3 +52,11 @@
   position: absolute;
   width: 1px;
 }
+
+/**
+ * Hide text while NOT making it readable for screen readers
+ * Usefull for inserting garbage text inside email adresses
+ */
+.obfuscate {
+  display: none;
+}

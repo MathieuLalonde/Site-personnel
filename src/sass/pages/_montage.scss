@@ -7,17 +7,17 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 
-    @media (max-width: 500px) {
+    @include mediamax(small) {
         justify-content: space-between;
-        // margin-inline: -0.6rem;
+        margin-inline: -0.6rem; // removes the img's outside margin
     }
 
     & img {
         height: 2rem;
         margin: 1rem;
-        filter: contrast(33%) brightness(125%) saturate(0%) ;
+        filter: contrast(33%) brightness(125%) saturate(0%) sepia(15%) hue-rotate(180deg);
 
-        @media (max-width: 500px) {
+        @include mediamax(small) {
             height: 1.28rem;
             margin: 0.5rem 0.6rem;
         }

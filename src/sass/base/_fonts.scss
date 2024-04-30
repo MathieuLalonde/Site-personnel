@@ -5,10 +5,16 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
 
+
+
 // $font-size: 1.5rem;
 
 body {
   /* Cabin + Humanist font stack */
   font-family: Cabin, Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
   color: #e7ebee;
+
+  // line-height: 1.3rem;
+
+  font-size: 16px;
 }

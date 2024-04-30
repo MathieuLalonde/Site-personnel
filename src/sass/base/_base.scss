@@ -40,7 +40,8 @@ body {
   --rouge-mjl: #990303;
   --accent_color: #555555;
 
-  height: 100vh; /* needed to keep footer at bottom*/
+  // height: 100vh; /* needed to keep footer at bottom but... */
+  height: auto; /* needed to keep sticky navbar from disapearing */
   display: flex;
   flex-direction: column;
   /* overflow-y: scroll; */
@@ -75,6 +76,13 @@ body {
 //   }
 // }
 
+
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  border: 1;
+  opacity: 0.25;
+}
 
 
 

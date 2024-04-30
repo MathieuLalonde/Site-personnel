@@ -2,57 +2,113 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
+@use '../base' as *;
 
-.headercontainer {
-    position: relative;
-    overflow: hidden;
-    width: 100vw;
-        /* 16:9 Aspect Ratio (9/16 = 0.5625) */
-    // padding-top: 80vh;
-    // margin-bottom: 1.25rem;
+.splash {
+  background: black;
+  min-height: 80vh;
 
-    min-height: 90vh;
-    height: 90vh;
-    max-height: 100vw;
-    & img {
-        width: 100vw;
-    }
+  display: flex;
+  justify-content: center ; /* Align horizontal */
+  align-items: center; /* Align vertical */
 }
 
-.headercontents {
-    background-image: url("../assets/splashscreen.jpg");
-    background-position: right;
-    background-size: cover;
+.splash__text {
+  // Set background (fill) image 
+  background-image: url("../assets/tvsnow/tvsnow001.jpg");
+  background-position: center;
+  background-size: 1920px 1080px;
 
-    
+  // Put background inside text
+  background-clip: text;
+  -webkit-background-clip: text;
+  color:transparent;
+  
+  // Style text
+  font-size: 10vw;
+  font-weight: 500;
+  text-shadow: #b4d5ebdd 1px 0 15px; // TODO: Check spread for smaller resolutions 
+  // filter: blur(1px);
 
-    /* clip-path: inset(30% 0 calc(70% - 5px) 0); */
-
-    /* position: absolute; */
-    top: 0;
-    left: 0;
-    right: 0;
-    /* width: 100%; */
-    height: 95vh;
-    max-height: 100vw;
-
-    /* Zoom in slightly to prevent background edges from showing */
-    /* scale: 1.003; */
-
-    text-align: left;
-    padding: 10% 10%;
+  animation-name: splash__static_image, splash__static__position;
+  animation-duration: 1s, 3s;
+  animation-timing-function: steps(30, jump-start), steps(1, jump-start);
+  animation-iteration-count: infinite;
 }
 
-/* Todo: 16x9 for large screens and fullscreen (around 9x16 or square?) with logo for small screens */
-
-@media (max-width: 768px) {
-    .headercontents {
-        background-image: url("../assets/statique.jpg");
-        background-position: left;
-    }
+.splashfade {
+  background: linear-gradient(to bottom, black 0%, transparent 100%);
+  padding-top: 20vh;
 }
+
+// .headercontainer {
+//   background-image: url("../assets/splashscreen.jpg");
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   // background-attachment: fixed;
+//   background-position: right 10% top 45%;
+//   min-height: 99%;
+
+//   @media (max-aspect-ratio: 9/12) {
+//     // color: red;
+//     background-position: left 20% top;
+
+//     // Version Stretch:
+//     // background-size: 230% 100%;
+//     // background-position: right 8% top 45%;
+//   }
+// }
+
+
+// .headercontainer {
+//   position: relative;
+//   overflow: hidden;
+//   width: 100vw;
+//   /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+//   // padding-top: 80vh;
+//   // margin-bottom: 1.25rem;
+
+//   border-color: aqua;
+//   border-width: 2px;
+//   min-height: 90vh;
+//   height: 90vh;
+//   max-height: 100vw;
+//   & img {
+//     width: 100vw;
+//   }
+// }
+
+// .headercontents {
+//   background-position: right;
+//   background-size: cover;
+
+//   /* clip-path: inset(30% 0 calc(70% - 5px) 0); */
+
+//   /* position: absolute; */
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   height: 95vh;
+//   max-height: 100vw;
+
+//   text-align: left;
+//   padding: 10vh 10%;
+//   & img {
+//     visibility: hidden;
+//       @media (max-aspect-ratio: 9/12) {
+//         visibility:visible;
+//   }
+
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .headercontents {
+//     background-image: url("../assets/statique.jpg");
+//     background-position: left;
+//   }
+// }
 
 /* @media (min-width: 768px) {
 
 } */
-

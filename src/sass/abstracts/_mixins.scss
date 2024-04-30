@@ -1,6 +1,25 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
+@use '../abstracts/breakpoints' as b;
+
+/// Media Querry
+/// @author Technophile
+/// @param {String} $key - Sreen size
+/// @link https://dev.to/dostonnabotov/media-queries-with-sass-mixins-and-maps-1ij6
+@mixin mediamax($key) {
+  $size: map-get(b.$breakpoints, $key);
+
+  @if ($size) {
+    @media only screen and (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @error '`#{$key}` does not exist in the $breakpoints';
+  }
+}
+
+
 
 // /// Event wrapper
 // /// @author Harry Roberts

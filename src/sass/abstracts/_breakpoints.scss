@@ -2,16 +2,16 @@
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
+  small: 30em,
+  medium: 50em,
+  large: 75em,
+);
 
+$aspectratios: (
+  16-9: 0.5625,
+  4-3: 0.75,
+  1-1: 1,
+  3-4: 1.33,
+  9-16: 1.78,
+);
 
-
-// Another example:
-
-// $breakpoints: (
-//     small: 40em,
-//     medium: 65em
-// );

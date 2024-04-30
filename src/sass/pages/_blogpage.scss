@@ -1,15 +1,14 @@
 /* BlogTemplatePage */
 .smallprint {
-    /* line-height: 1.5rem; */
-    font-size: 0.7rem; 
+  /* line-height: 1.5rem; */
+  font-size: 0.7rem;
 }
-
 
 .blog_header,
 .blog_content,
 .blog_about_card {
   width: 100%;
-  max-width: 70ch;  /* Assez large pour permettre d'insérer du code de 80ch... */
+  max-width: 70ch; /* Assez large pour permettre d'insérer du code de 80ch... */
   margin-inline: auto;
 }
 
@@ -19,29 +18,28 @@
 }
 
 .outer_grid {
-    display: grid;
-    grid-template-columns: repeat(4, auto) ;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
 }
 
 @media (min-width: 82em) {
-        .content_grid {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: auto auto ;
-    }
+  .content_grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto;
+  }
 
-    .blog_about_card {
-        grid-row: 2;
-        /* width: 25ch; */
-        max-width: 30ch;
-    }
+  .blog_about_card {
+    grid-row: 2;
+    /* width: 25ch; */
+    max-width: 30ch;
+  }
 
-    /* Pour le AboutCard... déplacer ?*/
-    .selfie {
+  /* Pour le AboutCard... déplacer ?*/
+  .selfie {
     max-width: 10rem;
   }
 }
-
 
 /* Formatage du texte */
 // p {
@@ -54,9 +52,8 @@
 // }
 
 code {
-  color:#6cb8e6;
+  color: #6cb8e6;
 }
-
 
 /* Exemples de code */
 .codesnippet {
@@ -68,6 +65,7 @@ pre {
   overflow: hidden;
   border-radius: 0.8rem;
   margin-inline: auto;
+  white-space: pre-wrap;
 }
 
 @media (max-width: 768px) {

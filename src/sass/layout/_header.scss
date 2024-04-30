@@ -1,3 +1,19 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+.head-logo {
+    width: 25rem;
+    max-width: 60%;
+    margin-inline: auto;
+}
+
+div.en_tete {
+    background-color: #0b62c5;
+    background-image: url("../assets/statique.jpg");
+    background-position: center;
+    background-size: cover;
+    
+    text-align: center;
+    padding: 1rem;
+}
