@@ -1,19 +1,19 @@
 /* VideoCard */
 
 .videocard {
-    padding: 1rem;
-    background-color: #171717;
+  padding: 1rem;
+  background-color: #171717;
 
-    /* position: relative;
+  /* position: relative;
     overflow: hidden; */
-    /* width: 100%; */
-    margin-top: 1rem;
-    margin-bottom: 1.25rem;
-    margin-inline: 0.5rem;
+  /* width: 100%; */
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+  margin-inline: 0.5rem;
 
-    /* bg image  */
-    background-size: cover;
-    border-radius: 0.8rem;
+  /* bg image  */
+  background-size: cover;
+  border-radius: 0.8rem;
 
-    box-shadow: 0 0 10px 0px #0004;
+  box-shadow: 0 0 10px 0px #0004;
 }

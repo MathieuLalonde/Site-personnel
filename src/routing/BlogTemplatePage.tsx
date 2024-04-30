@@ -9,72 +9,79 @@ import Markdown from '../components/Markdown';
 import PageTitle from '../components/PageTitle';
 
 import postList from '../posts.json';
-import './BlogTemplatePage.css'
 
 
 const BlogTemplatePage = () => {
-    const params = useParams();
+  const params = useParams();
 
-    let postFound = false;
-    let fetchedPost = {
-        title: "",
-        author: "",
-        postDate: "",
-        categories: [""],
-        content: "",
+  let postFound = false;
+  let fetchedPost = {
+    title: "",
+    author: "",
+    postDate: "",
+    categories: [""],
+    content: "",
+  }
+
+  for (const post of postList) {
+    if (params.id === post.id) {
+      fetchedPost.title = (post.title ? post.title : "No title given");
+      fetchedPost.author = (post.author ? post.author : "No title given");
+      fetchedPost.postDate = (post.postDate ? post.postDate : "No title given");
+      fetchedPost.categories = (post.categories ? post.categories : ["No title given"]);
+      fetchedPost.content = (post.content ? post.content : "No title given");
+      postFound = true;
+      break;
     }
+  }
 
-    for (const post of postList) {
-        if (params.id === post.id) {
-            fetchedPost.title = (post.title ? post.title : "No title given");
-            fetchedPost.author = (post.author ? post.author : "No title given");
-            fetchedPost.postDate = (post.postDate ? post.postDate : "No title given");
-            fetchedPost.categories = (post.categories ? post.categories : ["No title given"]);
-            fetchedPost.content = (post.content ? post.content : "No title given");
-            postFound = true;
-            break;
-        }
-    }
-
-    if (!postFound) {
-        return <Navigate replace to="/404" />;
-    }
+  if (!postFound) {
+    return <Navigate replace to="/404" />;
+  }
 
 
-    return (
-        <>
-            <PageTitle>{fetchedPost.title}</PageTitle>
+  return (
+    <>
+      <PageTitle>{fetchedPost.title}</PageTitle>
 
-            <div className='outer_grid'>
-                <div />
+      {/* <div className='container'>
+  
+            </div> */}
 
-                <div className='content_grid'>
-                    <div/>
-
-                    <div className='blog_header'>
-                        <div className='smallprint'>{fetchedPost.postDate}</div>
-                        <h1>{fetchedPost.title}</h1>
-                        <Labels>{fetchedPost.categories}</Labels>
-                    </div>
+      <div className='outer_grid'>
+        <div />
 
 
-                    <div className='blog_content'>
-                        {/* <div className='smallprint'>{fetchedPost.postDate}</div>
+        <div className='content_grid'>
+          <div />
+
+
+          <div className='blog_header'>
+            <div className='smallprint'>{fetchedPost.postDate}</div>
+            <h1>{fetchedPost.title}</h1>
+            <Labels>{fetchedPost.categories}</Labels>
+          </div>
+
+          <article>
+            <div className='blog_content'>
+              {/* <div className='smallprint'>{fetchedPost.postDate}</div>
                         <h1>{fetchedPost.title}</h1> */}
-                        {/* <Labels>{fetchedPost.categories}</Labels> */}
-                        <Markdown>{fetchedPost.content}</Markdown>
-                    </div>
+              {/* <Labels>{fetchedPost.categories}</Labels> */}
+              <Markdown>{fetchedPost.content}</Markdown>
+            </div>
+          </article>
 
-                    <div className='blog_about_card'>
-                        <AboutCard />
-                    </div>
+          <div className='blog_about_card'>
+            <AboutCard />
+          </div>
 
-                    
-                </div>
-            </div >
 
-        </>
-    );
+        </div>
+
+      </div >
+
+    </>
+  );
 };
 
 export default BlogTemplatePage;

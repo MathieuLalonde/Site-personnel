@@ -4,17 +4,17 @@
 import RichArticleCodeBlock from "./RichArticleCodeBlock";
 
 interface Props {
-    children: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[];
 };
 
 const RichArticlePreBlock = ({ children, ...rest }: Props) => {
-    if ("type" in children && children["type"] === "code") {
-        return RichArticleCodeBlock({
-            children: children["props"]["children"],
-            className: children["props"]["className"]
-        });
-    }
-    return <pre {...rest}>{children}</pre>;
+  if ("type" in children && children["type"] === "code") {
+    return RichArticleCodeBlock({
+      children: children["props"]["children"],
+      className: children["props"]["className"]
+    });
+  }
+  return <pre {...rest}>{children}</pre>;
 };
 
 export default RichArticlePreBlock

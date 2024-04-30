@@ -34,28 +34,28 @@ import YTV from '../assets/logos/YTV_logo_2009.svg'
 const TVLogos = () => {
   return (
     <div className='tvlogos'>
-          <img src={Ami} className="meddot" />
-          <img src={Bravo} className="meddot" />
-          <img src={CBC} className="meddot" style={{ padding: '0.15rem' }} />
-          <img src={CanalD} className="meddot" />
-          <img src={CanalVie} className="meddot" />
-          <img src={HGTV} className="meddot" />
-          <img src={Historia} className="meddot" />
-          <img src={History} className="meddot" />
-          <img src={LPB} className="meddot" />
-          <img src={RDI} className="meddot" />
-          <img src={Life} className="meddot" />
-          <img src={Lifetime} className="meddot" />
-          <img src={MusiMax} className="meddot" />
-          <img src={Nick} className="meddot" style={{padding: '0.4rem'}} />
-          <img src={Src} className="meddot" />
-          <img src={TeleQuebec} className="meddot" />
-          <img src={TFO} className="meddot" />
-          <img src={TV5} className="meddot" style={{ padding: '0.15rem' }} />
-          <img src={Tv5Monde} className="meddot" />
-          <img src={TVA} className="meddot" style={{ padding: '0.1rem' }} />
-          <img src={TVOntario} className="meddot" />
-          <img src={YTV} className="meddot" />
+      <img src={Ami} className="meddot" />
+      <img src={Bravo} className="meddot" />
+      <img src={CBC} className="meddot" style={{ padding: '0.15rem' }} />
+      <img src={CanalD} className="meddot" />
+      <img src={CanalVie} className="meddot" />
+      <img src={HGTV} className="meddot" />
+      <img src={Historia} className="meddot" />
+      <img src={History} className="meddot" />
+      <img src={LPB} className="meddot" />
+      <img src={RDI} className="meddot" />
+      <img src={Life} className="meddot" />
+      <img src={Lifetime} className="meddot" />
+      <img src={MusiMax} className="meddot" />
+      <img src={Nick} className="meddot" style={{ padding: '0.4rem' }} />
+      <img src={Src} className="meddot" />
+      <img src={TeleQuebec} className="meddot" />
+      <img src={TFO} className="meddot" />
+      <img src={TV5} className="meddot" style={{ padding: '0.15rem' }} />
+      <img src={Tv5Monde} className="meddot" />
+      <img src={TVA} className="meddot" style={{ padding: '0.1rem' }} />
+      <img src={TVOntario} className="meddot" />
+      <img src={YTV} className="meddot" />
     </div>
   )
 }

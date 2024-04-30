@@ -1,10 +1,11 @@
 import PageTitle from '../components/PageTitle';
+import TVLogos from '../components/TVLogos';
 import VideoStore from '../components/VideoStore';
 
 
 const Montage = () => {
   return (
-    <>
+    <div className='container'>
       <PageTitle>Montage</PageTitle>
       
       <h1>Montage...</h1>
@@ -12,6 +13,9 @@ const Montage = () => {
       <p>Historique</p>
 
       <h3>Résumé télé</h3>
+
+      <TVLogos/>
+
       <h3>Quelques vidéos</h3>
 
       <VideoStore />
@@ -23,16 +27,9 @@ const Montage = () => {
       <p>LinkedIn</p>
 
       <h3>Contact</h3>
-      <p>
-        Mathieu Lalonde <br />
-        5793, 2e avenue <br />
-        Montréal, Qc <br />
-        CANADA <br />
-        514 842-7178 <br />
-        moi@mathieulalonde.com <br />
-      </p>
+
       <p></p>
-    </>
+    </div>
   );
 };
 

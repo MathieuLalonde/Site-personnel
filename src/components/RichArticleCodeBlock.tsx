@@ -49,25 +49,25 @@ SyntaxHighlighter.registerLanguage("typescript", typescript);
 // SyntaxHighlighter.registerLanguage("yaml", yaml);
 
 interface Props {
-    children: string;
-    className: string;
+  children: string;
+  className: string;
 };
 
 const RichArticleCodeBlock = ({ children, className = 'code' }: Props) => {
-    const language = className?.replace("lang-", "");
-    
-    return (
-        <div className={className + " codesnippet"}>
-            <SyntaxHighlighter
-                // showLineNumbers
-                wrapLongLines
-                language={language.toLowerCase()}
-                style={coldarkDark}
-            >
-                {children}
-            </SyntaxHighlighter>
-        </div>
-    );
+  const language = className?.replace("lang-", "");
+
+  return (
+    <div className={className + " codesnippet"}>
+      <SyntaxHighlighter
+        // showLineNumbers
+        wrapLongLines
+        language={language.toLowerCase()}
+        style={coldarkDark}
+      >
+        {children}
+      </SyntaxHighlighter>
+    </div>
+  );
 };
 
 export default RichArticleCodeBlock

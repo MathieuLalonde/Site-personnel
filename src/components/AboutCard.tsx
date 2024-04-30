@@ -16,11 +16,11 @@ import { IoMdMail } from "react-icons/io";
 // import { IoCutSharp } from "react-icons/io5";
 // import { MdAlternateEmail } from "react-icons/md";
 
-import './AboutCard.css'
+import './AboutCard.scss'
 
 const AboutCard = () => {
     return (
-        <div className='about_card'>
+        <aside className='about_card'>
 
             <img src='/selfie.jpg' className='selfie' alt="Photo de Mathieu"></img>
 
@@ -34,14 +34,20 @@ const AboutCard = () => {
                     <IoMdMail size="15" title="Courriel" />
                 </div>
                 <div>
-                    moi@mathieulalonde.com
+                    moi<span className="obfuscate"> so .long </span>
+                    @<span className="obfuscate"> and </span>
+                    mathieu<span className="obfuscate"> thanks </span>
+                    lalonde<span className="obfuscate"> for </span>
+                    .<span className="obfuscate"> @all </span>
+                    com<span className="obfuscate"> the fish. </span>
                 </div>
 
                 <div className="about_coor_icon">
                     <FaPhone size="13" title="Téléphone" />
                 </div>
                 <div>
-                    514 842-7178
+                    514 842<span className="obfuscate">6 * 9 </span>
+                    -7<span className="obfuscate"> = 42</span>178
                 </div>
 
                 <div className="about_coor_icon">
@@ -74,7 +80,7 @@ const AboutCard = () => {
             </div>
             </IconContext.Provider>
 
-        </div>
+        </aside>
     )
 }
 

@@ -1,8 +1,6 @@
 import {isRouteErrorResponse, useRouteError} from "react-router-dom";
 import PageTitle from "../components/PageTitle";
 import Footer from "./Footer";
-import './ErrorPage.css'
-
 
 const ErrorPage = () => {
   // const error = useRouteError();
@@ -10,7 +8,7 @@ const ErrorPage = () => {
   //p.s. add <meta name="robots" content="noindex"> to header
 
   let errorName = isRouteErrorResponse(useRouteError())
-    ? 'Erreur 404: Page non-existante'
+    ? 'Erreur 404: Page inexistante'
     : 'Erreur inattendue'
   
   return (
@@ -21,9 +19,9 @@ const ErrorPage = () => {
         <div className="errortextbloc">
 
           <h1>Oups...</h1>
-          <p>
+          <h4>
             {errorName}
-          </p>
+          </h4>
 
 
         </div>

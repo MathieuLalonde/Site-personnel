@@ -2,7 +2,7 @@ import PageTitle from '../components/PageTitle';
 
 const Developpeur = () => {
   return (
-    <>
+    <div className='container'>
       <PageTitle>Developpeur</PageTitle>
       
       <h1>Developpeur...</h1>
@@ -24,15 +24,7 @@ const Developpeur = () => {
       <p>LinkedIn</p>
 
       <h3>Contact</h3>
-      <p>
-        Mathieu Lalonde <br/>
-        5793, 2e avenue <br />
-        Montréal, Qc <br />
-        CANADA <br />
-        514 842-7178 <br />
-        moi@mathieulalonde.com <br />
-      </p>
-    </>
+    </div>
   );
 };
 

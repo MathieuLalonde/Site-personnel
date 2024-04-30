@@ -17,27 +17,27 @@ import Dot from '../assets/dot.svg'
 // const VideoCard = ({ children }: Props) => {
 const VideoCard = () => {
 
-    // get thumbnail
+  // get thumbnail
 
-    return (
-        <div className='videocard'>
-            <img className='videothumb' src={'https://img.youtube.com/vi/S9uIVSWPfIQ/0.jpg'} ></img>
+  return (
+    <div className='videocard'>
+      <img className='videothumb' src={'https://img.youtube.com/vi/S9uIVSWPfIQ/0.jpg'} ></img>
 
 
-            <br />
-            <img src={Dot} />
-            <div>
-                Un titre ici (2024)
-            </div>
-        
-            Radio-Canada
-        
-            <br />
-            Il y a 1 mois
-        
-            <br />
+      <br />
+      <img src={Dot} />
+      <div>
+        Un titre ici (2024)
+      </div>
 
-            {/* <div className='videocontainer'>
+      Radio-Canada
+
+      <br />
+      Il y a 1 mois
+
+      <br />
+
+      {/* <div className='videocontainer'>
                 <iframe
                     className="videoplayer"
                     src={src + "&rel=0"}
@@ -45,8 +45,8 @@ const VideoCard = () => {
                     allowFullScreen
                 />
             </div> */}
-        </div>
-    )
+    </div>
+  )
 }
 
 export default VideoCard
