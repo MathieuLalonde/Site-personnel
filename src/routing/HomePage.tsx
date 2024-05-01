@@ -20,7 +20,7 @@ const HomePage = () => {
     // Clearing the interval
     return () => clearInterval(interval);
   }, [count]);
-  
+
   return (
     <>
       <PageTitle></PageTitle>
@@ -41,8 +41,9 @@ const HomePage = () => {
 
             Je viens tout juste de compléter un baccalauréat en informatique et génie logiciel et j'ai
             hâte d'en apprendre encore plus !
-          </p><p>
-            Si tu veux en savoir plus, je crois que ça résume pas mal bien les choses :
+          </p>
+          <p>
+            Si tu veux en savoir plus, je crois que cette vidéo résume pas mal bien les choses :
           </p>
         </div>
       </div>

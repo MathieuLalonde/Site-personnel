@@ -1,7 +1,7 @@
 const Blank = () => {
-    return (
-        <></>
-    )
+  return (
+    <></>
+  )
 }
 
 export default Blank
