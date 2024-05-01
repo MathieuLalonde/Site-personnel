@@ -13,13 +13,25 @@ $colors: (
     400: hsl(0, 0%, 33%),
     500: hsl(0, 0%, 18%),
   ),
-  white: (
+  blue: (
     100: hsl(212, 17%, 92%), // texte "blanc"
     200: hsl(212, 30%, 75%),
     300: hsl(212, 45%, 60%),
     400: hsl(212, 50%, 50%),
     500: hsl(212, 90%, 40%), // statique
-    700 :hsl(212, 90%, 25%),
-    800 :hsl(212, 90%, 12%),
-  )
+    700: hsl(212, 90%, 25%),
+    800: hsl(212, 90%, 12%),
+  ),
 );
+
+// Create custom properties from $colors map.
+// @example: --clr-red-100: hsl(0, 96%, 80%);
+// @author: Kevin Powell
+// https://www.youtube.com/watch?v=gP8yFWCTr7Q&t=190s
+:root {
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+}

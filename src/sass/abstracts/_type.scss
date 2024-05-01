@@ -1,18 +1,46 @@
+@use '../abstracts/mixins' as *;
+
 $type-scale: (
-    small:(
-        300: 1rem,
-        400: 1.125rem,
-        500: 1.563rem,
-        600: 1.953rem,
-        700: 2.441rem,
-        800: 3.052rem
-    ),
-    big:(
-        300: 1rem,
-        400: 1.25rem,
-        500: 2rem,
-        600: 2.827rem,
-        700: 4rem,
-        800: 5.653rem
-    )
-)
+  small: (
+    300: 1rem,
+    400: 1.125rem,
+    500: 1.563rem,
+    600: 1.953rem,
+    700: 2.441rem,
+    800: 3.052rem,
+  ),
+  large: (
+    300: 1rem,
+    400: 1.25rem,
+    500: 2rem,
+    600: 2.827rem,
+    700: 4rem,
+    800: 5.653rem,
+  ),
+);
+
+// Create custom properties from $type-scale map.
+// @example: --clr-red-100: hsl(0, 96%, 80%);
+// @author: Kevin Powell
+// https://www.youtube.com/watch?v=gP8yFWCTr7Q&t=190s
+:root {
+  @each $screen-size, $font-size in $type-scale {
+    @if $screen-size == small {
+      @each $size, $value in $font-size {
+        --fs-#{$size}: #{$value};
+      }
+    } @else if $screen-size == medium {
+      @include mq(small) {
+        @each $size, $value in $font-size {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    } @else {
+      @include mq(medium) {
+        @each $size, $value in $font-size {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+  }
+}

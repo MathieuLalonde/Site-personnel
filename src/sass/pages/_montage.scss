@@ -1,26 +1,30 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .tvlogos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
-    @include mediamax(small) {
-        justify-content: space-between;
-        margin-inline: -0.6rem; // removes the img's outside margin
+  @include mq(small) {
+    justify-content: space-between;
+    margin-inline: -0.6rem; // removes the img's outside margin
+  }
+
+  & img {
+    height: 1.28rem;
+    margin: 0.5rem 0.6rem;
+    filter: contrast(33%) brightness(125%) saturate(0%) sepia(15%) hue-rotate(180deg);
+
+    @include mq(small) {
+      height: 2rem;
+      margin: 1rem;
     }
-
-    & img {
-        height: 2rem;
-        margin: 1rem;
-        filter: contrast(33%) brightness(125%) saturate(0%) sepia(15%) hue-rotate(180deg);
-
-        @include mediamax(small) {
-            height: 1.28rem;
-            margin: 0.5rem 0.6rem;
-        }
-    }
+  }
 }
 
+.gemeaux {
+  filter: contrast(33%) brightness(125%) saturate(0%) sepia(15%) hue-rotate(180deg);
+  height: 6rem;
+}
