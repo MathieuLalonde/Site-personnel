@@ -1,16 +1,30 @@
 /**
  * Basic typography style for copy text
  */
-@use '../abstracts' as abst;
+@use '../abstracts' as *;
 
-// body {
-//   color: abst.$text-color;
-//   font: normal 125% / 1.4 abst.$text-font-stack;
-// }
+body {
+  color: $text-color;
+  // font: normal 125% / 1.4 abst.$text-font-stack;
+  font-size: var(--fs-400);
+}
 
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.75rem;
+}
+
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  // color: var(--bs-secondary-color);
+  text-align: left;
+}
 
 a {
-  color: white;
+  color: var(--clr-blue-100);
   font-weight: bold;
   text-decoration: none;
 }
@@ -20,52 +34,50 @@ a {
 } */
 
 /* Titres de sections */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* font-weight: lighter; */
-  letter-spacing: 0.1rem; 
-  /* letter-spacing: 0.35rem;  */
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  // font-weight: 500;
+  // font-weight: lighter;
+  line-height: 1.2;
   text-wrap: balance;
+  letter-spacing: 0.1rem; 
 }
 
 h1 {
-  font-size: 5rem; /* was 6rem (96px) */
+  @include fs(var(--fs-800));
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 3rem; /* 48px; */
+  @include fs(var(--fs-700));
 }
 
 h3 {
-  font-size: 2rem; /* 32px; */
+  @include fs(var(--fs-600));
 }
 
 h4 {
-  font-size: 1.5rem; /* 24px; */
+  @include fs(var(--fs-500));
 }
 
 h5 {
-  font-size: 1rem; /* 16px; */
+  font-size: var(--fs-400);
 }
 
 h6 {
-  font-size: 0.875rem; /* 14px; */
+  font-size: var(--fs-300);
 }
 
 
-.tiny {
-  font-size: 0.7rem; /* 12px; */
+.medium {
+  font-size: var(--fs-400);
 }
 .small {
-  font-size: 0.875rem; /* 14px; */
+  font-size: var(--fs-200);
 }
-.medium {
-  font-size: 1.125rem; /* 18px; */
+.tiny {
+  font-size: var(--fs-100);
 }
 
 
@@ -76,27 +88,29 @@ h6 {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-style: italic;
   font-weight: bolder;
+  color: var(--clr-gray-200)
 }
 
 .citation {
-  font-size: 2rem;
+  font-size: var(--fs-500);
   text-align: center;
   line-height: 1em;
-  padding: 4rem 0 0;
+  padding-top: 2rem;
   display: block;
   width: 99%; /* Evite d'avoir une barre de defillement en bas */
   transform: rotate(-1deg);
 }
 
 .source {
-  font-size: 1.2rem;
+  font-size: var(--fs-400);
   text-align: right;
   padding-right: 15%;
+  padding-bottom: 2rem;
 }
 
 .guillemets {
   font-family: "Times New Roman", serif;
-  font-size: 3.5em;
-  padding: 0 1.3rem;
-  vertical-align: -0.4em;
+  font-size: var(--fs-700);
+  padding: 2rem 1.3rem;
+  vertical-align: -0.4rem;
 }

@@ -3,13 +3,13 @@
 .tvlogos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  margin-inline: -0.6rem; // removes the img's outside margin
   margin-top: 1rem;
   margin-bottom: 1rem;
 
   @include mq(small) {
-    justify-content: space-between;
-    margin-inline: -0.6rem; // removes the img's outside margin
+    justify-content: center;  
   }
 
   & img {

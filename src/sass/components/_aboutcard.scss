@@ -1,7 +1,7 @@
 .about_card {
   --icon_color: #999999;
 
-  background-color: #323232;
+  background-color: var(--clr-gray-500);
   border-radius: 0.8rem;
   padding: 1rem;
   margin-left: auto;
@@ -17,7 +17,7 @@
 
 .selfie {
   border-radius: 50%;
-  border: 0.5rem solid var(--accent_color);
+  border: 0.5rem solid var(--clr-gray-400);
   max-width: 8rem;
   padding: 0.6rem;
   margin: 0 0.5rem 1rem 0;

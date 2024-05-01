@@ -20,6 +20,14 @@
 }
 
 
+/// Left alignment fix for larger font sizes
+/// @author Mathieu Lalonde
+/// @param {String} $key - Font size
+@mixin fs($key) {
+  font-size: $key;
+  margin-left: calc(-0.05 * $key);
+}
+
 
 // /// Event wrapper
 // /// @author Harry Roberts

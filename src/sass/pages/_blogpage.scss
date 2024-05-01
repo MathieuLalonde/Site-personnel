@@ -8,8 +8,10 @@
 .blog_content,
 .blog_about_card {
   width: 100%;
+  // TODO: use abst.$max-width instead ??
   max-width: 70ch; /* Assez large pour permettre d'insérer du code de 80ch... */
   margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 .blog_content,
@@ -33,6 +35,7 @@
     grid-row: 2;
     /* width: 25ch; */
     max-width: 30ch;
+    padding-inline: 0;
   }
 
   /* Pour le AboutCard... déplacer ?*/
