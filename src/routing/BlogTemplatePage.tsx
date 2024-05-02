@@ -44,30 +44,24 @@ const BlogTemplatePage = () => {
     <>
       <PageTitle>{fetchedPost.title}</PageTitle>
 
-      {/* <div className='container'>
-  
-            </div> */}
-
       <div className='outer_grid'>
-        <div />
 
         <div className='content_grid'>
-          <div />
+          <div></div>
 
-          <article>
-            <div className='blog_header'>
-              <h1>{fetchedPost.title}</h1>
-              <div className='small'>{fetchedPost.postDate}</div>
-              <Labels>{fetchedPost.categories}</Labels>
-            </div>
 
-            <div className='blog_content'>
-              {/* <div className='smallprint'>{fetchedPost.postDate}</div>
-                        <h1>{fetchedPost.title}</h1> */}
-              {/* <Labels>{fetchedPost.categories}</Labels> */}
+          <div className='blog_header'>
+            <h1>{fetchedPost.title}</h1>
+            <div className='subheading'>Le blogue de Mathieu Lalonde.</div>
+            <div className='small'>{fetchedPost.postDate}</div>
+            <Labels>{fetchedPost.categories}</Labels>
+          </div>
+
+          <div className='blog_content'>
+            <article>
               <Markdown>{fetchedPost.content}</Markdown>
-            </div>
-          </article>
+            </article>
+          </div>
 
           <div className='blog_about_card'>
             <AboutCard />
