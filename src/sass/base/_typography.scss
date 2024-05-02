@@ -42,7 +42,6 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   // font-weight: lighter;
   line-height: 1.2;
   text-wrap: balance;
-  letter-spacing: 0.1rem;
   padding-top: 0.5rem;
 }
 
@@ -50,11 +49,17 @@ h1 {
   @include fs(var(--fs-800));
   text-transform: uppercase;
   line-height: 0.825em;
+  @include mq(small){
+    letter-spacing: 0.1rem;
+  }
 }
 
 h2 {
   @include fs(var(--fs-600));
   line-height: 1.1em;
+  @include mq(small){
+    letter-spacing: 0.04rem;
+  }
 }
 
 h3 {
@@ -100,6 +105,10 @@ code {
   // color: hsl(203, 71%, 66%);
   color: var(--clr-blue-200);
 }
+
+
+
+
 
 
 /* Citations */

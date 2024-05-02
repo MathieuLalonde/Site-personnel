@@ -7,6 +7,7 @@ const Portfolio = () => {
   return (
     <>
       <div className='container'>
+        <article>
         <h1>Portfolio.</h1>
         <div className='subheading'>Le meilleur de mes travaux.</div>
         
@@ -20,7 +21,8 @@ const Portfolio = () => {
           L'informatique pour moi, c'est un outil; un outil de communication, un canevas sur
           lequel on peut tout créer. C'est aussi un formidable outil qui permet de créer d'autres outils...
         </p>
-
+        </article>
+        <hr/>
       </div>
       <ScrollRestoration />
       <Outlet />

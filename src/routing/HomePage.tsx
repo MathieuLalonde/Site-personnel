@@ -15,7 +15,7 @@ const HomePage = () => {
     // Setting the interval
     const interval = setInterval(() => {
       count + 1 < words.length ? setCount(count + 1) : setCount(0);
-    }, 1900);
+    }, 900);
 
     // Clearing the interval
     return () => clearInterval(interval);
@@ -48,7 +48,7 @@ const HomePage = () => {
               hâte d'en apprendre encore plus !
             </p>
             <p>
-              Si tu veux en savoir plus, je crois que cette vidéo résume pas mal bien les choses :
+              Si tu veux en savoir plus, je crois que cette vidéo résume pas mal bien qui je suis. :
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ const HomePage = () => {
             chance de travailler</p>
         </div>
       </article>
-      
+
       <div className='container'>
         <AboutCard />
       </div>
