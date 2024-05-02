@@ -1,4 +1,6 @@
 /* BlogTemplatePage */
+@use "../abstracts" as *;
+
 .smallprint {
   /* line-height: 1.5rem; */
   font-size: 0.7rem;
@@ -54,20 +56,21 @@
 //   margin-top: 2rem;
 // }
 
-code {
-  color: #6cb8e6;
-}
 
 /* Exemples de code */
 .codesnippet {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-size: var(--fs-200);
+
+  @include mq(small){
+    font-size: var(--fs-400);
+  }
 }
 
 pre {
   overflow: hidden;
   border-radius: 0.8rem;
-  margin-inline: auto;
   white-space: pre-wrap;
 }
 

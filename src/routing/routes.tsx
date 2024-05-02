@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       { path: 'montage', element: <Montage /> },
       { path: 'blog', element: <BlogPage /> },
       { path: 'blog/:id', element: <BlogTemplatePage /> },
-      { path: 'contact', element: <ContactPage /> },
+      { path: 'coordonnees', element: <ContactPage /> },
 
       { path: 'styleguide', element: <StyleGuide /> },
     ]

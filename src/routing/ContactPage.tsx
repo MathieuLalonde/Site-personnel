@@ -5,7 +5,7 @@ function ContactPage() {
   return (
     <div className="container">
       <h1>Coordonnées.</h1>
-      {/* <p>Voici les principales façons de me contacter :</p> */}
+      <div className='subheading'>Comment me contacter sur Internet et dans le monde réel.</div>
       <AboutCard />
     </div>
   )

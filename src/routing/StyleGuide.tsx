@@ -7,9 +7,11 @@ const StyleGuide = () => {
       <h1>Styleguide.</h1>
       Un guide des styles utilisés sur le site :
 
-      <h1>H1 Header</h1>
-      <h2>H2 Header</h2>
-      <h3>H3 Header</h3>
+      <hr/>
+
+      <h1>H1 Header qui dépasse sur deux lignes.</h1>
+      <h2>H2 Header qui dépasse sur deux lignes parse qu'il est trop long.</h2>
+      <h3>H3 Header qui dépasse sur deux lignes parse qu'il est trop long.</h3>
       <h4>H4 Header</h4>
       <h5>H5 Header</h5>
       <h6>H6 Header</h6>

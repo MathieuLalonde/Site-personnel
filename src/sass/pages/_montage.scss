@@ -1,4 +1,5 @@
 @use "../abstracts" as *;
+@use "../base" as *;
 
 .tvlogos {
   display: flex;
@@ -26,5 +27,5 @@
 
 .gemeaux {
   filter: contrast(33%) brightness(125%) saturate(0%) sepia(15%) hue-rotate(180deg);
-  height: 6rem;
+  height: 5rem;
 }

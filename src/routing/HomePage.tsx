@@ -32,40 +32,46 @@ const HomePage = () => {
           {words[count]}
         </div>
       </div>
-      <div className='splashfade'>
-        <div className='container'>
-          <h1 id='intro'>Introduction.</h1>
-          <p>
-            Bonjour, c'est moi Mathieu. Je suis un passionné de technologie; développeur logiciel, vidéaste,
-            et parfois photographe et graphiste sur les bords...
 
-            Je viens tout juste de compléter un baccalauréat en informatique et génie logiciel et j'ai
-            hâte d'en apprendre encore plus !
-          </p>
-          <p>
-            Si tu veux en savoir plus, je crois que cette vidéo résume pas mal bien les choses :
-          </p>
+      <article>
+        <div className='splashfade'>
+          <div className='container'>
+
+            <h1 id='intro'>Introduction.</h1>
+            <div className='subheading'>Permettez-moi de me présenter.</div>
+
+            <p>
+              Bonjour, c'est moi Mathieu. Je suis un passionné de technologie; développeur logiciel, vidéaste,
+              et parfois photographe et graphiste sur les bords...
+
+              Je viens tout juste de compléter un baccalauréat en informatique et génie logiciel et j'ai
+              hâte d'en apprendre encore plus !
+            </p>
+            <p>
+              Si tu veux en savoir plus, je crois que cette vidéo résume pas mal bien les choses :
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className='container'>
-        <VideoPlayer src="https://www.youtube-nocookie.com/embed/DXUfddvlo8Q?si=0W6tFwgVAGDSc1o7" />
-        <p>
-          Je suis très à l’aise avec la programmation orienté-objet, aussi bien sur Windows que Linux.
-          Je suis très confortable avec l’utilisation de Git, les bases de données SQL, la programmation
-          Java, Python, JS/React, les API REST et les Microservices.
-        </p><p>
-          Pendant plus de 20 ans, j’ai travaillé dans les médias à titre de monteur dans les domaines de
-          la télévision, du documentaire et de la publicité. C’est un métier qui m’a appris à travailler
-          aussi bien en équipe que de manière autonome, à résoudre des problèmes, à gérer projets, exigences
-          et échéanciers.
-        </p>
+        <div className='container'>
+          <VideoPlayer src="https://www.youtube-nocookie.com/embed/DXUfddvlo8Q?si=0W6tFwgVAGDSc1o7" />
+          <p>
+            Je suis très à l’aise avec la programmation orienté-objet, aussi bien sur Windows que Linux.
+            Je suis très confortable avec l’utilisation de Git, les bases de données SQL, la programmation
+            Java, Python, JS/React, les API REST et les Microservices.
+          </p><p>
+            Pendant plus de 20 ans, j’ai travaillé dans les médias à titre de monteur dans les domaines de
+            la télévision, du documentaire et de la publicité. C’est un métier qui m’a appris à travailler
+            aussi bien en équipe que de manière autonome, à résoudre des problèmes, à gérer projets, exigences
+            et échéanciers.
+          </p>
 
-        <h3>Quelques exemples logiciels...</h3>
-        <p>Jetez un coup d’œil à mon portfolio pour voir quelques petits projets sur lesquels j'ai eu la
-          chance de travailler</p>
-      </div>
-
+          <h3>Quelques exemples logiciels...</h3>
+          <p>Jetez un coup d’œil à mon portfolio pour voir quelques petits projets sur lesquels j'ai eu la
+            chance de travailler</p>
+        </div>
+      </article>
+      
       <div className='container'>
         <AboutCard />
       </div>

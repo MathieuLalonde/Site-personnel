@@ -25,7 +25,8 @@ html {
 html,
 body {
   height: 100vh;
-  width: 100vw; /* avoids screen resize for existence of scrollbar */
+  width: 100vw; // avoids screen resize for existence of scrollbar
+  overflow-x: hidden; // principalement pour la page 404 sur petits ecrans
 }
 
 body {
@@ -37,8 +38,8 @@ body {
 }
 
 #root {
-  // height: 100vh; /* needed to keep footer at bottom but... */
-  height: auto; /* needed to keep sticky navbar from disapearing */
+  // height: 100vh; // needed to keep footer at bottom but...
+  height: auto; // needed to keep sticky navbar from disapearing
   display: flex;
   flex-direction: column;
   /* overflow-y: scroll; */

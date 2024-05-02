@@ -8,8 +8,7 @@ const Footer = () => {
       <NavLink to="/">
         <img src={Logo} alt="Le petit logo de Mathieu Lalonde" />
       </NavLink>
-      <br />
-      {/* © Mathieu Lalonde */}
+      © Mathieu Lalonde
     </footer>
   );
 };

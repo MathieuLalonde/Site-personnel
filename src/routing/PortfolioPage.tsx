@@ -7,10 +7,9 @@ const Portfolio = () => {
   return (
     <>
       <div className='container'>
-        <h2>
-          Portfolio
-        </h2>
-
+        <h1>Portfolio.</h1>
+        <div className='subheading'>Le meilleur de mes travaux.</div>
+        
         <p>
           Bien avant de développer une passion pour le cinéma et la télévision,
           la technologie et l'informatique ont été une partie prenante de ma vie;

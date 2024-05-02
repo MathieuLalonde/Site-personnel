@@ -51,18 +51,16 @@ const BlogTemplatePage = () => {
       <div className='outer_grid'>
         <div />
 
-
         <div className='content_grid'>
           <div />
 
-
-          <div className='blog_header'>
-            <div className='smallprint'>{fetchedPost.postDate}</div>
-            <h1>{fetchedPost.title}</h1>
-            <Labels>{fetchedPost.categories}</Labels>
-          </div>
-
           <article>
+            <div className='blog_header'>
+              <h1>{fetchedPost.title}</h1>
+              <div className='small'>{fetchedPost.postDate}</div>
+              <Labels>{fetchedPost.categories}</Labels>
+            </div>
+
             <div className='blog_content'>
               {/* <div className='smallprint'>{fetchedPost.postDate}</div>
                         <h1>{fetchedPost.title}</h1> */}
@@ -75,11 +73,9 @@ const BlogTemplatePage = () => {
             <AboutCard />
           </div>
 
-
         </div>
 
       </div >
-
     </>
   );
 };

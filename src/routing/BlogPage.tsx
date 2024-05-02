@@ -15,13 +15,13 @@ const BlogPage = () => {
 
   return (
     <div className='container'>
-      <PageTitle>Blog</PageTitle>
+      <PageTitle>Blogue</PageTitle>
 
       <h1>Blogue.</h1>
-      <p>
+      <div className='subheading'>
         Un appercu de mes projets personnels actuels et des trucs qui me passent par la tête.
-      </p>
-      <br />
+      </div>
+      
       <PostList label={label}></PostList>
     </div>
   );
