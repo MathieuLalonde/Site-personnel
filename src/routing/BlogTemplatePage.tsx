@@ -46,12 +46,14 @@ const BlogTemplatePage = () => {
 
       <div className='outer_grid'>
 
+        <div></div>
+
         <div className='content_grid'>
+
           <div></div>
 
-
           <div className='blog_header'>
-            <h1>{fetchedPost.title}</h1>
+            <h1>{fetchedPost.title}.</h1>
             <div className='subheading'>Le blogue de Mathieu Lalonde.</div>
             <div className='small'>{fetchedPost.postDate}</div>
             <Labels>{fetchedPost.categories}</Labels>

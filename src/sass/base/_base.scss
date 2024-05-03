@@ -46,7 +46,6 @@ body {
 }
 
 .blogphoto {
-  border-radius: 0.8rem;
   max-width: 100%; /* p.s. rendre plus gros sur telephones... */
   display: block;
   margin-left: auto;
@@ -54,7 +53,8 @@ body {
   max-height: 100vh;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-
+  
+  border-radius: abst.$border-radius;
   box-shadow: 0 0 10px 0px #0004;
 }
 

@@ -79,3 +79,14 @@ pre {
     max-width: 98%;
   }
 }
+
+
+.post-card {
+  border: 2px solid;
+  border-color: var(--clr-gray-400);
+  margin-bottom: 2rem;
+  padding: 0 1rem 1rem;
+
+  border-radius: $border-radius;
+  box-shadow: 0 0 10px 0px #0004;
+}
