@@ -44,6 +44,7 @@ const router = createBrowserRouter([
   {
     path: 'portfolio',
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Portfolio /> },
       { path: 'cerveau', element: <Cerveau /> },
