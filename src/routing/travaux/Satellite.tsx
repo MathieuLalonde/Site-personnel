@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import PageTitle from "../../components/PageTitle";
 
 const Satellite = () => {
   return (
     <div className="container">
+      <PageTitle>Satellite</PageTitle>
       <article>
         <ul className="breadcrumb">
           <li><Link to="/portfolio" >Portfolio</Link></li>
@@ -20,9 +22,13 @@ const Satellite = () => {
 
         <h2>Description</h2>
 
-        <p>Animation OpenGL démontrant un télescope en orbite autour de la terre,
-          elle-même en orbite autour du soleil.
+        <p>Animation OpenGL démontrant un satellite en orbite autour de la terre,
+          elle-même en orbite autour du soleil. Il faut notter que les étoiles dans le ciel sont générées de façon procédurale.
         </p>
+
+        <h2>Instructions</h2>
+
+        <p>L'animation peut être contrôlée avec la souris</p>
       </article>
     </div>
   )

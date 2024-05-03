@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import PageTitle from "../../components/PageTitle";
 
 
 const Cerveau = () => {
   return (
     <div className="container">
+      <PageTitle>Cerveau</PageTitle>
       <article>
         <ul className="breadcrumb">
           <li><Link to="/portfolio" >Portfolio</Link></li>

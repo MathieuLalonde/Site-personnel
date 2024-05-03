@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import PageTitle from "../../components/PageTitle";
 
 const Respiration = () => {
   return (
     <div className="container">
+      <PageTitle>Relaxation</PageTitle>
       <article>
         <ul className="breadcrumb">
           <li><Link to="/portfolio" >Portfolio</Link></li>

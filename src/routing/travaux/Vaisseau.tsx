@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import PageTitle from "../../components/PageTitle";
 
 const Vaisseau = () => {
   return (
     <div className="container">
+      <PageTitle>Vaisseau spatial</PageTitle>
       <article>
         <ul className="breadcrumb">
           <li><Link to="/portfolio" >Portfolio</Link></li>
