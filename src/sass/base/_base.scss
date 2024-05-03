@@ -22,10 +22,27 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  color-scheme: dark;
+}
+
+#root {
+  // height: 100vh; // needed to keep footer at bottom but...
+  height: auto; // needed to keep sticky navbar from disapearing
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  // scrollbar-gutter: stable
+  // overflow: auto;
+}
+
 html,
 body {
   height: 100vh;
-  width: 100vw; // avoids screen resize for existence of scrollbar
+  width: 100vw; 
+  // overflow-y: scroll;
   overflow-x: hidden; // principalement pour la page 404 sur petits ecrans
 }
 
@@ -35,15 +52,10 @@ body {
   background: radial-gradient(circle, #303030 0%, #252525 60%, #1b1917 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  overflow-y: scroll; // Adds scrollbar gutter to short pages to stop resiging due to scrollbar
 }
 
-#root {
-  // height: 100vh; // needed to keep footer at bottom but...
-  height: auto; // needed to keep sticky navbar from disapearing
-  display: flex;
-  flex-direction: column;
-  /* overflow-y: scroll; */
-}
 
 .blogphoto {
   max-width: 100%; /* p.s. rendre plus gros sur telephones... */

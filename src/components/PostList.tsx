@@ -36,21 +36,20 @@ const PostList = ({ label = "" }: Props) => {
               <h2>
                 <Link className="links" to={`/blog/${post.id}`}>{post.title}</Link>
               </h2>
-              <Labels>{post.categories}</Labels>
-
               <small>
                 Publié le {post.postDate} par {post.author}
               </small>
+              <Labels>{post.categories}</Labels>
+
 
               <MarkdownToJsx
                 children={post.content.split(" ").slice(0, 20).join(" ") + "..."}
                 options={{ overrides: { VideoPlayer: Blank, }, }} />
 
               <small>
-                <Link className="links" to={`/blog/${post.id}`}>Lire la suite</Link>
+                <Link className="links" to={`/blog/${post.id}`}>Lire la suite ...</Link>
               </small>
 
-              <hr />
             </div>
           )
         })
