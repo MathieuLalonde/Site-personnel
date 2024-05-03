@@ -1,6 +1,6 @@
 import {isRouteErrorResponse, useRouteError} from "react-router-dom";
 import PageTitle from "../components/PageTitle";
-import Footer from "./Footer";
+import Footer from "../layout/Footer";
 
 const ErrorPage = () => {
   // const error = useRouteError();

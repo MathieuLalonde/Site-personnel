@@ -1,22 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
 
 // Pages principales :
-import BlogPage from "./BlogPage";
-import BlogTemplatePage from "./BlogTemplatePage";
-import ContactPage from "./ContactPage";
-import ErrorPage from "./ErrorPage";
-import HomePage from "./HomePage";
+import BlogPage from "../pages/BlogPage";
+import BlogTemplatePage from "../pages/BlogTemplatePage";
+import ContactPage from "../pages/ContactPage";
+import ErrorPage from "../pages/ErrorPage";
+import HomePage from "../pages/HomePage";
 import Layout from "./Layout";
-import Montage from "./Montage"
+import Montage from "../pages/Montage"
 // Travaux (portfolio):
-import Cerveau from "./travaux/Cerveau";
-import Portfolio from "./PortfolioPage";
-import Respiration from "./travaux/Respiration";
-import Satellite from "./travaux/Satellite";
-import Vaisseau from "./travaux/Vaisseau";
+import Cerveau from "../pages/travaux/Cerveau";
+import Portfolio from "../pages/PortfolioPage";
+import Respiration from "../pages/travaux/Respiration";
+import Satellite from "../pages/travaux/Satellite";
+import Vaisseau from "../pages/travaux/Vaisseau";
 // Autres pages :
-import StyleGuide from "./StyleGuide";
-import Multiplayer from "./travaux/Multiplayer";
+import StyleGuide from "../pages/StyleGuide";
+import Multiplayer from "../pages/travaux/Multiplayer";
 
 
 const router = createBrowserRouter([

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import PageTitle from '../components/PageTitle';
-import Footer from './Footer';
+import Footer from '../layout/Footer';
 
 import VideoPlayer from '../components/VideoPlayer';
-import NavBar from './NavBar';
+import NavBar from '../layout/NavBar';
 import AboutCard from '../components/AboutCard';
 
 const HomePage = () => {
