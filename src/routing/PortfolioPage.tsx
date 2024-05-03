@@ -1,8 +1,3 @@
-import { Outlet, ScrollRestoration } from 'react-router-dom';
-// import NavBar from './NavBar';
-// import Footer from './Footer';
-// import Header from './Header';
-
 const Portfolio = () => {
   return (
     <>
@@ -24,8 +19,6 @@ const Portfolio = () => {
         </article>
         <hr/>
       </div>
-      <ScrollRestoration />
-      <Outlet />
     </>
   );
 };

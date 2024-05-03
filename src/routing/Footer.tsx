@@ -1,13 +1,13 @@
-import { NavLink } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import Logo from '../assets/logo.svg'
 
 const Footer = () => {
   return (
     <footer>
-      <NavLink to="/">
+      <a href="/">
         <img src={Logo} alt="Le petit logo de Mathieu Lalonde" />
-      </NavLink>
+      </a>
       © Mathieu Lalonde
     </footer>
   );

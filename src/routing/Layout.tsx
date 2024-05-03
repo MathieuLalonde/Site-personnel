@@ -9,12 +9,12 @@ const Layout = () => {
       <Header></Header>
       <NavBar />
       <div id="main">
-        
+
         {/* Note: ScrollRestoration directs links to the top of each page */}
-        <ScrollRestoration />
         <Outlet />
       </div>
       <Footer />
+      {/* <ScrollRestoration /> */}
     </>
   );
 };

@@ -8,7 +8,6 @@ import ErrorPage from "./ErrorPage";
 import HomePage from "./HomePage";
 import Layout from "./Layout";
 import Montage from "./Montage"
-import Developpeur from "./Developpeur";
 // Travaux (portfolio):
 import Cerveau from "./travaux/Cerveau";
 import Portfolio from "./PortfolioPage";
@@ -17,6 +16,7 @@ import Satellite from "./travaux/Satellite";
 import Vaisseau from "./travaux/Vaisseau";
 // Autres pages :
 import StyleGuide from "./StyleGuide";
+import Multiplayer from "./travaux/Multiplayer";
 
 
 const router = createBrowserRouter([
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       // { index: true, element: <HomePage /> }, // or path: ''
-      { path: 'dev', element: <Developpeur /> },
+      // { path: 'dev', element: <Developpeur /> },
       { path: 'montage', element: <Montage /> },
       { path: 'blog', element: <BlogPage /> },
       { path: 'blog/:id', element: <BlogTemplatePage /> },
@@ -45,11 +45,12 @@ const router = createBrowserRouter([
     path: 'portfolio',
     element: <Layout />,
     children: [
-      { index: true, element: <Portfolio /> }, // or path: ''
+      { index: true, element: <Portfolio /> },
       { path: 'cerveau', element: <Cerveau /> },
       { path: 'relaxation', element: <Respiration /> },
       { path: 'satellite', element: <Satellite /> },
       { path: 'vaisseau', element: <Vaisseau /> },
+      { path: 'multiplayer', element: <Multiplayer /> },      
     ]
   },
 

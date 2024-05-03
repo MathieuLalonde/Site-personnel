@@ -1,65 +1,67 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="navbar">
-      <div >
-        <div>
-          <ul>
+    <nav>
+      <ul className="navbar">
 
-            <li className="nav-item">
-              <NavLink to="/" className="nav-link">
-                (Accueil)
-              </NavLink>
-            </li>
+        {/* <li className="nav-item">
+          <NavLink to="/" className="nav-link">
+            introduction
+          </NavLink>
+        </li> */}
 
-            <li className="nav-item">
-              <NavLink to="/portfolio" className="nav-link">
-                (portfolio)
-                {/* travaux pratiques */}
-              </NavLink>
-            </li>
+        {/* <li className="nav-item">
+          <NavLink to="/montage" className="nav-link">
+            en bref
+          </NavLink>
+        </li> */}
 
-            <li className="nav-item">
-              <NavLink to="/montage" className="nav-link">
-                {/* À propos de moi */}
-                (en bref - cv)
-              </NavLink>
-            </li>
+        <li className="nav-item">
+          <a href="/portfolio" className="nav-link">
+            portfolio
+            {/* travaux pratiques */}
+          </a>
+        </li>
 
-            {/* <li className="nav-item">
+        <li className="nav-item">
+          <a href="/montage" className="nav-link">
+            {/* À propos de moi */}
+            montage
+          </a>
+        </li>
+
+        {/* <li className="nav-item">
                 <NavLink to="/blog" className="nav-link">
                   Logiciels
                 </NavLink>
-              </li> */}
-            {/* 
-              <li className="nav-item">
-                <NavLink to="/montage" className="nav-link">
-                  Monteur
-                </NavLink>
               </li>
 
-              <li className="nav-item">
-                <NavLink to="/projection" className="nav-link">
-                  Salle de projection
-                </NavLink>
-              </li> */}
+        <li className="nav-item">
+          <NavLink to="/montage" className="nav-link">
+            Monteur
+          </NavLink>
+        </li>
 
-            <li className="nav-item">
-              <NavLink to="/blog" className="nav-link">
-                Blogue
-              </NavLink>
-            </li>
+        <li className="nav-item">
+          <NavLink to="/projection" className="nav-link">
+            Salle de projection
+          </NavLink>
+        </li> */}
 
-            <li className="nav-item">
-              <NavLink to="/coordonnees" className="nav-link">
-                Contact
-              </NavLink>
-            </li>
-            
-          </ul>
-        </div>
-      </div>
+        <li className="nav-item">
+          <a href="/blog" className="nav-link">
+            Blogue
+          </a>
+        </li>
+
+        <li className="nav-item">
+          <a href="/coordonnees" className="nav-link">
+            Contact
+          </a>
+        </li>
+
+      </ul>
     </nav>
   );
 };
