@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
-@use '../abstracts' as abst;
+@use '../abstracts' as *;
 
 /**
  * Set up a decent box model on the root element
@@ -56,29 +56,82 @@ body {
   overflow-y: scroll; // Adds scrollbar gutter to short pages to stop resiging due to scrollbar
 }
 
-
-.blogphoto {
+img.blogphoto {
   max-width: 100%; /* p.s. rendre plus gros sur telephones... */
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   max-height: 100vh;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  
-  border-radius: abst.$border-radius;
-  box-shadow: 0 0 10px 0px #0004;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+
+  @include roundcorners();
 }
+
+// Breadcrumbs
+/* Style the list */
+ul.breadcrumb {
+  margin: 2rem 0 -1rem -2.55rem;
+  list-style: none;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 1rem;
+  content: "\003E";
+}
+
+/* Add a color to all links inside the list */
+// ul.breadcrumb li a {
+
+// }
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: var(--clr-gray-200);
+}
+
+
+
+
+// Navbar
+/* Style the list */
+ul.navbar {
+  list-style: none;
+  margin-left: -2.05rem;
+}
+
+/* Display list items side by side */
+ul.navbar li {
+  display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.navbar li+li:before {
+  padding: 1rem;
+  content: "|";
+}
+
+/* Add a color on mouse-over */
+ul.navbar li a:hover {
+  color: var(--clr-blue-200);
+}
+
+
 
 // /**
 //  * Basic styles for links
 //  */
 // a {
-//   color: abst.$brand-color;
+//   color: $brand-color;
 //   text-decoration: none;
 
-//   @include abst.on-event {
-//     color: abst.$text-color;
+//   @include on-event {
+//     color: $text-color;
 //     text-decoration: underline;
 //   }
 // }

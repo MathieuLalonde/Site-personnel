@@ -1,4 +1,5 @@
 /* Embeded Video Player */
+@use "../abstracts/" as *;
 
 .videocontainer {
   position: relative;
@@ -11,24 +12,23 @@
   /* bg image  */
   background-image: url("../assets/statique.jpg");
   background-size: cover;
-  border-radius: 0.8rem;
-
-  box-shadow: 0 0 10px 0px #0004;
-  border-width: 0;
-      // scale: 1.25;
+  @include roundcorners();
 }
 
 .squarecontainer {
   @extend .videocontainer;
-  padding-top: 100%;
+  padding-top: 0;
+  width: 50vh;
+  height: 50vh;
+  margin-inline: auto;
 }
 
 .videoplayer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-width: 0;
-    scale: 1.007;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-width: 0;
+  scale: 1.007;
 }

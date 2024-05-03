@@ -28,6 +28,11 @@
   margin-left: calc(-0.05 * $key);
 }
 
+@mixin roundcorners() {
+  overflow: hidden;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 10px 0px #0004;
+}
 
 // /// Event wrapper
 // /// @author Harry Roberts
