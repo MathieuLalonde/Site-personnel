@@ -1,22 +1,16 @@
-
-
 /* Navigation */
+
+@use '../abstracts' as *;
+
 nav {
     text-align: center;
-    padding: 15px 10px 0 10px;
-    font-size: 0.7rem;
-    font-weight: bolder;
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
     background-color: black;
-    color: antiquewhite;
-    /* margin-bottom: '1rem'; */
 
-    /* box-shadow: 0 0 10px 0px #0004; */
-
+    // box-shadow: 0 0 10px 0px #0004;
+    
     position: sticky;
-    top: 0px;
-    z-index: 1;
+    bottom: unset;
+    top: 0;
 }
 
 nav a {
@@ -36,4 +30,34 @@ span.spacer {
     padding-right: 1vw;
     margin: 0rem;
     letter-spacing: 0rem;
+}
+
+
+// Navbar
+/* Style the list */
+ul.navbar {
+  list-style: none;
+  margin-left: -2.7rem;
+}
+
+/* Display list items side by side */
+ul.navbar li {
+  display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.navbar li+li:before {
+  padding: 0.38rem;
+  content: "|";
+  color: var(--clr-gray-400);
+
+  @include mq(small){
+    padding: 1rem;
+    color: var(--clr-gray-500);
+  }
+}
+
+/* Add a color on mouse-over */
+ul.navbar li a:hover {
+  color: var(--clr-blue-200);
 }

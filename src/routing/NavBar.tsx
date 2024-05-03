@@ -5,6 +5,8 @@ const NavBar = () => {
     <nav>
       <ul className="navbar">
 
+        {/* TODO: convertir les items en components */}
+
         {/* <li className="nav-item">
           <NavLink to="/" className="nav-link">
             introduction

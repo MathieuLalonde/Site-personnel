@@ -98,30 +98,6 @@ ul.breadcrumb li a:hover {
 
 
 
-// Navbar
-/* Style the list */
-ul.navbar {
-  list-style: none;
-  margin-left: -2.05rem;
-}
-
-/* Display list items side by side */
-ul.navbar li {
-  display: inline;
-}
-
-/* Add a slash symbol (/) before/behind each list item */
-ul.navbar li+li:before {
-  padding: 1rem;
-  content: "|";
-}
-
-/* Add a color on mouse-over */
-ul.navbar li a:hover {
-  color: var(--clr-blue-200);
-}
-
-
 
 // /**
 //  * Basic styles for links

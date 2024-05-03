@@ -107,7 +107,16 @@ code {
 }
 
 .navbar {
-  font-size: var(--fs-400);
+  font-size: var(--fs-100);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  @include mq(small){
+    font-size: var(--fs-300);
+    letter-spacing: 0.4rem;
+  }
+    @include mq(medium){
+    letter-spacing: 0.5rem;
+  }
 }
 
 
