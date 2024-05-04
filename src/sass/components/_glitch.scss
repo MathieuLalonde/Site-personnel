@@ -1,3 +1,5 @@
+@use "../abstracts/breakpoints" as *;
+
 .glitch {
   display: grid;
   grid-template: 1fr / 1fr;
@@ -15,30 +17,42 @@
   mask-image: url(glitch1.svg);
   // margin-left: 4px;
 
-  @media (prefers-reduced-motion: no-preference) {
-    animation-name: glitch1;
-    animation-duration: 8s;
-    animation-timing-function: steps(1, jump-both);
-    animation-iteration-count: infinite;
-    // animation-direction: alternate;
-  }
+  animation-name: glitch1;
 }
 
 .glitch__mask2 {
   -webkit-mask-image: url(glitch2.svg);
   mask-image: url(glitch2.svg);
-  // margin-left: -4px;
 
-  @media (prefers-reduced-motion: no-preference) {
-    animation-name: glitch2;
-    animation-duration: 8s;
-    animation-timing-function: steps(1, jump-both);
-    animation-iteration-count: infinite;
-    // animation-direction: alternate;
-  }
+  animation-name: glitch2;
+}
+
+.glitch__mask1,
+.glitch__mask2 {
+  animation-duration: 8s;
+  animation-timing-function: steps(1, jump-both);
+  animation-iteration-count: infinite;
+  // animation-direction: alternate;
 }
 
 .glitch__background {
   -webkit-mask-image: url(glitchbg.svg);
   mask-image: url(glitchbg.svg);
+}
+
+// N'applique pas l'effet sur les images dans un téléphone pour éviter de 
+// tout décaller la page
+@media (max-width: 30em) {
+  .glitch__mask1:has(img),
+  .glitch__mask2:has(img) {
+    animation-name: none;
+  }
+}
+
+// N'applique pas l'effet quand l'option prefers-reduced-motion est sélectionnée
+@media (prefers-reduced-motion) {
+  .glitch__mask1,
+  .glitch__mask2 {
+    animation-name: none;
+  }
 }
