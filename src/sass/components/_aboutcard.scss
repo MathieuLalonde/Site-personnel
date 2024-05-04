@@ -1,6 +1,6 @@
-.about_card {
-  --icon_color: #999999;
+@use '../abstracts/' as *;
 
+.about_card {
   background-color: var(--clr-gray-500);
   border-radius: 0.8rem;
   padding: 1rem;
@@ -32,7 +32,7 @@
 
 .about_coor_icon {
   margin-inline: auto;
-  color: var(--icon_color);
+  color: var(--clr-gray-200);
   margin-bottom: 0.2rem;
 }
 
@@ -48,7 +48,7 @@
 
 .about_link_icon {
   margin-inline: auto;
-  color: var(--icon_color);
+  color: var(--clr-gray-200);
   transition: 0.2s;
 }
 
