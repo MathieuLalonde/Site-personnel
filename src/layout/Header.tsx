@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
 
 import Logo from "../assets/logo.svg";
+import Glitch from "../components/glitch";
 
 const Header = () => {
   return (
     <div className="en_tete">
     <NavLink to="/" className="nav-link">
-        <img src={Logo} className="head-logo" alt="Le super logo de Mathieu Lalonde" />
+        <Glitch><img src={Logo} className="head-logo" alt="Le super logo de Mathieu Lalonde" /></Glitch>
     </NavLink>
     </div>
   );

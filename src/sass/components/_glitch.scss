@@ -1,0 +1,44 @@
+.glitch {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  // place-items: center;
+}
+
+.glitch > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  mask-size: auto;
+}
+
+.glitch__mask1 {
+  -webkit-mask-image: url(glitch1.svg);
+  mask-image: url(glitch1.svg);
+  // margin-left: 4px;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation-name: glitch1;
+    animation-duration: 8s;
+    animation-timing-function: steps(1, jump-both);
+    animation-iteration-count: infinite;
+    // animation-direction: alternate;
+  }
+}
+
+.glitch__mask2 {
+  -webkit-mask-image: url(glitch2.svg);
+  mask-image: url(glitch2.svg);
+  // margin-left: -4px;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation-name: glitch2;
+    animation-duration: 8s;
+    animation-timing-function: steps(1, jump-both);
+    animation-iteration-count: infinite;
+    // animation-direction: alternate;
+  }
+}
+
+.glitch__background {
+  -webkit-mask-image: url(glitchbg.svg);
+  mask-image: url(glitchbg.svg);
+}
