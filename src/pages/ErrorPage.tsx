@@ -24,8 +24,9 @@ const ErrorPage = () => {
               {errorName}
             </h4>
           </Glitch>
-
         </div>
+
+        <div style={{ height: '100%' }} />
         <Footer />
       </div>
     </>
