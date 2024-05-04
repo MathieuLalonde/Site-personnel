@@ -2,8 +2,13 @@
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  small: 30em,
-  medium: 50em,
+//   small: 30em,
+//   medium: 50em,
+//   large: 75em,
+// );
+
+  small: 525px,
+  medium: 850px,
   large: 75em,
 );
 

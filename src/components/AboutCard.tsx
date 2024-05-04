@@ -23,49 +23,52 @@ const AboutCard = () => {
 
       <img src='/selfie.jpg' className='selfie' alt="Photo de Mathieu"></img>
 
-      <h5>
-        Mathieu Lalonde
-      </h5>
-      Développeur logiciel (et monteur télévisuel)
-      <hr />
-      <div className="about_coordonnes">
-        <div className="about_coor_icon">
-          <IoMdMail size="15" title="Courriel" />
+      <div>
+        
+        <h5>
+          Mathieu Lalonde
+        </h5>
+        Développeur logiciel (et monteur télévisuel)
+        <hr />
+        <div className="about_coordonnes">
+          <div className="about_coor_icon">
+            <IoMdMail size="15" title="Courriel" />
+          </div>
+          <div>
+            moi<span className="obfuscate"> so .long </span>
+            @<span className="obfuscate"> and </span>
+            mathieu<span className="obfuscate"> thanks </span>
+            lalonde<span className="obfuscate"> for </span>
+            .<span className="obfuscate"> @all </span>
+            com<span className="obfuscate"> the fish. </span>
+          </div>
+  
+          <div className="about_coor_icon">
+            <FaPhone size="13" title="Téléphone" />
+          </div>
+          <div>
+            514 842<span className="obfuscate">6 * 9 </span>
+            -7<span className="obfuscate"> = 42</span>178
+          </div>
+  
+  
+          <div className="about_coor_icon">
+            <FaLocationDot size="15" title="Adresse" />
+          </div>
+          <div>
+            Montréal, QC
+          </div>
         </div>
-        <div>
-          moi<span className="obfuscate"> so .long </span>
-          @<span className="obfuscate"> and </span>
-          mathieu<span className="obfuscate"> thanks </span>
-          lalonde<span className="obfuscate"> for </span>
-          .<span className="obfuscate"> @all </span>
-          com<span className="obfuscate"> the fish. </span>
-        </div>
-
-        <div className="about_coor_icon">
-          <FaPhone size="13" title="Téléphone" />
-        </div>
-        <div>
-          514 842<span className="obfuscate">6 * 9 </span>
-          -7<span className="obfuscate"> = 42</span>178
-        </div>
-
-
-        <div className="about_coor_icon">
-          <FaLocationDot size="15" title="Adresse" />
-        </div>
-        <div>
-          Montréal, QC
-        </div>
-      </div>
-
-      <div className="about_coordonnes"> 
-        <div className="about_coor_icon">
-          <GrDocumentPdf size="16" title="Document PDF" />
-        </div> 
-        <div>
-          <a href="/CV_Mathieu_Lalonde.pdf" target="_blank">
-            Mon résumé
-          </a>
+  
+        <div className="about_coordonnes"> 
+          <div className="about_coor_icon">
+            <GrDocumentPdf size="16" title="Document PDF" />
+          </div> 
+          <div>
+            <a href="/CV_Mathieu_Lalonde.pdf" target="_blank">
+              Mon résumé
+            </a>
+          </div>
         </div>
       </div>
 

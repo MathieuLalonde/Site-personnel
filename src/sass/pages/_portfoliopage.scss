@@ -1,0 +1,26 @@
+@use '../abstracts/' as *;
+
+.portfolio {
+  display: grid;
+  gap: 1rem;
+  max-width: 1500px;
+  margin-inline: auto;
+  
+   grid-template-columns: 1fr;
+
+  @include mq(small){
+    grid-template-columns: repeat(2, 1fr);
+  }
+    @include mq(medium){
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.porfolio__card {
+  border: 2px solid;
+  border-color: var(--clr-gray-400);
+  margin-bottom: 2rem;
+  padding: 0 1rem 1rem;
+
+  @include roundcorners();
+}
