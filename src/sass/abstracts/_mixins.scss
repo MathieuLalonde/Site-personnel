@@ -25,7 +25,7 @@
 /// @param {String} $key - Font size
 @mixin fs($key) {
   font-size: $key;
-  margin-left: calc(-0.05 * $key);
+  margin-left: calc(-0.03 * $key);
 }
 
 @mixin roundcorners() {
