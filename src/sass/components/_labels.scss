@@ -1,0 +1,57 @@
+/* Labels */
+@use '../abstracts/' as *;
+
+
+.label {
+  border-width: 10px;
+  border: 1px solid var(--clr-gray-300);
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 0.1rem 0.45rem 0.2rem;
+  margin-right: 0.22rem; /* Space between labels */
+  background-color: var(--clr-gray-800);
+}
+
+.labels {
+  padding-bottom: 1rem;
+}
+
+/* purgecss start ignore */
+.label_css,
+.label_ctf,
+.label_hdmi,
+.label_html,
+.label_pdf,
+.label_svg {
+  text-transform: uppercase;
+}
+
+.label_audio,
+.label_graphisme,
+.label_graphics,
+.label_photo,
+.label_video,
+.label_montage,
+.label_editing {
+  background-color: var(--clr-red-600);
+}
+
+.label_web,
+.label_website,
+.label_css,
+.label_svg,
+.label_html {
+  background-color: var(--clr-blue-700);
+}
+
+.label_dev,
+.label_code {
+  background-color: var(--clr-blue-800);
+}
+
+.label_tech {
+  background-color: var(--clr-gray-800);
+}
+/* purgecss end ignore */
