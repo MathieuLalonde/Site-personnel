@@ -13,16 +13,16 @@
 }
 
 .glitch__mask1 {
-  -webkit-mask-image: url(glitch1.svg);
-  mask-image: url(glitch1.svg);
+  -webkit-mask-image: url(../assets/glitch1.svg);
+  mask-image: url(../assets/glitch1.svg);
   // margin-left: 4px;
 
   animation-name: glitch1;
 }
 
 .glitch__mask2 {
-  -webkit-mask-image: url(glitch2.svg);
-  mask-image: url(glitch2.svg);
+  -webkit-mask-image: url(../assets/glitch2.svg);
+  mask-image: url(../assets/glitch2.svg);
 
   animation-name: glitch2;
 }
@@ -36,8 +36,8 @@
 }
 
 .glitch__background {
-  -webkit-mask-image: url(glitchbg.svg);
-  mask-image: url(glitchbg.svg);
+  -webkit-mask-image: url(../assets/glitchbg.svg);
+  mask-image: url(../assets/glitchbg.svg);
 }
 
 // N'applique pas l'effet sur les images dans un téléphone pour éviter de 

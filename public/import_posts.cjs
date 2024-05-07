@@ -69,6 +69,7 @@ const getPosts = () => {
           id: slugify(metadata.title).toLowerCase(),
           title: metadata.title ? metadata.title : "No title given",
           author: metadata.author ? metadata.author : "No author given",
+          photo: metadata.photo ? metadata.photo : "",
           abstract: metadata.abstract ? metadata.abstract : "",
           postDate: metadata.postDate ? metadata.postDate : "No date given",
           categories: metadata.categories ? categories : ["No label given"],
