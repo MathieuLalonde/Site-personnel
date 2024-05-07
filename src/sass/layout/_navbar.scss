@@ -48,16 +48,11 @@ ul.navbar li {
 
 /* Add a slash symbol (/) before/behind each list item */
 ul.navbar li+li:before {
-  padding: 0.38rem;
+  padding: clamp(0.38rem, 2vw - 0.05rem, 1rem);
   content: "|";
   color: var(--clr-gray-400);
-
-  @include mq(small){
-    padding: 0.66rem;
-    color: var(--clr-gray-500);
-  }
-    @include mq(medium){
-    padding: 1rem;
+  
+  @include mq(medium){
     color: var(--clr-gray-500);
   }
 }
