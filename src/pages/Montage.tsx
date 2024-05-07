@@ -114,8 +114,9 @@ const Montage = () => {
             width: '100%', height: '12rem', objectFit: 'cover',
             filter: 'brightness(50%) hue-rotate(180deg) sepia(75%) hue-rotate(180deg)'
           }} />
+          <br />
 
-          <p>J'ai travaillé sur des émissions diffusées partout à travers le monde.</p>
+          <p>J'ai travaillé sur des émissions retransmises partout à travers le monde.</p>
 
           <TVLogos />
 

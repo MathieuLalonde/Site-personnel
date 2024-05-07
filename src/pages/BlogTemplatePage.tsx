@@ -9,6 +9,7 @@ import Markdown from '../components/Markdown';
 import PageTitle from '../components/PageTitle';
 
 import postList from '../posts.json';
+import Glitch from '../components/glitch';
 
 
 const BlogTemplatePage = () => {
@@ -18,6 +19,7 @@ const BlogTemplatePage = () => {
   let fetchedPost = {
     title: "",
     author: "",
+    photo: "",
     postDate: "",
     categories: [""],
     content: "",
@@ -27,6 +29,7 @@ const BlogTemplatePage = () => {
     if (params.id === post.id) {
       fetchedPost.title = (post.title ? post.title : "No title given");
       fetchedPost.author = (post.author ? post.author : "No title given");
+      fetchedPost.photo = (post.photo ? post.photo : "../test.jpg")
       fetchedPost.postDate = (post.postDate ? post.postDate : "No title given");
       fetchedPost.categories = (post.categories ? post.categories : ["No title given"]);
       fetchedPost.content = (post.content ? post.content : "No title given");
@@ -44,22 +47,35 @@ const BlogTemplatePage = () => {
     <>
       <PageTitle>{fetchedPost.title}</PageTitle>
 
-      <div className='outer_grid'>
-
-        <div></div>
-
-        <div className='content_grid'>
-
-          <div></div>
-
-          <div className='blog_header'>
-            <h1>{fetchedPost.title}.</h1>
-            <div className='subheading'>Le blogue de Mathieu Lalonde.</div>
+      <div className='blog-header'
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              rgba(0, 0, 0, 0.5),
+              rgba(0, 0, 0, 0.6) 25%,
+              rgba(0, 0, 0) ),
+            url(/${fetchedPost.photo})`
+        }}>
+        <div className='blog-header__container'>
+          <Glitch>
+            <div className='blog-header__top-info'>
+              <h1>{fetchedPost.title}</h1>
+              <div className='subheading'>Le blogue de Mathieu Lalonde.</div>
+            </div>
+          </Glitch>
+          <div className='blog-header__bottom-info'>
             <div className='small'>{fetchedPost.postDate}</div>
             <Labels>{fetchedPost.categories}</Labels>
           </div>
+        </div>
+      </div>
 
-          <div className='blog_content'>
+      <div className='blog--container'>
+
+        <div className='content_grid'>
+
+          <div className='blog__content'>
+
             <article>
               <Markdown>{fetchedPost.content}</Markdown>
             </article>

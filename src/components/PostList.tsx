@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import MarkdownToJsx from 'markdown-to-jsx';
 import postlist from "../posts.json"
 import Labels from "./Labels";
@@ -27,27 +26,29 @@ const PostList = ({ label = "" }: Props) => {
       {/* <h1 className="title">All Posts</h1> */}
 
       {results.length ? (
-        results.map((post, i) => {
-
+        results.map((post) => {
           return (
             // p.s. using i as the key is considered bad practice.
-            <div key={i} className="post-card">
+            <div key={post.id} className="post__card">
 
+              <img src={`/${post.photo?post.photo: 'test.jpg'}`} className='blogphoto' />
+              
               <h2>
-                <Link className="links" to={`/blog/${post.id}`}>{post.title}</Link>
+                <a href={`/blog/${post.id}`}>{post.title}</a>
               </h2>
               <small>
                 Publié le {post.postDate} par {post.author}
               </small>
               <Labels>{post.categories}</Labels>
 
+              <hr/>
 
               <MarkdownToJsx
                 children={post.content.split(" ").slice(0, 20).join(" ") + "..."}
                 options={{ overrides: { VideoPlayer: Blank, }, }} />
 
               <small>
-                <Link className="links" to={`/blog/${post.id}`}>Lire la suite ...</Link>
+                <a href={`/blog/${post.id}`}>Lire la suite ...</a>
               </small>
 
             </div>

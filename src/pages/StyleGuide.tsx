@@ -1,11 +1,12 @@
 import Labels from "../components/Labels"
 import PageTitle from "../components/PageTitle"
+import Glitch from "../components/glitch"
 
 const StyleGuide = () => {
   return (
     <div className="container">
       <PageTitle>Style Guide</PageTitle>
-      <h1>Style Guide.</h1>
+      <Glitch><h1>Style Guide.</h1></Glitch>
       Un guide des styles utilisés sur le site :
 
       <hr/>

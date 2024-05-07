@@ -1,0 +1,85 @@
+/* BlogTemplatePage */
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.blog-header {
+  width: 100%;
+  min-height: min(60vh, 35vw);
+
+  overflow-y: hidden;
+  margin-bottom: 3rem;
+
+  background-position: 50% 35%;
+  background-size: cover;
+
+  &__container {
+    min-height: inherit;
+    max-width: $max-width;
+    margin-inline: auto;
+    padding-left: 1rem;
+    padding-right: 17%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mq(large) {
+      margin-inline: 15%;
+    }
+  }
+}
+
+.blog--container {
+  @extend .container;
+  max-width: none;
+}
+
+.blog__content,
+.blog_about_card {
+  width: 100%;
+  // TODO: use abst.$max-width instead ??
+  max-width: 70ch; /* Assez large pour permettre d'insérer du code de 80ch... */
+  margin-inline: auto;
+  margin-bottom: 5rem;
+}
+
+@include mq(large) {
+  .content_grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto auto;
+  }
+
+  .blog_about_card {
+    grid-row: 1;
+    /* width: 25ch; */
+    max-width: 30ch;
+    padding-inline: 0;
+  }
+
+  /* Pour le AboutCard... déplacer ?*/
+  .selfie {
+    max-width: 10rem;
+  }
+}
+
+/* Exemples de code */
+.codesnippet {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: var(--fs-200);
+
+  @include mq(small) {
+    font-size: var(--fs-400);
+  }
+}
+
+pre {
+  overflow: hidden;
+  border-radius: 0.8rem;
+  white-space: pre-wrap;
+
+  @media (max-width: 768px) {
+    max-width: 98%;
+  }
+}

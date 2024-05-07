@@ -1,19 +1,19 @@
 @use '../abstracts/' as *;
 
 .portfolio {
-  display: grid;
+  // display: grid;
   gap: 1rem;
-  max-width: 1500px;
-  margin-inline: auto;
+  // max-width: 1500px;
+  // margin-inline: auto;
   
-   grid-template-columns: 1fr;
+  //  grid-template-columns: 1fr;
 
-  @include mq(small){
-    grid-template-columns: repeat(2, 1fr);
-  }
-    @include mq(medium){
-    grid-template-columns: repeat(3, 1fr);
-  }
+  // @include mq(small){
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
+  //   @include mq(medium){
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
 }
 
 .porfolio__card {
@@ -23,4 +23,13 @@
   padding: 0 1rem 1rem;
 
   @include roundcorners();
+
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
 }
+
+// .porfolio__card div {
+//   background-color: red;
+// }

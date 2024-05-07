@@ -31,17 +31,21 @@ const Portfolio = () => {
         <div className='portfolio'>
 
           <div className="porfolio__card">
-            <img src={Vaisseau} className='blogphoto' />
-            <a href='/portfolio/vaisseau'>Vaisseau Spatial</a>
-            <hr />
-            Une animation procédurale JavaScript pouvant être contrôlée depuis le clavier.
+              <img src={Vaisseau} className='blogphoto' />
+            <div>
+              <a href='/portfolio/vaisseau'>Vaisseau Spatial</a>
+              <hr />
+              Une animation procédurale JavaScript pouvant être contrôlée depuis le clavier.
+            </div>
           </div>
 
           <div className="porfolio__card">
             <img src={Multi} className='blogphoto' />
-            <a href='/portfolio/multiplayer'>Multiplayer Adventure</a>
-            <hr />
-            Un jeu vidéo 2D en JavaScript.
+            <div>
+              <a href='/portfolio/multiplayer'>Multiplayer Adventure</a>
+              <hr />
+              Un jeu vidéo 2D en JavaScript.
+            </div>
           </div>
 
           <div className="porfolio__card">

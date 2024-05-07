@@ -39,6 +39,7 @@ body {
   width: 100vw; 
   // overflow-y: scroll;
   overflow-x: hidden; // principalement pour la page 404 sur petits ecrans
+  // scrollbar-width: thin;
 }
 
 body {
@@ -82,7 +83,6 @@ ul.breadcrumb li+li:before {
 
 /* Add a color to all links inside the list */
 // ul.breadcrumb li a {
-
 // }
 
 /* Add a color on mouse-over */
