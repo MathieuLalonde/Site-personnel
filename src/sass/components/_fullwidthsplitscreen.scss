@@ -1,0 +1,178 @@
+/*
+Full-width split-screen
+
+@author Kevin Powell
+https://www.youtube.com/watch?v=Ivk8Blw2VTI
+https://codepen.io/kevinpowell/pen/ZEmgQvV
+*/
+
+@use "../abstracts/" as *;
+
+:root {
+  --clr-primary: hsl(229 33% 21%);
+  --clr-secondary: #302047;
+  --clr-accent: hsl(21deg 85% 60%);
+
+  --wrapper-padding-inline: 1rem;
+  --wrapper-max-width: 50rem;
+
+  --section-padding-block: 3rem;
+}
+
+// body {
+//   margin: 0;
+//   font-family: system-ui;
+//   font-size: 1.125rem;
+//   line-height: 1.7;
+//   color: white;
+//   background-color: var(--clr-primary);
+//   background-image: linear-gradient(to bottom right, blue, purple, red);
+//   background-blend-mode: multiply;
+// }
+
+// img {
+//   max-width: 100%;
+//   display: block;
+// }
+
+// h1 {
+//   font-size: clamp(3rem, 10vw, 5rem);
+//   line-height: 1;
+//   margin-bottom: 1.5rem;
+// }
+
+// section {
+//   padding-block: var(--section-padding-block);
+// }
+
+// .primary {
+//   color: white;
+//   background-color: var(--clr-primary);
+// }
+
+// .secondary {
+//   color: white;
+//   background-color: var(--clr-secondary);
+// }
+
+// .accent {
+//   background-color: var(--clr-accent);
+// }
+
+// .button {
+//   display: inline-flex;
+//   padding: 0.75em 1.5em;
+//   background: var(--clr-accent);
+//   color: var(--clr-primary);
+//   text-decoration: none;
+//   font-weight: 700;
+//   text-transform: uppercase;
+//   font-size: 0.875em;
+// }
+
+// .button:hover,
+// .button:focus {
+//   background-color: white;
+// }
+
+// .wrapper {
+//   max-width: var(--wrapper-max-width);
+//   margin-inline: auto;
+//   padding-inline: var(--wrapper-padding-inline);
+// }
+
+/* remove the padding so images can take up the entire height */
+.full-width-split-screen {
+  padding-block: 0;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  @media (min-width: 600px) {
+    /* outermost columns emulate the spacing from the .wrapper
+       while the two inner columns divide the rest of the space
+       into two equal parts */
+    display: grid;
+    grid-template-columns:
+      minmax(var(--wrapper-padding-inline), 1fr)
+      minmax(0, calc(var(--wrapper-max-width) / 2))
+      minmax(0, calc(var(--wrapper-max-width) / 2))
+      minmax(var(--wrapper-padding-inline), 1fr);
+
+    /* for positioning the pseudo-elements
+       to fill in the rest of the background*/
+    position: relative;
+  }
+
+  /* ensure the image fills up the entire space available */
+  & > img {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+
+    @include mq(small) {
+      @include roundcorners();
+    }
+
+    /* if the image is on the left, it covers the entire left half */
+    &:first-child {
+      grid-column: 1 / 3;
+
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    /* if the image is on the right, it covers the entire right half */
+    &:last-child {
+      grid-column: 3 / -1;
+
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  /* match the section padding for the text blocks for consistency */
+  & > :not(img) {
+    padding-block: var(--section-padding-block);
+    padding-inline: var(--wrapper-padding-inline);
+
+    /* make sure text doesn't touch the edge of the viewport 
+       and the content is vertically centered */
+    display: grid;
+    align-content: center;
+    justify-items: start;
+
+    /* if the non-image is first, place it in the second column
+       (first column is empty to emulate the .wrapper) */
+    &:first-child {
+      padding-left: 0;
+      grid-column: 2 / 3;
+    }
+
+    /* if the non-image is last, place it in the third column
+       (fourth column is empty to emulate the .wrapper) */
+    &:last-child {
+      padding-right: 0;
+      grid-column: 3 / 4;
+      padding-left: 2rem;
+    }
+
+    /* at large screens, ensure the background color
+       goes to the edge of the page */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+    }
+
+    /* ensures the background color fills the entire left side */
+    &:first-child::before {
+      grid-column: 1 / 2;
+    }
+
+    /* ensures the background color fills the entire right side */
+    &:last-child::before {
+      grid-column: 4 / 5;
+    }
+  }
+}

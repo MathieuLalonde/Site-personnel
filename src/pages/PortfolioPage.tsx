@@ -10,7 +10,7 @@ const Portfolio = () => {
     <>
       <PageTitle>Portfolio</PageTitle>
       <div className='container'>
-        <article>
+        <section>
           <h1>Portfolio.</h1>
           <div className='subheading'>Quelques projets sélectionnés</div>
 
@@ -24,63 +24,49 @@ const Portfolio = () => {
             L'informatique pour moi, c'est un outil; un outil de communication, un canevas sur
             lequel on peut tout créer. C'est aussi un formidable outil qui permet de créer d'autres outils...
           </p>
-        </article>
-
-
-
-        <div className='portfolio'>
-
-          <div className="porfolio__card">
-              <img src={Vaisseau} className='blogphoto' />
-            <div>
-              <a href='/portfolio/vaisseau'>Vaisseau Spatial</a>
-              <hr />
-              Une animation procédurale JavaScript pouvant être contrôlée depuis le clavier.
-            </div>
-          </div>
-
-          <div className="porfolio__card">
-            <img src={Multi} className='blogphoto' />
-            <div>
-              <a href='/portfolio/multiplayer'>Multiplayer Adventure</a>
-              <hr />
-              Un jeu vidéo 2D en JavaScript.
-            </div>
-          </div>
-
-          <div className="porfolio__card">
-            <img src={Relax} className='blogphoto' />
-            <a href='/portfolio/relaxation'>Relaxation</a>
-            <hr />
-            Une animation simple codée en SVG.
-          </div>
-
-          <div className="porfolio__card">
-            <img src={Satellite} className='blogphoto' />
-            <a href='/portfolio/satellite'>Simulation de l'orbite du téléscope James Webb</a>
-            <hr />
-            Une animation OpenGL démontrant un satellite en orbite.
-          </div>
-
-
-          <div className="porfolio__card">
-            {/* <img src={Satellite} className='blogphoto' /> */}
-            {/* <a href='/portfolio/satellite'>Simulation de l'orbite du téléscope James Webb</a>
-          <hr />
-          Une animation OpenGL démontrant un satellite en orbite. */}
-          </div>
-
-          <div className="porfolio__card">
-            <img src={Brain} className='blogphoto' />
-            <a href='/portfolio/cerveau'>Cerveau</a>
-            <hr />
-            Visualisation ThreeJS d'un cerveau de souris.
-          </div>
-
-
-        </div>
-
+        </section>
       </div>
+
+
+      <section className='full-width-split-screen'>
+        <img src={Vaisseau} />
+        <div>
+          <a href='/portfolio/vaisseau'><h2>Vaisseau Spatial</h2></a>
+          Une animation procédurale JavaScript pouvant être contrôlée depuis le clavier.
+        </div>
+      </section>
+
+      <section className='full-width-split-screen'>
+        <div>
+          <a href='/portfolio/multiplayer'><h2>Multiplayer Adventure</h2></a>
+          Un jeu vidéo 2D en JavaScript.
+        </div>
+        <img src={Multi} />
+      </section>
+
+      <section className='full-width-split-screen'>
+        <img src={Relax} />
+        <div>
+          <a href='/portfolio/relaxation'><h2>Relaxation</h2></a>
+          Une animation simple codée en SVG.
+        </div>
+      </section>
+
+      <section className='full-width-split-screen'>
+        <div>
+          <a href='/portfolio/satellite'><h2>Simulation de l'orbite du téléscope James Webb</h2></a>
+          Une animation OpenGL démontrant un satellite en orbite.
+        </div>
+        <img src={Satellite} />
+      </section>
+
+      <section className='full-width-split-screen'>
+        <img src={Brain} />
+        <div>
+          <a href='/portfolio/cerveau'><h2>Cerveau</h2></a>
+          Visualisation ThreeJS d'un cerveau de souris.
+        </div>
+      </section>
 
     </>
   );
