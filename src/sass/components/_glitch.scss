@@ -40,15 +40,6 @@
   mask-image: url(../assets/glitchbg.svg);
 }
 
-// N'applique pas l'effet sur les images dans un téléphone pour éviter de 
-// tout décaller la page
-@media (max-width: 30em) {
-  .glitch__mask1:has(img),
-  .glitch__mask2:has(img) {
-    animation-name: none;
-  }
-}
-
 // N'applique pas l'effet quand l'option prefers-reduced-motion est sélectionnée
 @media (prefers-reduced-motion) {
   .glitch__mask1,

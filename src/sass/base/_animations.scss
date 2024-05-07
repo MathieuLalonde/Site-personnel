@@ -43,18 +43,22 @@
 
 @keyframes glitch1 {
   4%, 7.5%, 19%, 21% {
-    margin-left: 0;;
+    margin-left: 0;
+    margin-right: 0;
   }
   5%, 20% {
-    margin-left: -6px;;
+    margin-left: -4px;
+    margin-right: 4px;
   }
 }
 
 @keyframes glitch2 {
   4%, 6%, 19%, 22.5% {
-    margin-left: 0;;
+    margin-left: 0;
+    margin-right: 0;
   }
   5%, 20% {
-    margin-left: 6px;;
+    margin-left: 4px;
+    margin-right: -4px;
   }
 }
