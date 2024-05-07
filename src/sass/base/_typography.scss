@@ -111,10 +111,11 @@ code {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   @include mq(small){
-    font-size: var(--fs-300);
-    letter-spacing: 0.4rem;
+    font-size: var(--fs-200);
+    letter-spacing: 0.3rem;
   }
     @include mq(medium){
+    font-size: var(--fs-300);
     letter-spacing: 0.5rem;
   }
 }

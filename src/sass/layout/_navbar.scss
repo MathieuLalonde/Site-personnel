@@ -53,6 +53,10 @@ ul.navbar li+li:before {
   color: var(--clr-gray-400);
 
   @include mq(small){
+    padding: 0.66rem;
+    color: var(--clr-gray-500);
+  }
+    @include mq(medium){
     padding: 1rem;
     color: var(--clr-gray-500);
   }

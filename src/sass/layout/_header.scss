@@ -1,11 +1,16 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+@use "../abstracts" as *; 
 
 .head-logo {
     width: 25rem;
     max-width: 60%;
     margin-inline: auto;
+
+    @include mq(small){
+        max-width: 35%;
+    }
 }
 
 div.en_tete {
