@@ -46,6 +46,8 @@ body {
   margin: 0;
 
   background: radial-gradient(circle, #303030 0%, #252525 60%, #1b1917 100%);
+  // Pour réduire le banding sur Firefox :
+  background: -moz-radial-gradient(hsl(15, 0.5%, 14%), hsl(15, 0.5%, 14%));
   background-repeat: no-repeat;
   background-attachment: fixed;
 
