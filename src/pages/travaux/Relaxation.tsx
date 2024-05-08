@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PageTitle from "../../components/PageTitle";
 
-const Respiration = () => {
+const Relaxation = () => {
   return (
     <div className="container">
       <PageTitle>Relaxation</PageTitle>
@@ -25,10 +25,10 @@ const Respiration = () => {
 
         <h2>Description</h2>
 
-        <p>Animation SVG simple.</p>
+        <p>Animation simple codée en <strong><em>SVG (SMIL)</em>.</strong> Tout est créé par section et certains éléments, tels les yeux, sont réutilisés. </p>
       </article>
     </div>
   )
 };
 
-export default Respiration
+export default Relaxation

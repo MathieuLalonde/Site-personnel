@@ -20,7 +20,7 @@ const Multiplayer = () => {
         <h2>Description</h2>
 
         <p>
-          Jeu <em>JavaScript</em> conçu en trois sprints <em>Agile</em> au sein d'une équipe de programmeurs. à partir d’une base de code
+          Jeu <em>JavaScript</em> conçu en trois sprints <em>Agile</em> au sein d'une équipe de programmeurs à partir d’une base de code
           non-optimale préexistante.
         </p>
 

@@ -11,7 +11,7 @@ import Montage from "../pages/Montage"
 // Travaux (portfolio):
 import Cerveau from "../pages/travaux/Cerveau";
 import Portfolio from "../pages/PortfolioPage";
-import Respiration from "../pages/travaux/Respiration";
+import Relaxation from "../pages/travaux/Relaxation";
 import Satellite from "../pages/travaux/Satellite";
 import Vaisseau from "../pages/travaux/Vaisseau";
 // Autres pages :
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Portfolio /> },
       { path: 'cerveau', element: <Cerveau /> },
-      { path: 'relaxation', element: <Respiration /> },
+      { path: 'relaxation', element: <Relaxation /> },
       { path: 'satellite', element: <Satellite /> },
       { path: 'vaisseau', element: <Vaisseau /> },
       { path: 'multiplayer', element: <Multiplayer /> },      

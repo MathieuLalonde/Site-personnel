@@ -20,7 +20,7 @@ const Cerveau = () => {
 
         <h2>Description</h2>
 
-        <p>Visualisation ThreeJS de vaisseaux sanguins à l'intérieur du cerveau d'une souris.</p>
+        <p>Visualisation <strong><em>ThreeJS</em></strong> de vaisseaux sanguins à l'intérieur du cerveau d'une souris.</p>
 
         <h2>Instructions</h2>
 

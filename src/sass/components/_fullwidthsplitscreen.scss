@@ -1,7 +1,6 @@
 /*
-Full-width split-screen
-
-@author Kevin Powell
+Full-width split-screen :
+Adapted from @author Kevin Powell
 https://www.youtube.com/watch?v=Ivk8Blw2VTI
 https://codepen.io/kevinpowell/pen/ZEmgQvV
 */
@@ -9,10 +8,6 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
 @use "../abstracts/" as *;
 
 :root {
-  --clr-primary: hsl(229 33% 21%);
-  --clr-secondary: #302047;
-  --clr-accent: hsl(21deg 85% 60%);
-
   --wrapper-padding-inline: 1rem;
   --wrapper-max-width: 50rem;
 

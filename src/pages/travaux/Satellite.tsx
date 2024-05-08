@@ -22,8 +22,8 @@ const Satellite = () => {
 
         <h2>Description</h2>
 
-        <p>Animation OpenGL démontrant un satellite en orbite autour de la terre,
-          elle-même en orbite autour du soleil. Il faut notter que les étoiles dans le ciel sont générées de façon procédurale.
+        <p>Animation <strong><em>OpenGL</em></strong> démontrant un satellite en orbite autour de la terre,
+          elle-même en orbite autour du soleil. Les étoiles dans le ciel sont générées de façon procédurale.
         </p>
 
         <h2>Instructions</h2>
