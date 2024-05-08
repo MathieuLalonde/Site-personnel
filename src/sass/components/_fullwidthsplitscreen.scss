@@ -82,7 +82,7 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
   margin-top: 4rem;
   margin-bottom: 4rem;
 
-  @media (min-width: 600px) {
+  @include mq(small) {
     /* outermost columns emulate the spacing from the .wrapper
        while the two inner columns divide the rest of the space
        into two equal parts */
