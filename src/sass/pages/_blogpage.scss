@@ -1,11 +1,72 @@
 /* BlogPage */
 @use "../abstracts" as *;
+$post-min-width: 325px;
+$post-gap: 0.75rem;
 
-.post__card {
+.postlist--wrapper {
+  margin-inline: 1rem;
+}
+
+.postlist {
+  display: grid;
+  gap: $post-gap;
+  margin-inline: auto;
+  max-width: max($max-width + 30ch, 90%);
+
+  grid-template-columns: repeat(auto-fit, minmax(min($post-min-width, 100%), 1fr));
+}
+
+.postlist--bestof .postlist{
+  max-width: max($max-width + 30ch, 0);
+}
+@media (min-width: 65rem) and (max-width: 88rem) {
+  .postlist--bestof .postlist {
+    grid-template-columns: repeat(3, minmax(min($post-min-width, 100%), 1fr));
+    .postlist__card:last-child {
+      display: none;
+    }
+  }
+}
+
+.postlist__card {
   border: 2px solid;
   border-color: var(--clr-gray-400);
-  margin-bottom: 2rem;
   padding: 0 1rem 1rem;
+  margin-bottom: 0.25rem;
+
+  max-width: 425px;
+
+  margin-inline: auto;
 
   @include roundcorners();
+
+  & img {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: 50% 35%;
+  }
+
+  // TODO: faire un calcul un peu plus automatisé...
+  // @media (min-width: calc(
+  //     $post-min-width * 3
+  //     + $post-gap * 2
+  //     + 2rem
+  //     + 17px
+  //     )) {
+  //   &:last-child {
+  //     display: none;
+  //   }
+  // }
+  // @media (min-width: 1285px) {
+  //   &:last-child {
+  //     display: inherit;
+  //   }
+  // }
+
+  // @media (min-width: 65rem) and (max-width: 88rem) {
+  //   .postlist__card:last-child {
+  //     display: none;
+  //   }
+  // }
 }

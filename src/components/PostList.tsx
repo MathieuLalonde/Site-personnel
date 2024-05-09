@@ -4,13 +4,14 @@ import Labels from "./Labels";
 import Blank from "./Blank"; // Replaces VideoPlayer to diable embeded videos
 
 interface Props {
-  label?: string
+  label?: string;
+  quantity?: number | null;
 }
 
 
 // Adapted from
 // https://github.com/willjw3/react-markdown-blog/blob/master/src/components/postlist.js
-const PostList = ({ label = "" }: Props) => {
+const PostList = ({ label = "", quantity }: Props) => {
 
   const search = () => {
     return postlist.filter(
@@ -20,47 +21,56 @@ const PostList = ({ label = "" }: Props) => {
   }
 
   const results = label ? search() : postlist;
+  const qty = quantity ? quantity : results.length;
 
   return (
-    <div className="postlist">
-      {/* <h1 className="title">All Posts</h1> */}
+    <div className='postlist--wrapper'>
+      <div className="postlist">
+        {/* <h1 className="title">All Posts</h1> */}
 
-      {results.length ? (
-        results.map((post) => {
-          return (
-            // p.s. using i as the key is considered bad practice.
-            <div key={post.id} className="post__card">
 
-              <img src={`/${post.photo?post.photo: 'test.jpg'}`} className='blogphoto' />
-              
-              <h2>
-                <a href={`/blog/${post.id}`}>{post.title}</a>
-              </h2>
-              <small>
-                Publié le {post.postDate} par {post.author}
-              </small>
-              <Labels>{post.categories}</Labels>
+        {results.length ? (
+          results.slice(0, qty).map((post) => {
+            return (
+              <div key={post.id} className="postlist__card">
 
-              <hr/>
+                <img src={`/${post.photo ? post.photo : 'test.jpg'}`} className='blogphoto' />
 
-              <MarkdownToJsx
-                children={post.content.split(" ").slice(0, 20).join(" ") + "..."}
-                options={{ overrides: { VideoPlayer: Blank, }, }} />
+                <h3>
+                  <a href={`/blog/${post.id}`}>{post.title}</a>
+                </h3>
+                <small>
+                  Publié le {post.postDate} par {post.author}
+                </small>
+                <Labels>{post.categories}</Labels>
 
-              <small>
-                <a href={`/blog/${post.id}`}>Lire la suite ...</a>
-              </small>
+                <hr />
 
-            </div>
-          )
-        })
-      ) : (
-        <>
+                {/* S'il n'y a pas de résumé, fallback sur le début de l'article
+                -- attention aux exemples de code!! */}
+                {post.abstract ?
+                  <p>{post.abstract}</p>
+                  :
+                  <MarkdownToJsx
+                    children={post.content.split(" ").slice(0, 20).join(" ") + "..."}
+                    options={{ overrides: { VideoPlayer: Blank, }, }} />
+                }
+
+                <small>
+                  <a href={`/blog/${post.id}`}>Lire la suite ...</a>
+                </small>
+
+              </div>
+            )
+          })
+        ) : (
+          <>
             <hr />
-            Aucun article correspond à la recherche.
-        </>
-      )}
+            <p>Désolé mais aucun article ne correspond à la recherche.</p>
+          </>
+        )}
 
+      </div>
     </div>
   )
 }

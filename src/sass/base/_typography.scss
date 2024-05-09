@@ -67,8 +67,6 @@ h2 {
 
 h3 {
   @include fs(var(--fs-500));
-  font-style: italic;
-  color: var(--clr-gray-200);
 }
 
 h4 {
@@ -114,9 +112,6 @@ code {
   text-transform: uppercase;
   letter-spacing: clamp(0rem, 0.6vw - 0.05rem, 0.5rem);
 }
-
-
-
 
 
 /* Citations */
