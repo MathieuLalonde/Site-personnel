@@ -38,6 +38,10 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
     position: relative;
   }
 
+  & h2 {
+    margin-top: 0;
+  }
+
   /* ensure the image fills up the entire space available */
   & > img {
     object-fit: cover;
@@ -76,7 +80,7 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
 
   /* match the section padding for the text blocks for consistency */
   & > :not(img) {
-    padding-inline: var(--wrapper-padding-inline);
+    // padding-inline: var(--wrapper-padding-inline);
     padding-bottom: 2rem;
 
     /* make sure text doesn't touch the edge of the viewport 
@@ -86,10 +90,6 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
     justify-items: start;
 
     grid-column: 1 / 3;
-
-    @include mq(small) {
-      padding-block: var(--section-padding-block);
-    }
 
     /* if the non-image is first, place it in the second column
        (first column is empty to emulate the .wrapper) */
@@ -106,8 +106,6 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
     /* if the non-image is last, place it in the third column
        (fourth column is empty to emulate the .wrapper) */
     &:last-child {
-      padding-right: 1rem;
-      
       @include mq(small) {
         grid-column: 3 / 4;
       }
