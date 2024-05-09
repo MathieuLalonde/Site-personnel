@@ -34,8 +34,7 @@
   <!-- Corps -->
   <ellipse
       id="corps"
-      style="fill:#008080;
-        fill-opacity:0.8;"
+      style="fill:#008080"
       cx="0.5"
       cy="0.9"
       rx="0.52"
@@ -134,7 +133,7 @@
     id="animCorpsH"
     xlink:href="#corps"
     attributeName="cy"
-    values="0.9;0.86;0.86;0.9"
+    values="0.9;0.83;0.83;0.9"
     begin="inspirezFadeIn.end"
     dur="15s"
     fill="freeze" />
@@ -142,8 +141,16 @@
     id="animCorpsW"
     xlink:href="#corps"
     attributeName="rx"
-    values="0.52;0.6;0.6;0.52"
+    values="0.52;0.65;0.65;0.52"
     begin="animCorpsH.begin"
+    dur="15s"
+    fill="freeze" />
+     <animate
+    id="animCorpsC"
+    xlink:href="#corps"
+    attributeName="fill"
+    values="#008080;#804040;#404080;#008080"
+    begin="inspirezFadeIn.end"
     dur="15s"
     fill="freeze" />
 
