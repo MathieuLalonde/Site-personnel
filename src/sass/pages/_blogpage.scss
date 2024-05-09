@@ -41,7 +41,7 @@ $post-gap: 0.75rem;
   @include roundcorners();
 
   & img {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 6 / 4;
     overflow: hidden;
     object-fit: cover;
     object-position: 50% 35%;
