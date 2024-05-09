@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import PageTitle from '../components/PageTitle';
 import PostList from "../components/PostList";
+import AboutCard from '../components/AboutCard';
 
 
 // p.s. add filter for categories / search / etc here...
@@ -23,6 +24,8 @@ const BlogPage = () => {
       </div>
       
       <PostList label={label}></PostList>
+
+      <AboutCard />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Relax from '../assets/images/portfolio_thumbs/thumb_relax.jpg'
 import Satellite from '../assets/images/portfolio_thumbs/thumb_satellite.jpg'
 import Vaisseau from '../assets/images/portfolio_thumbs/thumb_vaisseau.jpg'
 import PageTitle from '../components/PageTitle'
+import AboutCard from '../components/AboutCard'
 
 const Portfolio = () => {
   return (
@@ -75,7 +76,9 @@ const Portfolio = () => {
           <a href='/portfolio/cerveau'>Plus d'information ...</a>
         </div>
       </section>
-
+      <div className='container'>
+        <AboutCard />
+      </div>
     </>
   );
 };
