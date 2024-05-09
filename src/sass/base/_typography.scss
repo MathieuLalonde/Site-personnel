@@ -13,6 +13,9 @@ body {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+
+  max-width: $max-width;
+  text-wrap: pretty; // prevents orphans on last line
 }
 
 article{
