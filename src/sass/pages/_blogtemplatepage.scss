@@ -24,7 +24,7 @@
     justify-content: space-between;
 
     @include mq(large) {
-      margin-inline: 15%;
+      margin-inline: calc(18% - 7rem);
     }
   }
 }

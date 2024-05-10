@@ -7,125 +7,124 @@ import VideoPlayer from '../components/VideoPlayer';
 import Gemeaux from '../assets/logos/Gemeaux.svg'
 import Laurels from '../assets/logos/Laurel_Wreath.svg'
 
-import Mirror from '../assets/images/mirroir.jpg'
-import Interrogatoire from '../assets/images/interrogatoire.jpg'
-import Jimmy from '../assets/images/jimmy.jpg'
-import Fermier3 from '../assets/images/fermier3.jpg'
+// import Mirror from '../assets/images/mirroir.jpg'
+import Interrogatoire from '../assets/images/montage/interrogatoire.webp'
+import Jimmy from '../assets/images/montage/jimmy.webp'
+import Fermier3 from '../assets/images/montage/fermier3.webp'
+import BlogHeader from '../components/BlogHeader';
+import Glitch from '../components/glitch';
+import PostList from '../components/PostList';
 
 
 
 const Montage = () => {
   return (
     <>
+      <PageTitle>Montage</PageTitle>
+
       <article>
+        <BlogHeader photo={'../mirroir.webp'}>
+          <div>
+            <Glitch>
+              <h1>Montage.</h1>
+              <div className='subheading'>Comment je suis arrivé ici.</div>
+            </Glitch>
+          </div>
+        </BlogHeader>
+
         <div className='container'>
-          <PageTitle>Montage</PageTitle>
-
-          <h1>Montage.</h1>
-          <div className='subheading'>Comment je suis arrivé ici.</div>
-
-          <img src={Mirror} style={{
-            width: '100%', height: '12rem', objectFit: 'cover', objectPosition: '0 53%',
-            filter: 'brightness(75%) hue-rotate(180deg) sepia(75%) hue-rotate(180deg)'
-          }} />
-          <br />
-
           <p>
-            J'ai commencé à faire de la vidéo vers l'âge de 12 ans.
-          </p>
-
-          <p>
+            J'ai commencé à m'intéresser à la vidéo vers l'âge de 12 ans; à peu
+            près au même moment que j'ai découvert l'informatique.
             J'ai écrit des scénarios, tourné des court-métrages, réalisé des
             captations de pièces de théâtre, de concerts et de mariages; tout ça
             avant d'avoir 20 ans.
           </p>
-          {/* 
-      <div className="citation">
-        <span className="guillemets">&#8220;</span>
-        C'est très bon, c'est très drôle...
-        <span className="guillemets">&#8221;</span>
-      </div>
-      <p className="source">&#8212; François Jobin, <br />La Bande Magnétique 1994, TFO</p> */}
 
+        </div>
+        {/* 
           <div className="citation">
             <span className="guillemets">&#8220;</span>
-            C'est une super vidéo... Bravo!
+            C'est très bon, c'est très drôle...
             <span className="guillemets">&#8221;</span>
           </div>
-          <p className="source">&#8212; Jean-Sébastien Busque, <br />La Bande Magnétique 1994, TFO</p>
+          <p className="source">&#8212; François Jobin, <br />La Bande Magnétique 1994, TFO</p> */}
 
+        <div className='wide-image-with-text-overlay'>
+          <div>
+            <div className="citation">
+              <span className="guillemets">&#8220;</span>
+              C'est une super vidéo... Bravo!
+              <span className="guillemets">&#8221;</span>
+            </div>
+            <p className="source">&#8212; Jean-Sébastien Busque, <br />La Bande Magnétique 1994, TFO</p>
+          </div>
 
-          <img src={Fermier3} style={{
-            width: '100%', height: '12rem', objectFit: 'cover', objectPosition: '0 63%',
-            filter: 'brightness(50%) hue-rotate(180deg) sepia(75%) hue-rotate(180deg)'
-          }} />
-          <br />
+          <img src={Fermier3} style={{ objectPosition: '50% 58%' }} />
+        </div>
 
+        <div className='container'>
           <p>
             Plus tard, j'ai obtenu un diplôme en production télévisuelle et je suis
             devenu monteur de séries documentaires, magasines et de publicités.
+            C'est aussi à ce moment là que j'ai commencé à construire des sites webs pour mes employeurs...
+            et pour le plaisir.
           </p>
+        </div>
 
+        <div className='wide-image-with-text-overlay'>
+          <img src={Interrogatoire} style={{ objectPosition: '50% 74%' }} />
+
+          <br />
           <div className='center'>
             <img src={Laurels} className='gemeaux center' style={{ height: '3rem' }} />
-            <p>GAGNANT Prix REEL 1996 :</p>
-            <p><em>L'interrogatoire</em>, Meilleure production étudiante
+            <p>GAGNANT Prix REEL 1996 :
+              <br />
+              <em>L'interrogatoire</em>, Meilleure production étudiante
               <p className='tiny'>Association du film et de la télévision d'Ottawa-Hull (OHFTA)</p>
             </p>
           </div>
+        </div>
 
-          <img src={Interrogatoire} style={{
-            width: '100%', height: '12rem', objectFit: 'cover', objectPosition: '0 56%',
-            filter: 'brightness(50%) hue-rotate(180deg) sepia(75%) hue-rotate(180deg)'
-          }} />
-          <br />
-
+        <div className='container'>
           <p>
-            Avec l'arrivée d'internet, j'ai commencé à construire des sites webs pour mes employeurs...
-            et pour le plaisir.
+            J'ai toujours aimé raconter des histoires : l'image, le&nbsp;contraste, le&nbsp;rythme, l'émotion; oui ...
+            mais aussi la&nbsp;structure, la&nbsp;planification, la&nbsp;résolution de&nbsp;problème et la&nbsp;communication avec le public.
           </p>
+        </div>
 
-          <p>
-            J'ai toujours aimé raconter des histoires; la résolution de problème,
-            le rythme, le contraste, l'émotion.
-          </p>
-
-
-          <img src={Gemeaux} className='gemeaux center' />
-
+        <div className='wide-image-with-text-overlay'>
           <div className='center'>
-            <p>FINALISTE Prix Gémeaux 2005 :</p>
-            <p><em>
-              {/* Coeurs Batailleurs
-            :  */}
-              Il était une fois Jimmy Meaux
-            </em>,
-              Meilleur montage : <br />
-              <p>
-                <span className='small' >documentaire, affaires publiques, reportage, biographie &#8212; série</span>
-                <br />
-                <span className='tiny'>Académie canadienne du cinéma et de la télévision (ACCT)</span>
-              </p>
-
+            <img src={Gemeaux} className='gemeaux center' style={{ objectPosition: '50% 55%'}} />
+            <p>FINALISTE Prix Gémeaux 2005 :<br />
+              <em>
+                Coeurs Batailleurs
+                :
+                Il était une fois Jimmy Meaux
+              </em>,
+              <br />
+              <span className='small' > Meilleur montage : documentaire, affaires&nbsp;publiques,&nbsp;reportage,&nbsp;biographie &#8212; série</span>
+              <br />
+              <span className='tiny'>Académie canadienne du cinéma et de la télévision (ACCT)</span>
             </p>
           </div>
 
-          <img src={Jimmy} style={{
-            width: '100%', height: '12rem', objectFit: 'cover',
-            filter: 'brightness(50%) hue-rotate(180deg) sepia(75%) hue-rotate(180deg)'
-          }} />
-          <br />
+          <img src={Jimmy} />
+        </div>
 
-          <p>J'ai travaillé sur des émissions retransmises partout à travers le monde.</p>
+        <div className='container'>
+
+          <p>Au fil du temps, j'ai eu la chance de travaillr sur des émissions retransmises partout à travers le&nbsp;monde.</p>
 
           <TVLogos />
 
           <p>
-            {/* En voici quelques extraits : */}
+            En voici quelques points saillants :
           </p>
 
 
           <VideoPlayer src="https://player.vimeo.com/video/244261388?h=d4a2cd0241" />
+
 
         </div>
       </article>
@@ -139,12 +138,15 @@ const Montage = () => {
 
         <VideoStore />
 
-        {/* <h3>Sur le blog en ce moment</h3> */}
+        <section className='container'>
+          <br />
+          <h2>Dernièrement, sur le blogue :</h2>
 
-
+          <div className="postlist--bestof">
+            <PostList label='montage' quantity={3} />
+          </div>
+        </section>
         <AboutCard />
-
-        <p></p>
       </div>
     </>
   );

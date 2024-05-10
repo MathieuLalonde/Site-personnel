@@ -10,7 +10,7 @@
   margin-bottom: 1rem;
 
   @include mq(small) {
-    justify-content: center;  
+    justify-content: center;
   }
 
   & img {
@@ -26,6 +26,81 @@
 }
 
 .gemeaux {
-  filter: contrast(33%) brightness(125%) saturate(0%) sepia(15%) hue-rotate(180deg);
+  filter: 
+    contrast(33%)
+    brightness(130%)
+    saturate(0%)
+    sepia(15%)
+    hue-rotate(180deg);
   height: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wide-image-with-text-overlay {
+  padding-block: 0;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  display: grid;
+
+  @include mq(medium) {
+    grid-template-columns:
+      minmax(var(--wrapper-padding-inline), 1fr)
+      minmax(0, $max-width)
+      minmax(var(--wrapper-padding-inline), 1fr);
+  }
+
+  /* ensure the image fills up the entire space available */
+  & > img {
+    grid-row: 1;
+    object-fit: cover;
+
+    width: 100%;
+    height: 18rem;
+
+    filter: 
+      contrast(75%)
+      brightness(32%)
+      hue-rotate(180deg)
+      sepia(100%)
+      hue-rotate(180deg)
+      blur(1px);
+    
+    @include mq(medium) {
+      // max-height: 60vh;
+      @include roundcorners();
+    }
+
+    /* if the image is on the left, it covers the entire left half */
+    &:first-child {
+      grid-column: 1 / 1;
+
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+      @include mq(medium) {
+        grid-column: 1 / 3;
+      }
+    }
+
+    /* if the image is on the right, it covers the entire right half */
+    &:last-child {
+      grid-column: 2 / -1;
+
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  & > :not(img) {
+    grid-row: 1;
+    grid-column: 1 / 1;
+    z-index: 2;
+
+    display: grid;
+    align-content: center;
+
+    @include mq(medium) {
+      grid-column: 2 / 3;
+    }
+  }
 }

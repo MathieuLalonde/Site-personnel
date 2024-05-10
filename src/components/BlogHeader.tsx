@@ -12,7 +12,8 @@ const BlogHeader = ({ photo = "../test.jpg", children }: Props) => {
               rgba(0, 0, 0, 0.5),
               rgba(0, 0, 0, 0.6) 25%,
               rgba(0, 0, 0) ),
-            url(/${photo})`
+            url(/${photo})`,
+        backgroundPosition: '50% 45%'
       }}>
       <div className='blog-header__container'>
         {children}
