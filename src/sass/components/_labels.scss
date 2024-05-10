@@ -29,25 +29,26 @@
 }
 
 .label_audio,
+.label_editing,
 .label_graphisme,
 .label_graphics,
-.label_photo,
-.label_video,
 .label_montage,
-.label_editing {
+.label_photo,
+.label_video {
   background-color: var(--clr-red-600);
 }
 
-.label_web,
-.label_website,
 .label_css,
+.label_html,
+.label_react,
 .label_svg,
-.label_html {
+.label_web,
+.label_website {
   background-color: var(--clr-blue-700);
 }
 
-.label_dev,
-.label_code {
+.label_code,
+.label_dev {
   background-color: var(--clr-blue-800);
 }
 
