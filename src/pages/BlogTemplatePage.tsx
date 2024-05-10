@@ -30,7 +30,7 @@ const BlogTemplatePage = () => {
     if (params.id === post.id) {
       fetchedPost.title = (post.title ? post.title : "No title given");
       fetchedPost.author = (post.author ? post.author : "No title given");
-      fetchedPost.photo = (post.photo ? post.photo : "../test.jpg")
+      fetchedPost.photo = (post.photo ? post.photo : "statique.webp")
       fetchedPost.postDate = (post.postDate ? post.postDate : "No title given");
       fetchedPost.categories = (post.categories ? post.categories : ["No title given"]);
       fetchedPost.content = (post.content ? post.content : "No title given");
