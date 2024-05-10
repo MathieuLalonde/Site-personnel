@@ -3,7 +3,7 @@ interface Props {
   photo?: String;
 };
 
-const BlogHeader = ({ photo = "../test.jpg", children }: Props) => {
+const BlogHeader = ({ photo = "statique.webp", children }: Props) => {
   return (
     <div className='blog-header'
       style={{

@@ -34,7 +34,7 @@ const PostList = ({ label = "", quantity }: Props) => {
           return (
             <div key={post.id} className="postlist__card">
 
-              <img src={`/${post.photo ? post.photo : 'test.jpg'}`} className='blogphoto' />
+              <img src={`/${post.photo ? post.photo : 'statique.webp'}`} className='blogphoto' />
 
               <h3>
                 <a href={`/blog/${post.id}`}>{post.title}</a>
