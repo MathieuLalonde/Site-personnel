@@ -25,9 +25,9 @@ const AboutCard = () => {
 
       <div>
         
-        <h5>
+        <h3>
           Mathieu Lalonde
-        </h5>
+        </h3>
         Développeur logiciel (et monteur télévisuel)
         <hr />
         <div className="about_coordonnes">

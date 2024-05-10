@@ -70,17 +70,18 @@ const HomePage = () => {
           {/* <h3>Quelques exemples logiciels...</h3> */}
           <p>Jetez un coup d’œil à mon portfolio pour voir quelques petits projets sur lesquels j'ai eu la
             chance de travailler</p>
-
-          {/* <h3>Dernièrement, sur le blogue :</h3>
-          <br/> */}
         </div>
-{/* 
-        <section className="postlist--bestof">
-          <PostList quantity={4} />
-        </section> */}
-
       </article>
 
+      <section className='container'>
+          <br/>
+          <h2>Dernièrement, sur le blogue :</h2>
+
+        <div className="postlist--bestof">          
+          <PostList quantity={3} />
+        </div>
+      </section>
+      
         <div className='container'>
           <AboutCard />
         </div>

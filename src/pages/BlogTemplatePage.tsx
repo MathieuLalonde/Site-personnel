@@ -10,6 +10,7 @@ import PageTitle from '../components/PageTitle';
 
 import postList from '../posts.json';
 import Glitch from '../components/glitch';
+import BlogHeader from '../components/BlogHeader';
 
 
 const BlogTemplatePage = () => {
@@ -47,15 +48,7 @@ const BlogTemplatePage = () => {
     <>
       <PageTitle>{fetchedPost.title}</PageTitle>
 
-      <div className='blog-header'
-        style={{
-          backgroundImage: `
-            linear-gradient(
-              rgba(0, 0, 0, 0.5),
-              rgba(0, 0, 0, 0.6) 25%,
-              rgba(0, 0, 0) ),
-            url(/${fetchedPost.photo})`
-        }}>
+      <BlogHeader photo={fetchedPost.photo}>
         <div className='blog-header__container'>
           <Glitch>
             <div className='blog-header__top-info'>
@@ -68,7 +61,7 @@ const BlogTemplatePage = () => {
             <Labels>{fetchedPost.categories}</Labels>
           </div>
         </div>
-      </div>
+      </BlogHeader>
 
       <div className='blog--container'>
 

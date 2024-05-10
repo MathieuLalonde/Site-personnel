@@ -11,22 +11,32 @@ import AboutCard from '../components/AboutCard';
 const BlogPage = () => {
   const [searchParams] = useSearchParams();
 
-  const labelParam = searchParams.get('label')
+  const labelParam = searchParams.get('label');
+  const qtyParam = searchParams.get('qty');
+
   const label = labelParam ? labelParam : ""
+  const quantity = qtyParam ? Number(qtyParam) : 0;
 
   return (
-    <div className='container'>
+    <>
       <PageTitle>Blogue</PageTitle>
-
-      <h1>Blogue.</h1>
-      <div className='subheading'>
-        Un appercu de mes projets personnels actuels et des trucs qui me passent par la tête.
-      </div>
       
-      <PostList label={label}></PostList>
+      <div className='container'>
+        <h1>Blogue.</h1>
+        <div className='subheading'>
+          Un appercu de mes projets personnels actuels et des trucs qui me passent par la tête.
+        </div>
+      </div>
 
-      <AboutCard />
-    </div>
+      <div className='postlist--wrapper'>
+        <PostList label={label} quantity={quantity} />
+        
+      </div>
+
+      <div className='container'>
+        <AboutCard />
+      </div>
+    </>
   );
 };
 

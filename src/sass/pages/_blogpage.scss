@@ -1,6 +1,6 @@
 /* BlogPage */
 @use "../abstracts" as *;
-$post-min-width: 325px;
+$post-min-width: 290px;
 $post-gap: 0.75rem;
 
 .postlist--wrapper {
@@ -11,22 +11,22 @@ $post-gap: 0.75rem;
   display: grid;
   gap: $post-gap;
   margin-inline: auto;
-  max-width: max($max-width + 30ch, 90%);
+  max-width: $max-width + 57ch;
 
   grid-template-columns: repeat(auto-fit, minmax(min($post-min-width, 100%), 1fr));
 }
 
-.postlist--bestof .postlist{
-  max-width: max($max-width + 30ch, 0);
-}
-@media (min-width: 65rem) and (max-width: 88rem) {
-  .postlist--bestof .postlist {
-    grid-template-columns: repeat(3, minmax(min($post-min-width, 100%), 1fr));
-    .postlist__card:last-child {
-      display: none;
-    }
-  }
-}
+// .postlist--bestof .postlist {
+//   @include mq(small) {
+//     grid-template-columns: repeat(2, minmax(min($post-min-width, 100%), 1fr));
+//   }
+//   @include mq(medium) {
+//     grid-template-columns: repeat(3, minmax(min($post-min-width, 100%), 1fr));
+//     .postlist__card:last-child {
+//       display: none;
+//     }
+//   }
+// }
 
 .postlist__card {
   border: 2px solid;
