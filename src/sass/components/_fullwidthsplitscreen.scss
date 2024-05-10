@@ -77,6 +77,7 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
       }
     }
   }
+  
 
   /* match the section padding for the text blocks for consistency */
   & > :not(img) {
@@ -111,14 +112,15 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
       }
     }
 
-    /* at large screens, ensure the background color
-       goes to the edge of the page */
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: inherit;
-    }
+    // /* at large screens, ensure the background color
+    //    goes to the edge of the page */
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    
+    //   inset: 0;      // For some reason, inset:0 makes the mobile version lock-up 
+    //   background: inherit;
+    // }
 
     /* ensures the background color fills the entire left side */
     &:first-child::before {
