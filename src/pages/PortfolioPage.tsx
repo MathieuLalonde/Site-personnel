@@ -1,8 +1,8 @@
-import Multi from '../assets/images/portfolio_thumbs/thumb_multiplayer.jpg'
-import Brain from '../assets/images/portfolio_thumbs/thumb_cerveau.jpg'
-import Relax from '../assets/images/portfolio_thumbs/thumb_relax.jpg'
-import Satellite from '../assets/images/portfolio_thumbs/thumb_satellite.jpg'
-import Vaisseau from '../assets/images/portfolio_thumbs/thumb_vaisseau.jpg'
+import Multi from '../assets/images/portfolio/multiplayer.webp'
+import Brain from '../assets/images/portfolio/cerveau.webp'
+import Relax from '../assets/images/portfolio/relax.webp'
+import Satellite from '../assets/images/portfolio/satellite.webp'
+import Vaisseau from '../assets/images/portfolio/vaisseau.webp'
 import PageTitle from '../components/PageTitle'
 import AboutCard from '../components/AboutCard'
 

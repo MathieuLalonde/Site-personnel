@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PageTitle from "../../components/PageTitle";
+import Multi from '../../assets/images/portfolio/multiplayer.webp'
 
 const Multiplayer = () => {
   return (
@@ -13,7 +14,7 @@ const Multiplayer = () => {
         </ul>
         <h1>Multiplayer Adventure.</h1>
         <div className="subheading">Un jeu vidéo 2D que vous pouvez essayer maintenant !</div>
-        <img className="blogphoto" src="/travaux/photo_multiplayer.jpg" />
+        <img className="blogphoto" src={Multi} />
         <p className="tiny">
         </p>
 
