@@ -17,18 +17,20 @@ import { IoMdMail } from "react-icons/io";
 // import { MdAlternateEmail } from "react-icons/md";
 import { GrDocumentPdf } from "react-icons/gr";
 
+import Selfie from '../assets/images/selfie_sm.webp';
+
 const AboutCard = () => {
   return (
     <aside className='about_card'>
 
-      <img src='/selfie.jpg' className='selfie' alt="Photo de Mathieu"></img>
+      <img src={Selfie} className='selfie' alt="Photo de Mathieu"></img>
 
       <div>
         
         <h3>
           Mathieu Lalonde
         </h3>
-        Développeur logiciel (et monteur télévisuel)
+        Développeur logiciel (B. Sc. A.) et&nbsp;monteur&nbsp;télévisuel
         <hr />
         <div className="about_coordonnes">
           <div className="about_coor_icon">
