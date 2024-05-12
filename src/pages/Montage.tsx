@@ -95,7 +95,7 @@ const Montage = () => {
 
         <div className='wide-image-with-text-overlay'>
           <div className='center'>
-            <img src={Gemeaux} className='gemeaux center' style={{ objectPosition: '50% 55%'}} />
+            <img src={Gemeaux} className='gemeaux center' style={{ objectPosition: '50% 55%' }} />
             <p>FINALISTE Prix Gémeaux 2005 :<br />
               <em>
                 Coeurs Batailleurs
@@ -138,14 +138,14 @@ const Montage = () => {
 
         <VideoStore />
 
-        <section className='container'>
-          <br />
-          <h2>Dernièrement, sur le blogue :</h2>
 
-          <div className="postlist--bestof">
-            <PostList label='montage' quantity={3} />
-          </div>
-        </section>
+        <br />
+        <h2>Dernièrement, sur le blogue :</h2>
+
+        <div className="postlist--bestof">
+          <PostList label='montage' quantity={3} />
+        </div>
+
         <AboutCard />
       </div>
     </>

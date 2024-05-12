@@ -13,7 +13,7 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
 
   --section-padding-block: 3rem;
   --section-image-width: 90%;
-  --section-image-margin: calc(100% - var(--section-image-width))
+  --section-image-margin: calc(100% - var(--section-image-width));
 }
 
 /* remove the padding so images can take up the entire height */
@@ -23,20 +23,20 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
   margin-bottom: 4rem;
   display: grid;
 
-  @include mq(small) {
-    /* outermost columns emulate the spacing from the .wrapper
+  align-items: center; /* Align vertical */
+
+  /* outermost columns emulate the spacing from the .wrapper
        while the two inner columns divide the rest of the space
        into two equal parts */
-    grid-template-columns:
-      minmax(var(--wrapper-padding-inline), 1fr)
-      minmax(0, calc(var(--wrapper-max-width) / 2))
-      minmax(0, calc(var(--wrapper-max-width) / 2))
-      minmax(var(--wrapper-padding-inline), 1fr);
+  grid-template-columns:
+    minmax(var(--wrapper-padding-inline), 1fr)
+    minmax(0, calc(var(--wrapper-max-width) / 2))
+    minmax(0, calc(var(--wrapper-max-width) / 2))
+    minmax(var(--wrapper-padding-inline), 1fr);
 
-    /* for positioning the pseudo-elements
+  /* for positioning the pseudo-elements
        to fill in the rest of the background*/
-    position: relative;
-  }
+  position: relative;
 
   & h2 {
     margin-top: 0;
@@ -44,6 +44,7 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
 
   /* ensure the image fills up the entire space available */
   & > img {
+    grid-column: 1 / -1;
     object-fit: cover;
     object-position: 50% 35%;
 
@@ -51,38 +52,31 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
       width: var(--section-image-width);
       max-height: 50vh;
       @include roundcorners();
-    }
 
-    /* if the image is on the left, it covers the entire left half */
-    &:first-child {
-      grid-column: 1 / 3;
-
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-
-      @include mq(small) {
+      /* if the image is on the left, it covers the entire left half */
+      &:first-child {
+        grid-column: 1 / 3;
         margin-right: var(--section-image-margin);
+
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
-    }
 
-    /* if the image is on the right, it covers the entire right half */
-    &:last-child {
-      grid-column: 3 / -1;
-
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-
-      @include mq(small) {
+      /* if the image is on the right, it covers the entire right half */
+      &:last-child {
+        grid-column: 3 / -1;
         margin-left: var(--section-image-margin);
+
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
   }
-  
 
   /* match the section padding for the text blocks for consistency */
   & > :not(img) {
     // padding-inline: var(--wrapper-padding-inline);
-    padding-bottom: 2rem;
+    padding-top: 1rem;
 
     /* make sure text doesn't touch the edge of the viewport 
        and the content is vertically centered */
@@ -90,7 +84,7 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
     align-content: center;
     justify-items: start;
 
-    grid-column: 1 / 3;
+    grid-column: 2 / 4;
 
     /* if the non-image is first, place it in the second column
        (first column is empty to emulate the .wrapper) */
@@ -110,26 +104,6 @@ https://codepen.io/kevinpowell/pen/ZEmgQvV
       @include mq(small) {
         grid-column: 3 / 4;
       }
-    }
-
-    // /* at large screens, ensure the background color
-    //    goes to the edge of the page */
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    
-    //   inset: 0;      // For some reason, inset:0 makes the mobile version lock-up 
-    //   background: inherit;
-    // }
-
-    /* ensures the background color fills the entire left side */
-    &:first-child::before {
-      grid-column: 1 / 2;
-    }
-
-    /* ensures the background color fills the entire right side */
-    &:last-child::before {
-      grid-column: 4 / 5;
     }
   }
 }
