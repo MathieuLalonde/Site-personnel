@@ -29,18 +29,6 @@
   }
 }
 
-// @keyframes splash__static__position {
-//   0% {
-//     background-position: center;
-//   }
-//   33% {
-//     background-position: top;
-//   }
-//   66% {
-//     background-position: bottom;
-//   }
-// }
-
 @keyframes splash__glitch0 {
   0%   {
     transform: translate(-10px, 0) skew(30deg);
@@ -78,5 +66,14 @@
   5%, 20% {
     margin-left: 4px;
     margin-right: -4px;
+  }
+}
+
+@keyframes delayedDisplay {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
   }
 }

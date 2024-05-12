@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
-import { FaArrowDown } from "react-icons/fa";
-
 import PageTitle from '../components/PageTitle';
 import Footer from '../layout/Footer';
 
@@ -41,10 +39,14 @@ const HomePage = () => {
           {words[count]}
         </div>
 
-        <div className='hide-text'>
+        {/* <div className='hide-text'>
           {words}
+        </div> */}
+
+        <div className='arrow center'>
+          &darr;
         </div>
-        <div className="center"><FaArrowDown color="#1f1f1f" size={75} /></div>
+
       </div>
 
       <article>
