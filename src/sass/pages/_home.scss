@@ -2,42 +2,88 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-@use '../base' as *;
+@use "../base" as *;
 
 .splash {
   background: black;
   min-height: 80vh;
 
-  display: flex;
-  justify-content: center ; /* Align horizontal */
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center; /* Align horizontal */
   align-items: center; /* Align vertical */
   line-height: normal;
 }
 
-.splash__text {
-  // Set background (fill) image 
-  background-image: url("../assets/tvsnow/tvsnow001.jpg");
-  background-position: center;
-  background-size: 1920px 1080px;
+.splash__text,
+.splash__shadow {
+  // Stack text layers
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
 
-  // Put background inside text
-  background-clip: text;
-  -webkit-background-clip: text;
-  color:transparent;
-  
   // Style text
   font-size: clamp(3.2rem, 12vw, 20rem);
   font-weight: 500;
-  text-shadow: #b4d5ebdd 1px 0 15px; // TODO: Check spread for smaller resolutions 
-  // filter: blur(1px);
 
-  animation-name: splash__static_image, splash__static__position;
-  animation-duration: 1s, 3s;
-  animation-timing-function: steps(30, jump-start), steps(1, jump-start);
-  animation-iteration-count: infinite;
+  // Put background inside text (2)
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-.splashfade {
+.splash__text {
+  // Make sure this text is above the shadow
+  z-index: 2;
+  
+  // Set background (fill) image (1)
+  background-image: url("../assets/tvsnow/tvsnow001.jpg");
+  background-position: center;
+  // background-size: 1920px 1080px;
+  
+  // animate background (fill image) (3)
+  animation-name: splash__static_image;
+  animation-duration: 1s;
+  animation-timing-function: steps(30, jump-start);
+  animation-iteration-count: infinite;
+
+  // Style text
+  text-shadow: var(--clr-blue-400) 1px 0 150px; // TODO: Check spread for smaller resolutions
+  // filter: blur(1px);
+}
+
+.splash__shadow {
+  text-shadow: var(--clr-blue-400) 0 0 20px;
+}
+
+// Add transition everytime the classname changes
+// React alternates between two classnames to force css to be triggered
+/* purgecss start ignore */
+.splash__glitch0,
+.splash__glitch1 {
+  animation-name: splash__glitch1;
+  animation-duration: 0.9s;
+  animation-timing-function: steps(30, jump-start);
+  animation-iteration-count: 1;
+}
+
+.splash__glitch0 {
+  animation-name: splash__glitch0;
+}
+
+// .splash__anim0,
+// .splash__anim1 {
+//   animation-name: splash__static_image, splash__glitch1;
+//   animation-duration: 1s, 0.9s;
+//   animation-timing-function: steps(30, jump-start), steps(30, jump-start);
+//   animation-iteration-count: infinite, 1;
+// }
+
+// .splash__anim0 {
+//     animation-name: splash__static_image, splash__glitch0;
+// }
+/* purgecss end  ignore */
+
+.splash--fade {
   background: linear-gradient(to bottom, black 0%, transparent 100%);
   padding-top: 20vh;
 }
@@ -59,7 +105,6 @@
 //     // background-position: right 8% top 45%;
 //   }
 // }
-
 
 // .headercontainer {
 //   position: relative;

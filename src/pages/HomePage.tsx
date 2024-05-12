@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
+import { FaArrowDown } from "react-icons/fa";
+
 import PageTitle from '../components/PageTitle';
 import Footer from '../layout/Footer';
 
@@ -10,13 +12,15 @@ import PostList from "../components/PostList";
 
 const HomePage = () => {
   const [count, setCount] = useState(0);
-  const words: String[] = ["Créer.", "Coder.", "Communiquer.", "Collaborer.", "Captiver.", "Concevoir."];
+  const [splashVariant, setSplashVariant] = useState(0);
+  const words: String[] = ["Créer. ", "Coder. ", "Communiquer. ", "Collaborer. ", "Captiver. ", "Concevoir. "];
 
   useEffect(() => {
     // Setting the interval
     const interval = setInterval(() => {
       count + 1 < words.length ? setCount(count + 1) : setCount(0);
-    }, 900);
+      splashVariant < 1 ? setSplashVariant(1) : setSplashVariant(0);
+    }, 1200);
 
     // Clearing the interval
     return () => clearInterval(interval);
@@ -32,10 +36,19 @@ const HomePage = () => {
         <div className='splash__text'>
           {words[count]}
         </div>
+
+        <div className={`splash__shadow splash__glitch${splashVariant}`}>
+          {words[count]}
+        </div>
+
+        <div className='hide-text'>
+          {words}
+        </div>
+        <div className="center"><FaArrowDown color="#1f1f1f" size={75} /></div>
       </div>
 
       <article>
-        <div className='splashfade'>
+        <div className='splash--fade'>
           <div className='container'>
 
             <h1 id='intro'>Introduction.</h1>
@@ -74,17 +87,17 @@ const HomePage = () => {
       </article>
 
       <section className='container'>
-          <br/>
-          <h2>Dernièrement, sur le blogue :</h2>
+        <br />
+        <h2>Dernièrement, sur le blogue :</h2>
 
-        <div className="postlist--bestof">          
+        <div className="postlist--bestof">
           <PostList quantity={3} />
         </div>
       </section>
-      
-        <div className='container'>
-          <AboutCard />
-        </div>
+
+      <div className='container'>
+        <AboutCard />
+      </div>
       <Footer />
     </>
   );
