@@ -1,40 +1,29 @@
 /* Navigation */
 
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 nav {
-    text-align: center;
-    background-color: black;
+  text-align: center;
+  background-color: black;
 
-    // box-shadow: 0 0 10px 0px #0004;
-    
-    position: sticky;
-    bottom: unset;
-    top: -1px;
-    z-index: 100;
+  // box-shadow: 0 0 10px 0px #0004;
+
+  position: sticky;
+  bottom: unset;
+  top: -1px;
+  z-index: 100;
 }
 
-nav a {
-    opacity: 0.7;
-
-    /* text-decoration: none;
-    color: white; */
+.navbar a {
+  color: var(--clr-gray-200);
+  // text-decoration: none;
+  padding: 1rem 0;
 }
 
-nav a:hover {
-    opacity: 1;
-    transition-duration: 0.5s;
+.navbar a:hover {
+  transition-duration: 0.5s;
 }
 
-span.spacer {
-    padding-left: 1vw;
-    padding-right: 1vw;
-    margin: 0rem;
-    letter-spacing: 0rem;
-}
-
-
-// Navbar
 /* Style the list */
 ul.navbar {
   list-style: none;
@@ -46,18 +35,19 @@ ul.navbar li {
   display: inline;
 }
 
-/* Add a slash symbol (/) before/behind each list item */
-ul.navbar li+li:before {
+/* Add a slash symbol (|) before/behind each list item */
+ul.navbar li + li:before {
   padding: clamp(0.38rem, 2vw - 0.05rem, 1rem);
   content: "|";
   color: var(--clr-gray-400);
-  
-  @include mq(medium){
+
+  @include mq(medium) {
     color: var(--clr-gray-500);
   }
 }
 
-/* Add a color on mouse-over */
+/* Add color on mouse-over */
 ul.navbar li a:hover {
   color: var(--clr-blue-200);
+  text-shadow: var(--clr-blue-200) 0 0 0.5rem;
 }
