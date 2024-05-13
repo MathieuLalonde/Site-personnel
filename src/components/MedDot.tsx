@@ -5,7 +5,7 @@ interface Props {
   size?: string;
 }
 
-const MedDot = ({ className, size='2%' }: Props) => {
+const MedDot = ({ className, size='35rem' }: Props) => {
   return (
     <img src={Dot} width={`${size}`} height={`${size}`} className={`meddot ${className}`} style={{ margin: '4rem auto' }} />
   )
