@@ -5,6 +5,7 @@ import Satellite from '../assets/images/portfolio/satellite.webp'
 import Vaisseau from '../assets/images/portfolio/vaisseau.webp'
 import PageTitle from '../components/PageTitle'
 import AboutCard from '../components/AboutCard'
+import MedDot from '../components/MedDot'
 
 const Portfolio = () => {
   return (
@@ -29,7 +30,7 @@ const Portfolio = () => {
       </div>
 
 
-      <section className='full-width-split-screen'>
+      <section className='full-width-split-screen slideUpFade'>
         <img src={Vaisseau} />
         <div>
           <a href='/portfolio/vaisseau'><h2>Vaisseau Spatial</h2></a>
@@ -38,7 +39,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <section className='full-width-split-screen'>
+      <section className='full-width-split-screen slideUpFade'>
         <div>
           <a href='/portfolio/multiplayer'><h2>Multiplayer Adventure</h2></a>
           <p>Jeu <em><strong>JavaScript</strong></em> conçu en trois sprints <strong><em>Agile</em></strong> au sein d'une équipe de programmeurs
@@ -48,7 +49,7 @@ const Portfolio = () => {
         <img src={Multi} />
       </section>
 
-      <section className='full-width-split-screen'>
+      <section className='full-width-split-screen slideUpFade'>
         <img src={Relax} />
         <div>
           <a href='/portfolio/relaxation'><h2>Relaxation</h2></a>
@@ -57,7 +58,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <section className='full-width-split-screen'>
+      <section className='full-width-split-screen slideUpFade'>
         <div>
           <a href='/portfolio/satellite'><h2>Simulation de l'orbite du téléscope James Webb</h2></a>
           <p>Animation <strong><em>OpenGL</em></strong> démontrant un satellite en orbite autour de la terre,
@@ -68,7 +69,7 @@ const Portfolio = () => {
         <img src={Satellite} />
       </section>
 
-      <section className='full-width-split-screen'>
+      <section className='full-width-split-screen slideUpFade'>
         <img src={Brain} />
         <div>
           <a href='/portfolio/cerveau'><h2>Cerveau</h2></a>
@@ -76,8 +77,9 @@ const Portfolio = () => {
           <a href='/portfolio/cerveau'>Plus d'information ...</a>
         </div>
       </section>
+      
       <div className='container'>
-        <AboutCard />
+        <AboutCard className="slideUp" />
       </div>
     </>
   );

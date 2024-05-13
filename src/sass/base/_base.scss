@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 /**
  * Set up a decent box model on the root element
@@ -36,7 +36,7 @@ html {
 html,
 body {
   height: 100vh;
-  width: 100vw; 
+  width: 100vw;
   // overflow-y: scroll;
   overflow-x: hidden; // principalement pour la page 404 sur petits ecrans
   // scrollbar-width: thin;
@@ -78,7 +78,7 @@ ul.breadcrumb li {
 }
 
 /* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
+ul.breadcrumb li + li:before {
   padding: 1rem;
   content: "\003E";
 }
@@ -91,10 +91,6 @@ ul.breadcrumb li+li:before {
 ul.breadcrumb li a:hover {
   color: var(--clr-gray-200);
 }
-
-
-
-
 
 // /**
 //  * Basic styles for links
@@ -109,7 +105,6 @@ ul.breadcrumb li a:hover {
 //   }
 // }
 
-
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -117,6 +112,41 @@ hr {
   opacity: 0.25;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .slideUp,
+  .slideUpFade,
+  .slideInLeft,
+  .slideInRight {
+    animation-timing-function: ease-out;
+    animation-timeline: view();
+    animation-range: 0% 33%;
+  }
 
+  .slideUp {
+    animation-name: slideUp;
+  }
 
+  .slideUpFade {
+    animation-name: slideUpFade;
+  }
 
+  .slideInLeft {
+    animation-name: slideInLeft;
+  }
+
+  .slideInRight {
+    animation-name: slideInRight;
+  }
+
+  .fadeIn,
+  .blurFadeIn {
+    animation-name: fadeIn;
+    animation-timing-function: ease-out;
+    animation-timeline: view();
+    animation-range: cover 0% 40%;
+  }
+
+  .blurFadeIn {
+    animation-name: blurFadeIn;
+  };
+}

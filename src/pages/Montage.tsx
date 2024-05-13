@@ -14,6 +14,7 @@ import Fermier3 from '../assets/images/montage/fermier3.webp'
 import BlogHeader from '../components/BlogHeader';
 import Glitch from '../components/glitch';
 import PostList from '../components/PostList';
+import MedDot from '../components/MedDot';
 
 
 
@@ -32,7 +33,7 @@ const Montage = () => {
           </div>
         </BlogHeader>
 
-        <div className='container'>
+        <section className='container'>
           <p>
             J'ai commencé à m'intéresser à la vidéo vers l'âge de 12 ans; à peu
             près au même moment que j'ai découvert l'informatique.
@@ -41,7 +42,7 @@ const Montage = () => {
             avant d'avoir 20 ans.
           </p>
 
-        </div>
+        </section>
         {/* 
           <div className="citation">
             <span className="guillemets">&#8220;</span>
@@ -52,33 +53,33 @@ const Montage = () => {
 
         <div className='wide-image-with-text-overlay'>
           <div>
-            <div className="citation">
+            <div className="citation blurFadeIn">
               <span className="guillemets">&#8220;</span>
               C'est une super vidéo... Bravo!
               <span className="guillemets">&#8221;</span>
             </div>
-            <p className="source">&#8212; Jean-Sébastien Busque, <br />La Bande Magnétique 1994, TFO</p>
+            <p className="source blurFadeIn">&#8212; Jean-Sébastien Busque, <br />La Bande Magnétique 1994, TFO</p>
           </div>
 
           <img src={Fermier3} style={{ objectPosition: '50% 58%' }} />
         </div>
 
-        <div className='container'>
+        <section className='container'>
           <p>
             Plus tard, j'ai obtenu un diplôme en production télévisuelle et je suis
             devenu monteur de séries documentaires, magasines et de publicités.
             C'est aussi à ce moment là que j'ai commencé à construire des sites webs pour mes employeurs...
             et pour le plaisir.
           </p>
-        </div>
+        </section>
 
         <div className='wide-image-with-text-overlay'>
           <img src={Interrogatoire} style={{ objectPosition: '50% 74%' }} />
 
           <br />
           <div className='center'>
-            <img src={Laurels} className='gemeaux center' style={{ height: '3rem' }} />
-            <p>GAGNANT Prix REEL 1996 :
+            <img src={Laurels} className='gemeaux center fadeIn' style={{ height: '3rem' }} />
+            <p className='blurFadeIn'>GAGNANT Prix REEL 1996 :
               <br />
               <em>L'interrogatoire</em>, Meilleure production étudiante
               <p className='tiny'>Association du film et de la télévision d'Ottawa-Hull (OHFTA)</p>
@@ -86,17 +87,17 @@ const Montage = () => {
           </div>
         </div>
 
-        <div className='container'>
+        <section className='container'>
           <p>
             J'ai toujours aimé raconter des histoires : l'image, le&nbsp;contraste, le&nbsp;rythme, l'émotion; oui ...
             mais aussi la&nbsp;structure, la&nbsp;planification, la&nbsp;résolution de&nbsp;problème et la&nbsp;communication avec le public.
           </p>
-        </div>
+        </section>
 
         <div className='wide-image-with-text-overlay'>
           <div className='center'>
-            <img src={Gemeaux} className='gemeaux center' style={{ objectPosition: '50% 55%' }} />
-            <p>FINALISTE Prix Gémeaux 2005 :<br />
+            <img src={Gemeaux} className='gemeaux center fadeIn' style={{ objectPosition: '50% 55%' }} />
+            <p className='fadeIn'>FINALISTE Prix Gémeaux 2005 :<br />
               <em>
                 Coeurs Batailleurs
                 :
