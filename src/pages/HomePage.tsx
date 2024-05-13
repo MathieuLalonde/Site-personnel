@@ -43,8 +43,10 @@ const HomePage = () => {
           {words}
         </div> */}
 
-        <div className='arrow center'>
-          &darr;
+        <div className="arrow--delay">
+          <div className='arrow' aria-hidden="true">
+            &darr;
+          </div>
         </div>
 
       </div>

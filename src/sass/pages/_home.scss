@@ -32,35 +32,24 @@
   padding-top: minmax(0, 4rem);
 }
 
-.arrow {
-  grid-column: 1 / 1;
-  grid-row: 2 / 3;
-
-  font-size: clamp(3.2rem, 5vw, 6rem);
-  font-weight: 800;
-  color: var(--clr-gray-500);
-
-  animation-name: delayedDisplay;
-  animation-duration: 10s;
-  animation-iteration-count: 1;
-}
-
 .splash__text {
   // Make sure this text is above the shadow
   z-index: 2;
 
   // Set background (fill) image (1)
-  background-image: url("../assets/tvsnow/tvsnow001.jpg");
+  background-image: url("../assets/tvsnow/tvsnow001.webp");
   background-position: center;
 
   // animate background (fill image) (3)
-  animation-name: splash__static_image;
-  animation-duration: 1s;
-  animation-timing-function: steps(30, jump-start);
-  animation-iteration-count: infinite;
+  @media (prefers-reduced-motion: no-preference) {
+    animation-name: splash__static_image;
+    animation-duration: 1s;
+    animation-timing-function: steps(30, jump-start);
+    animation-iteration-count: infinite;
+  }
 
   // Style text
-  text-shadow: var(--clr-blue-400) 1px 0 150px; // TODO: Check spread for smaller resolutions
+  text-shadow: var(--clr-blue-400) 1px 0 120px; // TODO: Check spread for smaller resolutions
 }
 
 .splash__shadow {
@@ -70,18 +59,43 @@
 // Add transition everytime the classname changes
 // React alternates between two classnames to force css to be triggered
 /* purgecss start ignore */
-.splash__glitch0,
-.splash__glitch1 {
-  animation-name: splash__glitch1;
-  animation-duration: 0.9s;
-  animation-timing-function: steps(30, jump-start);
-  animation-iteration-count: 1;
+
+@media (prefers-reduced-motion: no-preference) {
+  .splash__glitch0,
+  .splash__glitch1 {
+    animation-name: splash__glitch1;
+    animation-duration: 0.9s;
+    animation-timing-function: steps(30, jump-start);
+    animation-iteration-count: 1;
+  }
+  .splash__glitch0 {
+    animation-name: splash__glitch0;
+  }
 }
 
-.splash__glitch0 {
-  animation-name: splash__glitch0;
-}
 /* purgecss end  ignore */
+
+.arrow {
+  grid-column: 1 / 1;
+  grid-row: 2 / 3;
+
+  font-size: clamp(3.2rem, 5vw, 6rem);
+  font-weight: 800;
+  color: var(--clr-gray-500);
+  text-align: center;
+
+  // fade out arrow on scroll
+  animation-name: fadeOut;
+  animation-timeline: view();
+}
+
+.arrow--delay {
+  @media (prefers-reduced-motion: no-preference) {
+    animation-name: delayedDisplay;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+  }
+}
 
 .splash--fade {
   background: linear-gradient(to bottom, black 0%, transparent 100%);
