@@ -116,7 +116,8 @@ hr {
   .slideUp,
   .slideUpFade,
   .slideInLeft,
-  .slideInRight {
+  .slideInRight,
+  .lineHeightUp {
     animation-timing-function: ease-out;
     animation-timeline: view();
     animation-range: 0% 33%;
@@ -137,6 +138,13 @@ hr {
   .slideInRight {
     animation-name: slideInRight;
   }
+
+  @include mq(small){
+    .lineHeightUp {
+      animation-name: lineHeightUp;
+    }
+  }
+
 
   .fadeIn,
   .blurFadeIn {
