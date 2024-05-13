@@ -19,9 +19,13 @@ import { GrDocumentPdf } from "react-icons/gr";
 
 import Selfie from '../assets/images/selfie_sm.webp';
 
-const AboutCard = () => {
+interface Props {
+  className?: string;
+}
+
+const AboutCard = ({ className }: Props) => {
   return (
-    <aside className='about_card'>
+    <aside className={`about_card ${className}`}>
 
       <img src={Selfie} className='selfie' alt="Photo de Mathieu"></img>
 
