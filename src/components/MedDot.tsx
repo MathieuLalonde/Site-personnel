@@ -1,9 +1,13 @@
 import Dot from '../assets/dot.svg'
-import './MedDot.css'
 
-const MedDot = () => {
+interface Props {
+  className?: string;
+  size?: string;
+}
+
+const MedDot = ({ className, size='2%' }: Props) => {
   return (
-    <img src={Dot} className="meddot" />
+    <img src={Dot} width={`${size}`} height={`${size}`} className={`meddot ${className}`} style={{ margin: '4rem auto' }} />
   )
 }
 

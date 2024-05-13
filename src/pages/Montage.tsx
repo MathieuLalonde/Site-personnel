@@ -130,6 +130,8 @@ const Montage = () => {
         </div>
       </article>
 
+      <MedDot />
+
       <div className='container'>
 
         {/* Visionnez quelques unes de mes productions dans la salle de projection : (lien) */}

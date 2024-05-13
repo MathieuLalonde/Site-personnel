@@ -7,6 +7,7 @@ import VideoPlayer from '../components/VideoPlayer';
 import NavBar from '../layout/NavBar';
 import AboutCard from '../components/AboutCard';
 import PostList from "../components/PostList";
+import MedDot from "../components/MedDot";
 
 const HomePage = () => {
   const [count, setCount] = useState(0);
@@ -89,6 +90,8 @@ const HomePage = () => {
             chance de travailler</p>
         </div>
       </article>
+
+      <MedDot />
 
       <section className='container'>
         <br />
