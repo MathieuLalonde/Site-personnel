@@ -167,9 +167,12 @@
 @keyframes tv-static {
   0% {
     opacity: 100%;
+    background-color: var(--clr-gray-700);
+  }
+  50%{
+    background-color: hsla(212, 90%, 40%, 0);
   }
   100% {
-    background-position: 50% 0, 60% 50%;
     opacity: 0;
   }
 }

@@ -1,0 +1,43 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="256px"
+ height="256px"
+ viewBox="256 256 512 512"
+ >
+
+  <defs>
+    <pattern id="pattern"
+             width="10" height="10"
+             patternUnits="userSpaceOnUse"
+             >
+      <line stroke="hsl(212, 17%, 92%)" stroke-width="10px" x2="10"/>
+      <line stroke="hsl(212, 100%, 33%)" stroke-width="5px" x2="10"/>
+    </pattern>
+
+    <filter id="noise">
+      <feTurbulence 
+        id="turbulence"
+        >
+        <animate
+          attributeName="baseFrequency"
+          dur="20"
+          values="0.9 0.9;0.8 0.8;0.9 0.9"
+          repeatCount="indefinite"
+          numOctaves="2"
+        >
+        </animate>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
+    </filter>
+  </defs>
+
+  <!-- TV static -->
+  <rect
+    id="static"
+    x="-100" y="-100"
+    width="1024" height="1024"
+    fill= "url(#pattern)"
+    style="filter: url(#noise)"  
+  />
+</svg>

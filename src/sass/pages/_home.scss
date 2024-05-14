@@ -92,7 +92,7 @@
 .arrow--delay {
   @media (prefers-reduced-motion: no-preference) {
     animation-name: delayedDisplay;
-    animation-duration: 12s;
+    animation-duration: 10s;
     animation-iteration-count: 1;
   }
 }
@@ -112,13 +112,12 @@
     // content: "";
     z-index: 100;
     pointer-events: none;
-
-    background: repeating-radial-gradient(var(--clr-blue-700) 0 0.0001%, var(--clr-blue-200) 0 0.0002%) 50% 0/2500px 2500px,
-      repeating-conic-gradient(#000 0 0.0001%, var(--clr-blue-200) 0 0.0002%) 60% 60%/2500px 2500px;
-    background-blend-mode: difference;
-    filter: blur(1.2px);
-
-    animation: tv-static 1s 1 alternate;
+    
+    background-image: url(../assets/tv-static.svg);
+    background-size: 450px;
+    filter: blur(1px);
+  
+    animation: tv-static 1.25s 1 forwards;
     animation-timing-function: ease-out;
   }
 }
