@@ -97,7 +97,8 @@ const Montage = () => {
         <div className='wide-image-with-text-overlay'>
           <div className='center'>
             <img src={Gemeaux} className='gemeaux center fadeIn' style={{ objectPosition: '50% 55%' }} />
-            <p className='fadeIn'>FINALISTE Prix Gémeaux 2005 :<br />
+            <p className='blurFadeIn'>
+              FINALISTE Prix Gémeaux 2005 :<br />
               <em>
                 Coeurs Batailleurs
                 :
