@@ -1,0 +1,14 @@
+//robots.txt
+
+# All crawlers
+User-agent: *
+# (p.s. delay is in ms)
+Crawl-delay: 120
+Disallow: /404
+Disallow: /styleguide
+Disallow: /travaux
+Disallow: /blogs
+Disallow: /assets
+Disallow: *.svg
+Disallow: *.webp
+Allow: /
