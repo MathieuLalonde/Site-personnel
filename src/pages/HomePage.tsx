@@ -12,7 +12,7 @@ import MedDot from "../components/MedDot";
 const HomePage = () => {
   const [count, setCount] = useState(0);
   const [splashVariant, setSplashVariant] = useState(0);
-  const words: String[] = ["Créer. ", "Coder. ", "Communiquer. ", "Collaborer. ", "Captiver. ", "Concevoir. "];
+  const words: String[] = ["Créer. ", "Coder. ", "Collaborer. ", "Communiquer. ", "Captiver. ", "Concevoir. "];
 
   useEffect(() => {
     // Setting the interval
@@ -30,6 +30,8 @@ const HomePage = () => {
       <PageTitle></PageTitle>
 
       <NavBar />
+
+      <div className="tv-static"/>
 
       <div className='splash' >
         <div className='splash__text'>
@@ -86,7 +88,7 @@ const HomePage = () => {
           </p>
 
           {/* <h3>Quelques exemples logiciels...</h3> */}
-          <p>Jetez un coup d’œil à mon portfolio pour voir quelques petits projets sur lesquels j'ai eu la
+          <p>Jetez un coup d’œil à mon <a href="/portfolio">portfolio</a> pour voir quelques petits projets sur lesquels j'ai eu la
             chance de travailler</p>
         </div>
       </article>
