@@ -11,6 +11,7 @@ const VideoPlayer = ({ src }: Props) => {
         src={src + "&vq=hd1080p&rel=0"}
         title="Streaming video player"
         allowFullScreen
+        loading="lazy"
       />
     </div>
   )
