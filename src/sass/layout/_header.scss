@@ -5,7 +5,9 @@
 
 .head-logo {
     margin-inline: auto;
-    width: clamp(12rem, 35%, 25rem)
+    width: clamp(12rem, 35%, 25rem);
+    max-height: 22vh;
+    min-height: 6rem;
 }
 
 div.en_tete {
