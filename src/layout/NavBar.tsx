@@ -7,11 +7,11 @@ const NavBar = () => {
 
         {/* TODO: convertir les items en components */}
 
-        {/* <li className="nav-item">
-          <NavLink to="/" className="nav-link">
+        <li className="nav-item">
+          <a href="/introduction" className="nav-link">
             introduction
-          </NavLink>
-        </li> */}
+          </a>
+        </li>
 
         {/* <li className="nav-item">
           <NavLink to="/montage" className="nav-link">

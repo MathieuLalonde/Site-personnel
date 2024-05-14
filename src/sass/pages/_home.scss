@@ -97,9 +97,21 @@
   }
 }
 
-.splash--fade {
+// Create an 0 height anchor point to contain the fade
+.splash-fade--container {
+  height: 0;
+}
+// Create a fade that takes up 0 space on the page. 
+// The padding makes it slide under whatever follows by that much.
+.splash-fade {
   background: linear-gradient(to bottom, black 0%, transparent 100%);
-  padding-top: 20vh;
+  padding-top: 40vh;
+  position: relative;
+  z-index: -1;
+}
+// The next div creates actual padding to position whatever follows
+.splash-fade__padding {
+  height: 20vh;
 }
 
 // TV static

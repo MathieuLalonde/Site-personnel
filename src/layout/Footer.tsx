@@ -5,7 +5,7 @@ import Logo from '../assets/logo.svg'
 const Footer = () => {
   return (
     <footer>
-      <a href="/">
+      <a href="/introduction">
         <img src={Logo} alt="Le petit logo de Mathieu Lalonde" />
       </a>
       © Mathieu Lalonde
