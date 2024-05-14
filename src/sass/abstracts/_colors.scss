@@ -32,10 +32,12 @@ $colors: (
 // @example: --clr-red-100: hsl(0, 96%, 80%);
 // @author: Kevin Powell
 // https://www.youtube.com/watch?v=gP8yFWCTr7Q&t=190s
+//
+// Note: changed `$color` to `"" + $color` to remove sass interpolation warnings
 :root {
   @each $color, $shades in $colors {
     @each $shade, $value in $shades {
-      --clr-#{$color}-#{$shade}: #{$value};
+      --clr-#{"" + $color}-#{$shade}: #{$value};
     }
   }
 }
