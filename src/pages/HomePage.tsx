@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import PageTitle from '../components/PageTitle';
-import Footer from '../layout/Footer';
 
 import VideoPlayer from '../components/VideoPlayer';
-import NavBar from '../layout/NavBar';
 import AboutCard from '../components/AboutCard';
 import PostList from "../components/PostList";
 import MedDot from "../components/MedDot";
@@ -29,49 +27,21 @@ const HomePage = () => {
     <>
       <PageTitle></PageTitle>
 
-      <NavBar />
-
-      <div className="tv-static"/>
-
-      <div className='splash' >
-        <div className='splash__text'>
-          {words[count]}
-        </div>
-
-        <div className={`splash__shadow splash__glitch${splashVariant}`}>
-          {words[count]}
-        </div>
-
-        {/* <div className='hide-text'>
-          {words}
-        </div> */}
-
-        <div className="arrow--delay">
-          <div className='arrow' aria-hidden="true">
-            &darr;
-          </div>
-        </div>
-
-      </div>
-
       <article>
-        <div className='splash--fade'>
-          <div className='container'>
+        <div className='container'>
+          <h1 id='intro'>Introduction.</h1>
+          <div className='subheading'>Permettez-moi de me présenter.</div>
 
-            <h1 id='intro'>Introduction.</h1>
-            <div className='subheading'>Permettez-moi de me présenter.</div>
+          <p>
+            Bonjour, c'est moi Mathieu. Je suis un passionné de technologie; développeur logiciel, vidéaste,
+            et parfois photographe et graphiste sur les bords...
 
-            <p>
-              Bonjour, c'est moi Mathieu. Je suis un passionné de technologie; développeur logiciel, vidéaste,
-              et parfois photographe et graphiste sur les bords...
-
-              Je viens tout juste de compléter un baccalauréat en informatique et génie logiciel et j'ai
-              hâte d'en apprendre encore plus !
-            </p>
-            <p>
-              Si tu veux en savoir plus, je crois que cette vidéo résume pas mal bien qui je suis. :
-            </p>
-          </div>
+            Je viens tout juste de compléter un baccalauréat en informatique et génie logiciel et j'ai
+            hâte d'en apprendre encore plus !
+          </p>
+          <p>
+            Si tu veux en savoir plus, je crois que cette vidéo résume pas mal bien qui je suis. :
+          </p>
         </div>
 
         <div className='container'>
@@ -107,7 +77,6 @@ const HomePage = () => {
       <div className='container'>
         <AboutCard />
       </div>
-      <Footer />
     </>
   );
 };
