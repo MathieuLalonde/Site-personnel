@@ -2,7 +2,6 @@ import AboutCard from '../components/AboutCard';
 import PageTitle from '../components/PageTitle';
 import TVLogos from '../components/TVLogos';
 import VideoStore from '../components/VideoStore';
-import VideoPlayer from '../components/VideoPlayer';
 
 import Gemeaux from '../assets/logos/Gemeaux.svg'
 import Laurels from '../assets/logos/Laurel_Wreath.svg'
@@ -120,12 +119,12 @@ const Montage = () => {
 
           <TVLogos />
 
-          <p>
+          {/* <p>
             En voici quelques points saillants :
           </p>
 
 
-          <VideoPlayer src="https://player.vimeo.com/video/244261388?h=d4a2cd0241" />
+          <VideoPlayer src="https://player.vimeo.com/video/244261388?h=d4a2cd0241" /> */}
 
 
         </div>
