@@ -31,7 +31,7 @@ import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 SyntaxHighlighter.registerLanguage("css", css);
 // SyntaxHighlighter.registerLanguage("git", git);
 // SyntaxHighlighter.registerLanguage("haskell", haskell);
-SyntaxHighlighter.registerLanguage("http", http);
+// SyntaxHighlighter.registerLanguage("http", http);
 // SyntaxHighlighter.registerLanguage("java", java);
 SyntaxHighlighter.registerLanguage("javascript", javascript);
 // SyntaxHighlighter.registerLanguage("json", json);
