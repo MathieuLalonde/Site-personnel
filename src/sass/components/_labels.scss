@@ -55,4 +55,10 @@
 .label_tech {
   background-color: var(--clr-gray-800);
 }
+
+// Label utilisé pour sélectionner les posts de la page portfolio
+// Le label lui-même ne sera pas affiché 
+.label_top3 {
+  display: none;
+}
 /* purgecss end ignore */
