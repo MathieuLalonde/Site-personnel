@@ -25,7 +25,7 @@ const PostList = ({ label = "", quantity }: Props) => {
 
   return (
     <div className="postlist">
-  
+
       {/* {label ? (
         <p>Voici les résultats correspondant à la recherche  </p>
       ) : (<></>)} */}
@@ -34,7 +34,9 @@ const PostList = ({ label = "", quantity }: Props) => {
           return (
             <div key={post.id} className="postlist__card">
 
-              <img src={`/${post.photo ? post.photo : 'statique.webp'}`} className='blogphoto' />
+              <a href={`/blog/${post.id}`}>
+                <img src={`/${post.photo ? post.photo : 'statique.webp'}`} className='blogphoto' />
+              </a>
 
               <h3>
                 <a href={`/blog/${post.id}`}>{post.title}</a>
