@@ -8,7 +8,6 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import git from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import haskell from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
-import http from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import java from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import javascript from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import json from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
