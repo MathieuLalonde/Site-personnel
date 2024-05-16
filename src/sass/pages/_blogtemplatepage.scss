@@ -63,14 +63,43 @@
   }
 }
 
-/* Exemples de code */
-.codesnippet {
-  margin-top: 1rem;
+/* Exemples de code (aka codesnippets)*/
+$languages:
+  css,
+  http,
+  javascript,
+  JSX,
+  markdown,
+  python,
+  scss,
+  svg,
+  tsx,
+  typescript;
+
+@each $language in $languages {
+  .lang-#{$language}::before {
+    content: "#{$language}";
+  }
+}
+
+[class^="lang-"] {
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-size: var(--fs-200);
+  z-index: 1;
 
   @include mq(small) {
     font-size: var(--fs-400);
+  }
+
+  &::before {
+    background: #111b27;
+    padding: 0.5rem 1.5rem 2rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    z-index: 0;
   }
 }
 
