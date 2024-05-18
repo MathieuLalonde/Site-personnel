@@ -52,7 +52,7 @@ const BlogTemplatePage = () => {
         <div className='blog-header__container'>
           <Glitch>
             <div className='blog-header__top-info'>
-              <h1>{fetchedPost.title}</h1>
+              <h1 className={fetchedPost.title.includes("ç")?`titre_avec_cedille`:``}>{fetchedPost.title}</h1>
               <div className='subheading'>Le blogue de Mathieu Lalonde.</div>
             </div>
           </Glitch>

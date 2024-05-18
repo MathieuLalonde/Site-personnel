@@ -66,6 +66,10 @@ h1 {
   @include mq(small) {
     letter-spacing: 0.1rem;
   }
+
+  &.titre_avec_cedille {
+    line-height: 1em;
+  }
 }
 
 h2 {
@@ -110,7 +114,6 @@ figcaption {
   margin-top: -0.5rem;
   padding-inline: 0.75rem;
   margin-bottom: 2.5rem;
-  
 }
 
 .subheading {
