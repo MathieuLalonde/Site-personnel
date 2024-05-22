@@ -2,6 +2,7 @@ import MarkdownToJsx from "markdown-to-jsx";
 
 import RichArticlePreBloc from "./RichArticlePreBlock"
 import VideoPlayer from "./VideoPlayer";
+import Glitch from "../components/glitch"
 
 interface Props {
   children: string;
@@ -23,6 +24,7 @@ const Markdown = ({children}: Props) => {
           overrides: {
             pre: RichArticlePreBloc,
             VideoPlayer: VideoPlayer,
+            Glitch: Glitch,
             // code: Code,
             // Code: Code,
           },

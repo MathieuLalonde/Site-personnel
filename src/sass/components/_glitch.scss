@@ -10,12 +10,12 @@
   grid-column: 1 / 1;
   grid-row: 1 / 1;
   mask-size: auto;
+  // mask-position: 0 59.9%;  // To adjust the v-position of the mask
 }
 
 .glitch__mask1 {
   -webkit-mask-image: url(../assets/glitch1.svg);
   mask-image: url(../assets/glitch1.svg);
-  // margin-left: 4px;
 
   animation-name: glitch1;
 }
