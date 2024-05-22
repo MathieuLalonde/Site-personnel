@@ -13,6 +13,13 @@ const Markdown = ({children}: Props) => {
       <MarkdownToJsx
         children={children}
         options={{
+          namedCodesToUnicode: {
+            laquo: '\u00AB',  //  «
+            raquo: '\u00BB',  //  »
+            nbsp: '\u00A0',   //  non-breaking-space
+            ndash: '\u2013',
+            mdash: '\u2014',
+          },
           overrides: {
             pre: RichArticlePreBloc,
             VideoPlayer: VideoPlayer,
