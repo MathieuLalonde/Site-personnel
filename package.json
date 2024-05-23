@@ -29,7 +29,6 @@
     "react-router-dom": "^6.23.1",
     "react-slugify": "^3.0.3",
     "react-syntax-highlighter": "^15.5.0",
-    "rehype-highlight": "^7.0.0",
     "sass": "^1.77.2",
     "slugify": "^1.6.6"
   },
@@ -43,7 +42,7 @@
     "@vitejs/plugin-react": "^4.3.0",
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.1",
-    "eslint": "^9.3.0",
+    "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "postcss": "^8.4.38",
