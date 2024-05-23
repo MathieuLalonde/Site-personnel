@@ -5,7 +5,9 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 // Syntax Highlight Languates import:
 // ----------------------------------
 // import c from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
+// import csharp from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
+// import fsharp from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import git from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import haskell from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import java from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
@@ -17,6 +19,7 @@ import markdown from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import prolog from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import python from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import regex from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
+// import rust from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import scss from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import shellSession from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import sql from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
@@ -24,10 +27,16 @@ import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 // import yaml from "react-syntax-highlighter/dist/cjs/languages/prism/tsx";
 
+// Other imports:
+// ----------------------------------
+import Delayed from "./Delayed";
+
 // Syntax Highlight Languates register:
 // ------------------------------------
 // SyntaxHighlighter.registerLanguage("c", c);
+// SyntaxHighlighter.registerLanguage("csharp", csharp);
 SyntaxHighlighter.registerLanguage("css", css);
+// SyntaxHighlighter.registerLanguage("fsharp", fsharp);
 // SyntaxHighlighter.registerLanguage("git", git);
 // SyntaxHighlighter.registerLanguage("haskell", haskell);
 // SyntaxHighlighter.registerLanguage("http", http);
@@ -40,6 +49,7 @@ SyntaxHighlighter.registerLanguage("markdown", markdown);
 // SyntaxHighlighter.registerLanguage("prolog", prolog);
 SyntaxHighlighter.registerLanguage("python", python);
 // SyntaxHighlighter.registerLanguage("regex", regex);
+// SyntaxHighlighter.registerLanguage("rust", rust);
 SyntaxHighlighter.registerLanguage("scss", scss);
 // SyntaxHighlighter.registerLanguage("shellsession", shellSession);
 // SyntaxHighlighter.registerLanguage("sql", sql);
@@ -58,18 +68,17 @@ const RichArticleCodeBlock = ({ children, className = 'code' }: Props) => {
   return (
     <div className={className.toLowerCase()}>
 
-      {/* Adding some text to avoid getting back [object Object] 
-      from SyntaxHighlighter: */}
-      &nbsp; 
+      <Delayed waitBeforeShow={500}>
+        <SyntaxHighlighter
+          // showLineNumbers
+          wrapLongLines
+          language={language.toLowerCase()}
+          style={coldarkDark}
+        >
+          {children}
+        </SyntaxHighlighter>
+      </Delayed>
 
-      <SyntaxHighlighter
-        // showLineNumbers
-        wrapLongLines
-        language={language.toLowerCase()}
-        style={coldarkDark}
-      >
-        {children}
-      </SyntaxHighlighter>
     </div>
   );
 };
