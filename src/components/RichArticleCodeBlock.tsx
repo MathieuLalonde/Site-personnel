@@ -57,6 +57,11 @@ const RichArticleCodeBlock = ({ children, className = 'code' }: Props) => {
 
   return (
     <div className={className.toLowerCase()}>
+
+      {/* Adding some text to avoid getting back [object Object] 
+      from SyntaxHighlighter: */}
+      &nbsp; 
+
       <SyntaxHighlighter
         // showLineNumbers
         wrapLongLines
