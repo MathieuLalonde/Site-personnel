@@ -18,7 +18,7 @@
     "title": "Créer un glitch en CSS et SVG (et un peu de React)",
     "author": "Mathieu Lalonde",
     "photo": "blogs/glitch_1/glitchy_logo_xcu.webp",
-    "abstract": "(résumé de l'article)",
+    "abstract": "Aujourd'hui, « j'ajoute des bogues » dans mon site avec cet effet de glitch !",
     "postDate": "2024-05-03",
     "categories": [
       "css",
