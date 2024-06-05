@@ -30,7 +30,7 @@ const AboutCard = ({ className }: Props) => {
       <img src={Selfie} className='selfie' alt="Photo de Mathieu"></img>
 
       <div>
-        
+
         <h3>
           Mathieu Lalonde
         </h3>
@@ -48,7 +48,7 @@ const AboutCard = ({ className }: Props) => {
             .<span className="obfuscate"> @all </span>
             com<span className="obfuscate"> the fish. </span>
           </div>
-  
+
           <div className="about_coor_icon">
             <FaPhone size="13" title="Téléphone" />
           </div>
@@ -56,8 +56,8 @@ const AboutCard = ({ className }: Props) => {
             514 842<span className="obfuscate">6 * 9 </span>
             -7<span className="obfuscate"> = 42</span>178
           </div>
-  
-  
+
+
           <div className="about_coor_icon">
             <FaLocationDot size="15" title="Adresse" />
           </div>
@@ -65,20 +65,29 @@ const AboutCard = ({ className }: Props) => {
             Montréal, QC
           </div>
         </div>
-  
-        <div className="about_coordonnes"> 
+
+        <div className="about_coordonnes">
           <div className="about_coor_icon">
             <GrDocumentPdf size="16" title="Document PDF" />
-          </div> 
+          </div>
           <div>
-            <a href="/CV_Mathieu_Lalonde.pdf" target="_blank">
-              Mon résumé
+            <a href="/CV_Mathieu_Lalonde_FR.pdf" target="_blank">
+              Curriculum vitae (CV) - Français
+            </a>
+          </div>
+
+          <div className="about_coor_icon">
+            <GrDocumentPdf size="16" title="Document PDF" />
+          </div>
+          <div>
+            <a href="/CV_Mathieu_Lalonde_EN.pdf" target="_blank">
+              Curriculum vitae (CV) - English
             </a>
           </div>
         </div>
       </div>
 
-      
+
 
       <IconContext.Provider value={{ size: "25" }}>
         <div className="about_link_icon_flex">
