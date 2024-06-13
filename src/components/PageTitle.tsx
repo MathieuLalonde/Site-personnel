@@ -16,7 +16,7 @@ const PageTitle = ({ children = "", noSiteName = false, description = "" }: Prop
         {noSiteName ?
           (<title> {children} </title>) :
           (children ?
-            (<title> {siteName} | {children} </title>)
+            (<title> {children} | {siteName} </title>)
             : <title> {siteName} </title>)
         }
 
