@@ -40,15 +40,15 @@ const HomePage = () => {
             hâte d'en apprendre encore plus !
           </p>
           <p>
-            Si tu veux en savoir plus, je crois que cette vidéo résume pas mal bien qui je suis. :
+            Si tu veux en savoir plus, cette vidéo résume plutôt bien qui je suis :
           </p>
         </div>
 
         <div className='container'>
           <VideoPlayer src="https://www.youtube-nocookie.com/embed/DXUfddvlo8Q?si=0W6tFwgVAGDSc1o7" />
           <p>
-            Je suis très à l’aise avec la programmation orienté-objet, aussi bien sur Windows que Linux.
-            Je suis très confortable avec l’utilisation de Git, les bases de données SQL, la programmation
+            Je suis très à l’aise avec la programmation orientée-objet, aussi bien sur Windows que Linux.
+            Je maîtrise l’utilisation de Git, les bases de données SQL, la programmation
             Java, Python, JS/React, les API REST et les Microservices.
           </p><p>
             Pendant plus de 20 ans, j’ai travaillé dans les médias à titre de monteur dans les domaines de
