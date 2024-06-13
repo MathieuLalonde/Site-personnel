@@ -5,6 +5,7 @@ import Satellite from '../assets/images/portfolio/satellite.webp'
 import Vaisseau from '../assets/images/portfolio/vaisseau.webp'
 import PageTitle from '../components/PageTitle'
 import AboutCard from '../components/AboutCard'
+import PostList from '../components/PostList'
 
 const Portfolio = () => {
   return (
@@ -17,7 +18,7 @@ const Portfolio = () => {
 
           <p>
             Bien avant de développer une passion pour le cinéma et la télévision,
-            la technologie et l'informatique ont été une partie prenante de ma vie;
+            la technologie et l'informatique ont été une partie prenante de ma vie &mdash;
             au point où je me souviens encore de toutes les spécifications techniques de mes
             premiers ordinateurs (beiges!).
           </p>
@@ -76,9 +77,15 @@ const Portfolio = () => {
           <a href='/portfolio/cerveau'>Plus d'information ...</a>
         </div>
       </section>
-      
-      <div className='container'>
-        <AboutCard className="slideUp" />
+
+      <br />
+      <div className='container slideUp'>
+        <h2>Dernièrement, sur le blogue :</h2>
+        <div className="postlist--bestof">
+          <PostList label='top3' quantity={3} />
+        </div>
+
+        <AboutCard />
       </div>
     </>
   );
