@@ -6,7 +6,6 @@ import VideoStore from '../components/VideoStore';
 import Gemeaux from '../assets/logos/Gemeaux.svg'
 import Laurels from '../assets/logos/Laurel_Wreath.svg'
 
-// import Mirror from '../assets/images/mirroir.jpg'
 import Interrogatoire from '../assets/images/montage/interrogatoire.webp'
 import Jimmy from '../assets/images/montage/jimmy.webp'
 import Fermier3 from '../assets/images/montage/fermier3.webp'
@@ -14,6 +13,7 @@ import BlogHeader from '../components/BlogHeader';
 import Glitch from '../components/glitch';
 import PostList from '../components/PostList';
 import MedDot from '../components/MedDot';
+import VideoPlayer from '../components/VideoPlayer';
 
 
 
@@ -34,10 +34,10 @@ const Montage = () => {
 
         <section className='container'>
           <p>
-            J'ai commencé à m'intéresser à la vidéo vers l'âge de 12 ans; à peu
-            près au même moment que j'ai découvert l'informatique.
+            J'ai commencé à m'intéresser à la vidéo vers l'âge de 12 ans &mdash; à peu
+            près au même moment où j'ai découvert l'informatique.
             J'ai écrit des scénarios, tourné des court-métrages, réalisé des
-            captations de pièces de théâtre, de concerts et de mariages; tout ça
+            captations de pièces de théâtre, de concerts et de mariages &mdash; tout ça
             avant d'avoir 20 ans.
           </p>
 
@@ -89,7 +89,7 @@ const Montage = () => {
         <section className='container'>
           <p>
             J'ai toujours aimé raconter des histoires : l'image, le&nbsp;contraste, le&nbsp;rythme, l'émotion; oui ...
-            mais aussi la&nbsp;structure, la&nbsp;planification, la&nbsp;résolution de&nbsp;problème et la&nbsp;communication avec le public.
+            mais aussi la&nbsp;structure, la&nbsp;planification, la&nbsp;résolution de&nbsp;problèmes et la&nbsp;communication avec le public.
           </p>
         </section>
 
@@ -115,17 +115,21 @@ const Montage = () => {
 
         <div className='container'>
 
-          <p>Au fil du temps, j'ai eu la chance de travaillr sur des émissions retransmises partout à travers le&nbsp;monde.</p>
+          <p>Au fil du temps, j'ai eu la chance de travailler sur des séries télé retransmises partout à travers le&nbsp;monde.</p>
 
           <TVLogos />
 
-          {/* <p>
+          <p>
             En voici quelques points saillants :
           </p>
 
+          <VideoPlayer src="https://player.vimeo.com/video/244261388?h=d4a2cd0241" />
 
-          <VideoPlayer src="https://player.vimeo.com/video/244261388?h=d4a2cd0241" /> */}
-
+          <p>
+            Vous pouvez également visionner quelques unes de mes productions antérieures à partir de <a href='https://www.youtube.com/@mathieulalonde' target='_blank'>
+              mon canal YouTube.
+            </a>
+          </p>
 
         </div>
       </article>
@@ -134,7 +138,7 @@ const Montage = () => {
 
       <div className='container'>
 
-        {/* Visionnez quelques unes de mes productions dans la salle de projection : (lien) */}
+
 
 
         {/* <h3>Quelques vidéos</h3> */}
