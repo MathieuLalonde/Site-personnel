@@ -38,7 +38,9 @@ const Montage = () => {
             près au même moment où j'ai découvert l'informatique.
             J'ai écrit des scénarios, tourné des court-métrages, réalisé des
             captations de pièces de théâtre, de concerts et de mariages &mdash; tout ça
-            avant d'avoir 20 ans.
+            avant d'avoir 20 ans. La vidéo amateure a ancré en moi les réflexes d’être
+            efficace et imaginatif, de maximiser mes ressources et toujours faire plus
+            avec moins… Bref, d’utiliser les contraintes existantes à mon avantage.
           </p>
 
         </section>
@@ -70,6 +72,7 @@ const Montage = () => {
             C'est aussi à ce moment là que j'ai commencé à construire des sites webs pour mes employeurs...
             et pour le plaisir.
           </p>
+
         </section>
 
         <div className='wide-image-with-text-overlay'>
@@ -88,7 +91,7 @@ const Montage = () => {
 
         <section className='container'>
           <p>
-            J'ai toujours aimé raconter des histoires : l'image, le&nbsp;contraste, le&nbsp;rythme, l'émotion; oui ...
+            J'ai toujours aimé raconter des histoires : l'image et le son, le&nbsp;contraste, le&nbsp;rythme, l'émotion; oui ...
             mais aussi la&nbsp;structure, la&nbsp;planification, la&nbsp;résolution de&nbsp;problèmes et la&nbsp;communication avec le public.
           </p>
         </section>
@@ -115,7 +118,15 @@ const Montage = () => {
 
         <div className='container'>
 
-          <p>Au fil du temps, j'ai eu la chance de travailler sur des séries télé retransmises partout à travers le&nbsp;monde.</p>
+
+          <p>
+            Voilà déjà plus de 25 ans que j’œuvre dans les médias à titre de monteur et de réalisateur-monteur dans les domaines du documentaire, de la publicité, de la corpo et du magazine&nbsp;télé.
+          </p>
+
+          <p>
+            Au fil du temps, j'ai eu la chance de travailler sur des productions qui ont été retransmises ici et partout à travers le&nbsp;monde.
+
+          </p>
 
           <TVLogos />
 
