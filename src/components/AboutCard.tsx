@@ -53,8 +53,8 @@ const AboutCard = ({ className }: Props) => {
             <FaPhone size="13" title="Téléphone" />
           </div>
           <div>
-            514 842<span className="obfuscate">6 * 9 </span>
-            -7<span className="obfuscate"> = 42</span>178
+            514&#8209;842<span className="obfuscate">6 * 9 </span>
+            &#8209;7<span className="obfuscate"> = 42</span>178
           </div>
 
 
