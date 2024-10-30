@@ -33,6 +33,9 @@
 }
 
 .splash__text {
+  // Style text
+  text-shadow: var(--clr-blue-400) 1px 0 120px; // TODO: Check spread for smaller resolutions
+
   // Make sure this text is above the shadow
   z-index: 2;
 
@@ -47,9 +50,6 @@
     animation-timing-function: steps(30, jump-start);
     animation-iteration-count: infinite;
   }
-
-  // Style text
-  text-shadow: var(--clr-blue-400) 1px 0 120px; // TODO: Check spread for smaller resolutions
 }
 
 .splash__shadow {

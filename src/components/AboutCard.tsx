@@ -34,7 +34,7 @@ const AboutCard = ({ className }: Props) => {
         <h3>
           Mathieu Lalonde
         </h3>
-        Développeur logiciel (B. Sc. A.) et&nbsp;monteur&nbsp;télévisuel
+        Monteur&nbsp;télévisuel et&nbsp;Développeur web (B.Sc.A.)
         <hr />
         <div className="about_coordonnes">
           <div className="about_coor_icon">
@@ -71,8 +71,13 @@ const AboutCard = ({ className }: Props) => {
             <GrDocumentPdf size="16" title="Document PDF" />
           </div>
           <div>
-            <a href="/CV_Mathieu_Lalonde_FR.pdf" target="_blank">
-              Curriculum vitae (CV) - Français
+            CV de monteur&nbsp;:&nbsp;
+            <a href="/CV_Mathieu_Lalonde_Monteur.pdf" target="_blank">
+              Français
+            </a>
+            &nbsp;/&nbsp; 
+            <a href="/CV_Mathieu_Lalonde_Editor.pdf" target="_blank">
+              English
             </a>
           </div>
 
@@ -80,11 +85,17 @@ const AboutCard = ({ className }: Props) => {
             <GrDocumentPdf size="16" title="Document PDF" />
           </div>
           <div>
+            CV de développeur&nbsp;:&nbsp;
+            <a href="/CV_Mathieu_Lalonde_FR.pdf" target="_blank">
+              Français
+            </a>
+            &nbsp;/&nbsp;
             <a href="/CV_Mathieu_Lalonde_EN.pdf" target="_blank">
-              Curriculum vitae (CV) - English
+              English
             </a>
           </div>
         </div>
+
       </div>
 
 

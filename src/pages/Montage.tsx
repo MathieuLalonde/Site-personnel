@@ -1,14 +1,7 @@
 import AboutCard from '../components/AboutCard';
 import PageTitle from '../components/PageTitle';
 import TVLogos from '../components/TVLogos';
-import VideoStore from '../components/VideoStore';
 
-import Gemeaux from '../assets/logos/Gemeaux.svg'
-import Laurels from '../assets/logos/Laurel_Wreath.svg'
-
-import Interrogatoire from '../assets/images/montage/interrogatoire.webp'
-import Jimmy from '../assets/images/montage/jimmy.webp'
-import Fermier3 from '../assets/images/montage/fermier3.webp'
 import BlogHeader from '../components/BlogHeader';
 import Glitch from '../components/glitch';
 import PostList from '../components/PostList';
@@ -32,114 +25,127 @@ const Montage = () => {
           </div>
         </BlogHeader>
 
-        <section className='container'>
-          <p>
-            J'ai commencé à m'intéresser à la vidéo vers l'âge de 12 ans &mdash; à peu
-            près au même moment où j'ai découvert l'informatique.
-            J'ai écrit des scénarios, tourné des court-métrages, réalisé des
-            captations de pièces de théâtre, de concerts et de mariages &mdash; tout ça
-            avant d'avoir 20 ans. La vidéo amateure a ancré en moi les réflexes d’être
-            efficace et imaginatif, de maximiser mes ressources et toujours faire plus
-            avec moins… Bref, d’utiliser les contraintes existantes à mon avantage.
-          </p>
-
-        </section>
-        {/* 
-          <div className="citation">
-            <span className="guillemets">&#8220;</span>
-            C'est très bon, c'est très drôle...
-            <span className="guillemets">&#8221;</span>
-          </div>
-          <p className="source">&#8212; François Jobin, <br />La Bande Magnétique 1994, TFO</p> */}
-
-        <div className='wide-image-with-text-overlay'>
-          <div>
-            <div className="citation blurFadeIn">
-              <span className="guillemets">&#8220;</span>
-              C'est une super vidéo... Bravo!
-              <span className="guillemets">&#8221;</span>
-            </div>
-            <p className="source blurFadeIn">&#8212; Jean-Sébastien Busque, <br />La Bande Magnétique 1994, TFO</p>
-          </div>
-
-          <img src={Fermier3} style={{ objectPosition: '50% 58%' }} />
-        </div>
-
-        <section className='container'>
-          <p>
-            Plus tard, j'ai obtenu un diplôme en production télévisuelle et je suis
-            devenu monteur de séries documentaires, magasines et de publicités.
-            C'est aussi à ce moment là que j'ai commencé à construire des sites webs pour mes employeurs...
-            et pour le plaisir.
-          </p>
-
-        </section>
-
-        <div className='wide-image-with-text-overlay'>
-          <img src={Interrogatoire} style={{ objectPosition: '50% 74%' }} />
-
-          <br />
-          <div className='center'>
-            <img src={Laurels} className='gemeaux center fadeIn' style={{ height: '3rem' }} />
-            <p className='blurFadeIn'>GAGNANT Prix REEL 1996 :
-              <br />
-              <em>L'interrogatoire</em>, Meilleure production étudiante
-              <p className='tiny'>Association du film et de la télévision d'Ottawa-Hull (OHFTA)</p>
-            </p>
-          </div>
-        </div>
-
-        <section className='container'>
-          <p>
-            J'ai toujours aimé raconter des histoires : l'image et le son, le&nbsp;contraste, le&nbsp;rythme, l'émotion; oui ...
-            mais aussi la&nbsp;structure, la&nbsp;planification, la&nbsp;résolution de&nbsp;problèmes et la&nbsp;communication avec le public.
-          </p>
-        </section>
-
-        <div className='wide-image-with-text-overlay'>
-          <div className='center'>
-            <img src={Gemeaux} className='gemeaux center fadeIn' style={{ objectPosition: '50% 55%' }} />
-            <p className='blurFadeIn'>
-              FINALISTE Prix Gémeaux 2005 :<br />
-              <em>
-                Coeurs Batailleurs
-                :
-                Il était une fois Jimmy Meaux
-              </em>,
-              <br />
-              <span className='small' > Meilleur montage : documentaire, affaires&nbsp;publiques,&nbsp;reportage,&nbsp;biographie &#8212; série</span>
-              <br />
-              <span className='tiny'>Académie canadienne du cinéma et de la télévision (ACCT)</span>
-            </p>
-          </div>
-
-          <img src={Jimmy} />
-        </div>
-
         <div className='container'>
-
-
           <p>
-            Voilà déjà plus de 25 ans que j’œuvre dans les médias à titre de monteur et de réalisateur-monteur dans les domaines du documentaire, de la publicité, de la corpo et du magazine&nbsp;télé.
+            Voilà déjà plus de 20 ans déjà que j’œuvre dans les médias à titre de monteur et de réalisateur-monteur dans les domaines du documentaire, de la publicité, de la corpo et du magazine&nbsp;télé.
           </p>
 
           <p>
-            Au fil du temps, j'ai eu la chance de travailler sur des productions qui ont été retransmises ici et partout à travers le&nbsp;monde.
-
-          </p>
-
-          <TVLogos />
-
-          <p>
-            En voici quelques points saillants :
+            Autant que possible, j'aime suivre un projet du début à la fin; monter le contenu, la structure, le rythme, ajouter de la musique et des sons, faire les effets, la finition, l'étalonnage des couleurs...
           </p>
 
           <VideoPlayer src="https://player.vimeo.com/video/244261388?h=d4a2cd0241" />
 
           <p>
-            Vous pouvez également visionner quelques unes de mes productions antérieures à partir de <a href='https://www.youtube.com/@mathieulalonde' target='_blank'>
-              mon canal YouTube.
-            </a>
+            Au fil du temps, j'ai eu la chance de travailler sur des productions qui ont été retransmises ici et partout à travers le&nbsp;monde.
+          </p>
+
+          <TVLogos />
+        </div>
+
+
+        <section className='portfolio-montage'>
+          <div>
+            <h3>
+              Campagne de socio-financement
+            </h3>
+            <h2>
+              Masson Village
+            </h2>
+            <p>
+              Réalisation, caméra, montage, couleur, mix sonore (...et une grande partie des photos)
+            </p>
+            <p>
+              Le défi ici était de concevoir une vidéo promotionelle autour de photographies d'évènements sans trop en perdre l'énergie et le mouvement. 
+            </p>
+          </div>
+            <VideoPlayer src="https://player.vimeo.com/video/1004492200?h=d4a2cd0241" />
+        </section>
+
+        <section className='portfolio-montage'>
+            <VideoPlayer src="https://www.youtube.com/embed/hG2L0N7FVPk?si=D60Hwy7lB-kVoeA6" />
+          <div>
+            <h3>Série docu-réalité</h3>
+            <h2>
+              Mordus de course
+            </h2>
+            <p>
+              Montage
+            </p>
+            <p>
+              Cette série était tournée à 6 caméras dont un drone et 3 GoPros pour capturer tous les aspects d'une course, mais à la fin, l'histoire passe toujours par l'émotion. 
+            </p>
+
+          </div>
+        </section>
+
+        <section className='portfolio-montage'>
+          <div>
+            <h3>Magazine jeunesse</h3>
+            <h2>
+              Brigade Animo
+            </h2>
+            <p>
+              Montage, couleur, finition
+            </p>
+            <p>
+              <em>
+                Prix d'excellence Alliance Médias Jeunesse 2014&nbsp;: Meilleure émission de télévision&nbsp;- Acquisition de connaissances et développement du sens critique.
+              </em>
+            </p>
+            <p>
+              Visionnez les premières saisons gratuitement sur <a href='https://www.tfo.org/serie/brigade-animo/002032433'>TFO</a>
+            </p>
+          </div>
+            <VideoPlayer src="https://www.youtube.com/embed/8qpk6wW0LuQ?si=jkk9-AvAxsX-sYpa" />
+        </section>
+
+        <section className='portfolio-montage'>
+            <VideoPlayer src="https://www.youtube.com/embed/NRX_yeGoMw0?si=B2U7cm6sNQvWAT8q" />
+          <div>
+            <h3>
+              Série docu-portrait
+            </h3>
+            <h2>
+              De père en fils
+            </h2>
+            <p>
+              Montage
+            </p>
+            <p>
+              Portraits de pères et de fils unis par la passion de leur métier commun. Chaque épisode trace les contours, l'histoire et l'évolution du métier qui les fait vivre et auquel ils ont tous deux donné un visage humain.
+            </p>
+            <p>
+              Visionnez la série complète gratuitement sur <a href='https://www.tv5unis.ca/de-pere-en-fils/saisons/1'>TV5 Unis</a>
+            </p>
+          </div>
+        </section>
+
+        <section className='portfolio-montage'>
+          <div>
+            <h3>
+              Publicité (version longue)
+            </h3>
+            <h2>
+              Les&nbsp;Éleveurs de porcs du&nbsp;Québec
+            </h2>
+            <p>
+              Montage
+            </p>
+            <p>
+              Une histoire mémorable de relève familiale : Kim Loranger raconte comment elle a repris la ferme familiale.
+            </p>
+          </div>
+            <VideoPlayer src="https://www.youtube.com/embed/_WGSCVTkvzg?si=cDWxh34mfzIQ236A" />
+        </section>
+
+        
+
+        <div className='container'>
+          <p>
+            Vous pouvez aussi visionner quelques unes de mes productions antérieures sur <em><a href='https://www.youtube.com/@mathieulalonde' target='_blank'>
+            ma chaîne YouTube.
+            </a></em>
           </p>
 
         </div>
@@ -154,10 +160,9 @@ const Montage = () => {
 
         {/* <h3>Quelques vidéos</h3> */}
 
-        <VideoStore />
+        {/* <VideoStore /> */}
 
 
-        <br />
         <h2>Dernièrement, sur le blogue :</h2>
 
         <div className="postlist--bestof">

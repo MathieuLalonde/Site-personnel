@@ -9,7 +9,7 @@ const NavBar = () => {
 
         <li className="nav-item">
           <a href="/introduction" className="nav-link">
-            introduction
+            intro
           </a>
         </li>
 
@@ -20,16 +20,22 @@ const NavBar = () => {
         </li> */}
 
         <li className="nav-item">
-          <a href="/portfolio" className="nav-link">
-            portfolio
-            {/* travaux pratiques */}
-          </a>
-        </li>
-
-        <li className="nav-item">
           <a href="/montage" className="nav-link">
             {/* À propos de moi */}
             montage
+          </a>
+        </li>
+{/* 
+        <li className="nav-item">
+          <a href="/photo" className="nav-link">
+            photo
+          </a>
+        </li> */}
+
+        <li className="nav-item">
+          <a href="/webdev" className="nav-link">
+            web
+            {/* travaux pratiques */}
           </a>
         </li>
 
@@ -57,11 +63,11 @@ const NavBar = () => {
           </a>
         </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a href="/coordonnees" className="nav-link">
             Contact
           </a>
-        </li>
+        </li> */}
 
       </ul>
     </nav>

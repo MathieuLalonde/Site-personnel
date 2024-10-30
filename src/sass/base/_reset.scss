@@ -7,3 +7,12 @@ img {
   max-width: 100%;
   font-style: italic; /* In case alt-text is shown instead */
 }
+
+figure {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  // unicode-bidi: isolate;
+}

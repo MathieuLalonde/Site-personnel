@@ -33,7 +33,7 @@ const BlogTemplatePage = () => {
       fetchedPost.photo = (post.photo ? post.photo : "statique.webp")
       fetchedPost.postDate = (post.postDate ? post.postDate : "No title given");
       fetchedPost.categories = (post.categories ? post.categories : ["No title given"]);
-      fetchedPost.content = (post.content ? post.content : "No title given");
+      fetchedPost.content = (post.content ? post.content : "No content given");
       postFound = true;
       break;
     }

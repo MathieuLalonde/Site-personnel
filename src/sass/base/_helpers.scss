@@ -66,3 +66,12 @@
     display: block;
     margin-inline: auto;
 } 
+
+// https://www.youtube.com/watch?v=6qpEOBkDr88
+.pile {
+  display: grid;
+
+  > * {
+    grid-area: 1 / 1;
+  }
+}

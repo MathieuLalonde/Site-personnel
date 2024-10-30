@@ -18,6 +18,7 @@ import Vaisseau from "../pages/travaux/Vaisseau";
 import StyleGuide from "../pages/StyleGuide";
 import Multiplayer from "../pages/travaux/Multiplayer";
 import Splash from "./Splash";
+import Photo from "../pages/Photo";
 
 
 
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       // { path: 'dev', element: <Developpeur /> },
       { path: 'introduction', element: <HomePage /> },
       { path: 'montage', element: <Montage /> },
+      { path: 'photo', element: <Photo /> },
       { path: 'blog', element: <BlogPage /> },
       { path: 'blog/:id', element: <BlogTemplatePage /> },
       { path: 'coordonnees', element: <ContactPage /> },
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: 'portfolio',
+    path: 'webdev',
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
