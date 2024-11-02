@@ -63,45 +63,7 @@ const Montage = () => {
         </section>
 
         <section className='portfolio-montage'>
-            <VideoPlayer src="https://www.youtube.com/embed/hG2L0N7FVPk?si=D60Hwy7lB-kVoeA6" />
-          <div>
-            <h3>Série docu-réalité</h3>
-            <h2>
-              Mordus de course
-            </h2>
-            <p>
-              Montage
-            </p>
-            <p>
-              Cette série était tournée à 6 caméras dont un drone et 3 GoPros pour capturer tous les aspects d'une course, mais à la fin, l'histoire passe toujours par l'émotion. 
-            </p>
-
-          </div>
-        </section>
-
-        <section className='portfolio-montage'>
-          <div>
-            <h3>Magazine jeunesse</h3>
-            <h2>
-              Brigade Animo
-            </h2>
-            <p>
-              Montage, couleur, finition
-            </p>
-            <p>
-              <em>
-                Prix d'excellence Alliance Médias Jeunesse 2014&nbsp;: Meilleure émission de télévision&nbsp;- Acquisition de connaissances et développement du sens critique.
-              </em>
-            </p>
-            <p>
-              Visionnez les premières saisons gratuitement sur <a href='https://www.tfo.org/serie/brigade-animo/002032433'>TFO</a>
-            </p>
-          </div>
-            <VideoPlayer src="https://www.youtube.com/embed/8qpk6wW0LuQ?si=jkk9-AvAxsX-sYpa" />
-        </section>
-
-        <section className='portfolio-montage'>
-            <VideoPlayer src="https://www.youtube.com/embed/NRX_yeGoMw0?si=B2U7cm6sNQvWAT8q" />
+          <VideoPlayer src="https://www.youtube.com/embed/NRX_yeGoMw0?si=B2U7cm6sNQvWAT8q" />
           <div>
             <h3>
               Série docu-portrait
@@ -124,6 +86,63 @@ const Montage = () => {
         <section className='portfolio-montage'>
           <div>
             <h3>
+              Série magazine
+            </h3>
+            <h2>
+              Par-dessus le marché
+            </h2>
+            <p>
+              Montage, couleur, finition
+            </p>
+            <p>
+              Pendant 3 saisons, j'ai monté ce magazine agro-alimentaire animé par Martin Drainville.
+            </p>
+          </div>
+          <VideoPlayer src="https://www.youtube.com/embed/zF-ljMchNKs?si=26ygjQ4XTp7h1tz5" />
+        </section>
+
+        <section className='portfolio-montage'>
+            <VideoPlayer src="https://www.youtube.com/embed/hG2L0N7FVPk?si=D60Hwy7lB-kVoeA6" />
+          <div>
+            <h3>Série docu-réalité</h3>
+            <h2>
+              Mordus de course
+            </h2>
+            <p>
+              Montage
+            </p>
+            <p>
+              Cette série était tournée à 6 caméras dont un drone et 3 GoPros pour capturer tous les aspects d'une course, mais à la fin, l'histoire passe toujours par l'émotion. 
+            </p>
+
+          </div>
+        </section>
+ 
+        <section className='portfolio-montage'>
+          <div>
+            <h3>Série magazine jeunesse</h3>
+            <h2>
+              Brigade Animo
+            </h2>
+            <p>
+              Montage, couleur, finition
+            </p>
+            <p>
+              <em>
+                Prix d'excellence Alliance Médias Jeunesse 2014&nbsp;: Meilleure émission de télévision&nbsp;- Acquisition de connaissances et développement du sens critique.
+              </em>
+            </p>
+            <p>
+              Visionnez les premières saisons gratuitement sur <a href='https://www.tfo.org/serie/brigade-animo/002032433'>TFO</a>
+            </p>
+          </div>
+            <VideoPlayer src="https://www.youtube.com/embed/8qpk6wW0LuQ?si=jkk9-AvAxsX-sYpa" />
+        </section>
+
+        <section className='portfolio-montage'>
+            <VideoPlayer src="https://www.youtube.com/embed/_WGSCVTkvzg?si=cDWxh34mfzIQ236A" />
+          <div>
+            <h3>
               Publicité (version longue)
             </h3>
             <h2>
@@ -136,14 +155,13 @@ const Montage = () => {
               Une histoire mémorable de relève familiale : Kim Loranger raconte comment elle a repris la ferme familiale.
             </p>
           </div>
-            <VideoPlayer src="https://www.youtube.com/embed/_WGSCVTkvzg?si=cDWxh34mfzIQ236A" />
         </section>
 
         
 
         <div className='container'>
           <p>
-            Vous pouvez aussi visionner quelques unes de mes productions antérieures sur <em><a href='https://www.youtube.com/@mathieulalonde' target='_blank'>
+            Si vous voulez en voir plus, d'autres extraits sont également disponibles sur <em><a href='https://www.youtube.com/@mathieulalonde' target='_blank'>
             ma chaîne YouTube.
             </a></em>
           </p>
