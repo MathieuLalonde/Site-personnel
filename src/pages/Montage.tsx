@@ -2,6 +2,8 @@ import AboutCard from '../components/AboutCard';
 import PageTitle from '../components/PageTitle';
 import TVLogos from '../components/TVLogos';
 
+import { RiExternalLinkFill } from "react-icons/ri";
+
 import BlogHeader from '../components/BlogHeader';
 import Glitch from '../components/glitch';
 import PostList from '../components/PostList';
@@ -58,6 +60,12 @@ const Montage = () => {
             <p>
               Le défi ici était de concevoir une vidéo promotionelle autour de photographies d'évènements sans trop en perdre l'énergie et le mouvement. 
             </p>
+
+            <p>
+              Visizonnez d'autres publicités et corpos sur
+              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              </a>
+            </p>
           </div>
             <VideoPlayer src="https://player.vimeo.com/video/1004492200?h=d4a2cd0241" />
         </section>
@@ -77,8 +85,14 @@ const Montage = () => {
             <p>
               Portraits de pères et de fils unis par la passion de leur métier commun. Chaque épisode trace les contours, l'histoire et l'évolution du métier qui les fait vivre et auquel ils ont tous deux donné un visage humain.
             </p>
+          
             <p>
-              Visionnez la série complète gratuitement sur <a href='https://www.tv5unis.ca/de-pere-en-fils/saisons/1'>TV5 Unis</a>
+              Visionnez la série complète gratuitement sur <a href='https://www.tv5unis.ca/de-pere-en-fils/saisons/1'>TV5 Unis</a> <RiExternalLinkFill />
+            </p>
+            <p>
+              Visizonnez d'autres extraits documentaires sur 
+              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              </a>
             </p>
           </div>
         </section>
@@ -96,6 +110,12 @@ const Montage = () => {
             </p>
             <p>
               Pendant 3 saisons, j'ai monté ce magazine agro-alimentaire animé par Martin Drainville.
+            </p>
+
+            <p>
+              Visizonnez d'autres extraits magazine sur
+              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              </a>
             </p>
           </div>
           <VideoPlayer src="https://www.youtube.com/embed/zF-ljMchNKs?si=26ygjQ4XTp7h1tz5" />
@@ -115,6 +135,11 @@ const Montage = () => {
               Cette série était tournée à 6 caméras dont un drone et 3 GoPros pour capturer tous les aspects d'une course, mais à la fin, l'histoire passe toujours par l'émotion. 
             </p>
 
+            <p>
+              Visizonnez d'autres extraits documentaires sur
+              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              </a>
+            </p>
           </div>
         </section>
  
@@ -132,8 +157,14 @@ const Montage = () => {
                 Prix d'excellence Alliance Médias Jeunesse 2014&nbsp;: Meilleure émission de télévision&nbsp;- Acquisition de connaissances et développement du sens critique.
               </em>
             </p>
+
             <p>
               Visionnez les premières saisons gratuitement sur <a href='https://www.tfo.org/serie/brigade-animo/002032433'>TFO</a>
+            </p>
+            <p>
+              Visizonnez d'autres extraits magazine sur
+              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              </a>
             </p>
           </div>
             <VideoPlayer src="https://www.youtube.com/embed/8qpk6wW0LuQ?si=jkk9-AvAxsX-sYpa" />
@@ -154,19 +185,15 @@ const Montage = () => {
             <p>
               Une histoire mémorable de relève familiale : Kim Loranger raconte comment elle a repris la ferme familiale.
             </p>
+
+            <p>
+              Visizonnez d'autres publicités et corpos sur
+              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              </a>
+            </p>
           </div>
         </section>
 
-        
-
-        <div className='container'>
-          <p>
-            Si vous voulez en voir plus, d'autres extraits sont également disponibles sur <em><a href='https://www.youtube.com/@mathieulalonde' target='_blank'>
-            ma chaîne YouTube.
-            </a></em>
-          </p>
-
-        </div>
       </article>
 
       <MedDot />
