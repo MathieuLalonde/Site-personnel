@@ -87,7 +87,7 @@ const Montage = () => {
             </p>
           
             <p>
-              Visionnez la série complète gratuitement sur <a href='https://www.tv5unis.ca/de-pere-en-fils/saisons/1'>TV5 Unis</a> <RiExternalLinkFill />
+              Visionnez la série complète gratuitement sur <a href='https://www.tv5unis.ca/de-pere-en-fils/saisons/1'> TV5 Unis <RiExternalLinkFill /></a>
             </p>
             <p>
               Visizonnez d'autres extraits documentaires sur 
@@ -159,7 +159,7 @@ const Montage = () => {
             </p>
 
             <p>
-              Visionnez les premières saisons gratuitement sur <a href='https://www.tfo.org/serie/brigade-animo/002032433'>TFO</a>
+              Visionnez les premières saisons gratuitement sur <a href='https://www.tfo.org/serie/brigade-animo/002032433'>TFO <RiExternalLinkFill /></a>
             </p>
             <p>
               Visizonnez d'autres extraits magazine sur
