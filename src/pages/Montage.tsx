@@ -194,6 +194,15 @@ const Montage = () => {
           </div>
         </section>
 
+        <div className='container'>
+          <p>
+            Et pour le dessert, une deuxième démo qui met de l'avant mes tallants de monteur online, de séries magazines et d'effets visuels... Des clones, des fantômes, de la neige, de feu et des explosions !!
+          </p>
+
+          <VideoPlayer src="https://www.youtube.com/embed/2ApA_UpNXcA?si=IR6PJP49aao2hlJw" />
+
+        </div>
+
       </article>
 
       <MedDot />
