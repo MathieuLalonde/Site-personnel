@@ -3,6 +3,7 @@ import { IconContext } from "react-icons";
 // import { BiCameraMovie } from "react-icons/bi";
 import { FaImdb } from "react-icons/fa"
 import {
+  FaFlickr,
   FaGithub,
   FaLinkedin,
   FaLocationDot,
@@ -116,6 +117,9 @@ const AboutCard = ({ className }: Props) => {
           </a>
           <a href="https://vimeo.com/levraimathieulalonde" target="_blank">
             <FaVimeo className="about_link_icon" title="Vimeo" />
+          </a>
+          <a href="https://flickr.com/photos/mathieulalonde/" target="_blank">
+            <FaFlickr className="about_link_icon" title="Flickr" />
           </a>
           {/*  <Gi3DGlasses />  */}
         </div>

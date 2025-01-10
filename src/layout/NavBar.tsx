@@ -25,17 +25,17 @@ const NavBar = () => {
             montage
           </a>
         </li>
-{/* 
-        <li className="nav-item">
-          <a href="/photo" className="nav-link">
-            photo
-          </a>
-        </li> */}
 
         <li className="nav-item">
           <a href="/webdev" className="nav-link">
             web
             {/* travaux pratiques */}
+          </a>
+        </li>
+
+        <li className="nav-item">
+          <a href="https://flickr.com/photos/mathieulalonde/" className="nav-link" target="_blank">
+            photo
           </a>
         </li>
 
