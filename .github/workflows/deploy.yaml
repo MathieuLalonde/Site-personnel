@@ -34,5 +34,5 @@ jobs:
         run: |
           rsync -havz --delete --keep-dirlinks \
             -e "ssh -p 18765" \
-            ./build/ \
+            ./dist/ \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH_STAGING }}
