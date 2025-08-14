@@ -1,5 +1,6 @@
-import Src from '../assets/logos/SRC-TV.svg'
+
 import Ami from '../assets/logos/AMI TV.svg'
+import AppleTV from '../assets/logos/Apple_TV.svg'
 // import Bbc from '../assets/logos/BBC_Logo_2021.svg'
 import Bravo from '../assets/logos/Bravo_logo.svg'
 // import Bravo2012 from '../assets/logos/Bravo_Canada_2012.svg'
@@ -20,6 +21,9 @@ import MusiMax from '../assets/logos/MusiMax_logo.svg'
 // import NHK from '../assets/logos/NHK_logo_2020.svg'
 import Nick from '../assets/logos/Nickelodeon_2009_logo.svg'
 // import Nick2023 from '../assets/logos/Nickelodeon_2023_logo_(outline).svg'
+import ONF from '../assets/logos/ONF.svg'
+import Paramount from '../assets/logos/Paramount_Plus.svg'
+import Src from '../assets/logos/SRC-TV.svg'
 import TFO from '../assets/logos/TFO_2020_Logo.svg'
 // import TFO97 from '../assets/logos/TFO_1997.svg'
 import TV5 from '../assets/logos/TV5_(logo).svg'
@@ -30,32 +34,34 @@ import TVOntario from '../assets/logos/TVOntario_2022.svg'
 import YTV from '../assets/logos/YTV_logo_2009.svg'
 
 
-
 const TVLogos = () => {
   return (
     <div className='tvlogos'>
-      <img src={Ami} />
-      <img src={Bravo}  />
-      <img src={CBC} style={{ padding: '0.15rem' }} />
-      <img src={CanalD} />
-      <img src={CanalVie} />
-      <img src={HGTV} />
-      <img src={Historia} />
-      <img src={History} />
-      <img src={LPB} />
-      <img src={RDI} />
-      <img src={Life} />
-      <img src={Lifetime} />
-      <img src={MusiMax} />
-      <img src={Nick} style={{ padding: '0.4rem' }} />
-      <img src={Src} />
-      <img src={TeleQuebec} />
-      <img src={TFO} />
-      <img src={TV5} style={{ padding: '0.15rem' }} />
-      <img src={Tv5Monde} />
-      <img src={TVA} style={{ padding: '0.1rem' }} />
-      <img src={TVOntario} />
-      <img src={YTV} />
+      <img src={Ami} alt="AMI TV" />
+      <img src={AppleTV} alt="Apple TV" />
+      <img src={Bravo} alt="Bravo" />
+      <img src={CBC} alt="CBC" style={{ padding: '0.15rem' }} />
+      <img src={CanalD} alt="Canal D" />
+      <img src={CanalVie} alt="Canal Vie" />
+      <img src={HGTV} alt="HGTV" />
+      <img src={Historia} alt="Historia" />
+      <img src={History} alt="History Television" />
+      <img src={LPB} alt="LPB/PBS" />
+      <img src={RDI} alt="ici RDI" />
+      <img src={Life} alt="Life" />
+      <img src={Lifetime} alt="Lifetime" />
+      <img src={MusiMax} alt="Musimax" />
+      <img src={Nick} alt="Nickelodeon" style={{ padding: '0.4rem' }} />
+      <img src={ONF} alt="ONF/NFB" />
+      <img src={Paramount} alt="Paramount+" />
+      <img src={Src} alt="SRC" />
+      <img src={TeleQuebec} alt="Télé-Québec" />
+      <img src={TFO} alt="TFO" />
+      <img src={TV5} alt="TV5" style={{ padding: '0.15rem' }} />
+      <img src={Tv5Monde} alt="TV5 Monde" />
+      <img src={TVA} alt="TVA" style={{ padding: '0.1rem' }} />
+      <img src={TVOntario} alt="TVOntario" />
+      <img src={YTV} alt="YTV" />
     </div>
   )
 }

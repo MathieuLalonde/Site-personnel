@@ -16,7 +16,7 @@ import {
 import { IoMdMail } from "react-icons/io";
 // import { IoCutSharp } from "react-icons/io5";
 // import { MdAlternateEmail } from "react-icons/md";
-import { GrDocumentPdf } from "react-icons/gr";
+// import { GrDocumentPdf } from "react-icons/gr";
 
 import Selfie from '../assets/images/selfie_sm.webp';
 
@@ -35,7 +35,7 @@ const AboutCard = ({ className }: Props) => {
         <h3>
           Mathieu Lalonde
         </h3>
-        Monteur&nbsp;télévisuel et&nbsp;Développeur web (B.Sc.A.)
+        Développeur&nbsp;logiciel (B.Sc.A.) <br /> Monteur&nbsp;documentaire <br /> Passioné&nbsp;de&nbsp;technologie
         <hr />
         <div className="about_coordonnes">
           <div className="about_coor_icon">
@@ -67,7 +67,7 @@ const AboutCard = ({ className }: Props) => {
           </div>
         </div>
 
-        <div className="about_coordonnes">
+        {/* <div className="about_coordonnes">
           <div className="about_coor_icon">
             <GrDocumentPdf size="16" title="Document PDF" />
           </div>
@@ -95,7 +95,7 @@ const AboutCard = ({ className }: Props) => {
               English
             </a>
           </div>
-        </div>
+        </div> */}
 
       </div>
 
