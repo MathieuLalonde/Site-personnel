@@ -2,8 +2,7 @@ name: Deploy with Rsync over SSH
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, master]
 
 jobs:
   deploy:
