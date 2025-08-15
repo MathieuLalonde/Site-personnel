@@ -1,5 +1,3 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-
 interface Props {
   // siteName?: string;
   children?: string;
@@ -11,8 +9,7 @@ const PageTitle = ({ children = "", noSiteName = false, description = "" }: Prop
   let siteName = "Mathieu Lalonde"
 
   return (
-    <HelmetProvider>
-      <Helmet>
+      <>
         {noSiteName ?
           (<title> {children} </title>) :
           (children ?
@@ -21,8 +18,7 @@ const PageTitle = ({ children = "", noSiteName = false, description = "" }: Prop
         }
 
         {description ? <meta name="description" content={description} /> : <></>}
-      </Helmet>
-    </HelmetProvider>
+      </>
   )
 };
 
