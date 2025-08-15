@@ -2,13 +2,14 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 @use '../abstracts/breakpoints' as *;
+@use "sass:map";
 
 /// Media Querry
 /// @author Technophile
 /// @param {String} $key - Sreen size
 /// @link https://dev.to/dostonnabotov/media-queries-with-sass-mixins-and-maps-1ij6
 @mixin mq($key) {
-  $size: map-get($breakpoints, $key);
+  $size: map.get($breakpoints, $key);
 
   @if ($size) {
     @media only screen and (min-width: $size) {

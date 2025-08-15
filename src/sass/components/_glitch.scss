@@ -14,15 +14,15 @@
 }
 
 .glitch__mask1 {
-  -webkit-mask-image: url(../assets/glitch1.svg);
-  mask-image: url(../assets/glitch1.svg);
+  -webkit-mask-image: url("@/assets/glitch1.svg");
+  mask-image: url("@/assets/glitch1.svg");
 
   animation-name: glitch1;
 }
 
 .glitch__mask2 {
-  -webkit-mask-image: url(../assets/glitch2.svg);
-  mask-image: url(../assets/glitch2.svg);
+  -webkit-mask-image: url("@/assets/glitch2.svg");
+  mask-image: url("@/assets/glitch2.svg");
 
   animation-name: glitch2;
 }
@@ -36,8 +36,8 @@
 }
 
 .glitch__background {
-  -webkit-mask-image: url(../assets/glitchbg.svg);
-  mask-image: url(../assets/glitchbg.svg);
+  -webkit-mask-image: url("@/assets/glitchbg.svg");
+  mask-image: url("@/assets/glitchbg.svg");
 }
 
 // N'applique pas l'effet quand l'option prefers-reduced-motion est sélectionnée

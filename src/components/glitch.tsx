@@ -1,6 +1,8 @@
+import React from 'react';
+
 interface Props {
-  children: JSX.Element | JSX.Element[];
-};
+  children: React.ReactNode;
+}
 
 const Glitch = ({ children }: Props) => {
   return (

@@ -1,5 +1,7 @@
+import React from 'react';
+
 interface Props {
-  children?: JSX.Element | JSX.Element[];
+  children?: React.ReactNode | React.ReactNode[];
   photo?: String;
 };
 

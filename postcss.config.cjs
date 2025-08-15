@@ -1,4 +1,4 @@
-const purgecss = require("@fullhuman/postcss-purgecss");
+const purgecss = require("@fullhuman/postcss-purgecss").default;
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 
