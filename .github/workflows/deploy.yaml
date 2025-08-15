@@ -32,7 +32,7 @@ jobs:
 
       - name: Deploy via Rsync
         run: |
-          rsync -havz --delete --keep-dirlinks \
+          rsync -chavz --delete --keep-dirlinks \
             -e "ssh -p 18765" \
             ./dist/ \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH_STAGING }}
