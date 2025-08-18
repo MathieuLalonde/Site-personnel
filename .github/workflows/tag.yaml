@@ -1,0 +1,45 @@
+name: Retag Commit
+
+on:
+  workflow_dispatch:  # Manual trigger
+    inputs:
+      tag_name:
+        description: "Tag to update"
+        required: true
+        default: "staging"
+      branch:
+        description: "Branch to tag"
+        required: true
+        default: "main"
+
+jobs:
+  retag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed to get all history for tags
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Delete old tag (if exists)
+        run: |
+          TAG_NAME="${{ github.event.inputs.tag_name }}"
+          if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
+            git tag -d "$TAG_NAME"
+          fi
+          git push origin :refs/tags/"$TAG_NAME" || true
+
+      - name: Create new tag at latest commit on branch
+        run: |
+          TAG_NAME="${{ github.event.inputs.tag_name }}"
+          BRANCH="${{ github.event.inputs.branch }}"
+          git fetch origin "$BRANCH"
+          NEW_COMMIT=$(git rev-parse origin/"$BRANCH")
+          git tag "$TAG_NAME" "$NEW_COMMIT"
+          git push origin "$TAG_NAME"

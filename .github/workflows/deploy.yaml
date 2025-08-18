@@ -36,3 +36,11 @@ jobs:
             -e "ssh -p 18765" \
             ./dist/ \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH_STAGING }}
+
+        # -c compares file changes by checksum, not modification time
+        # -h (or --human-readable) outputs numbers in a more human readable format
+        # -a (or --archive) retains file attributes and permissions and recursively copies files and directories
+        # -v (or --verbose): shows status output
+        # -z (or --compress) Compresses file data during transfer
+        # --delete deletes files from the destination that aren’t found in the source (anymore)
+        # -n (or --dry-run): Performs a trial run without actually making any changes
