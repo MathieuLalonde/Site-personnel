@@ -11,9 +11,12 @@ on:
         description: "Branch to tag"
         required: true
         default: "main"
+      tag_commit:
+        description: "Specific commit to tag (optional)"
+        required: false
 
 permissions:
-  contents: write   # 👈 Needed to push tags
+  contents: write   # Needed to push tags
 
 jobs:
   retag:
@@ -43,6 +46,12 @@ jobs:
           TAG_NAME="${{ github.event.inputs.tag_name }}"
           BRANCH="${{ github.event.inputs.branch }}"
           git fetch origin "$BRANCH"
-          NEW_COMMIT=$(git rev-parse origin/"$BRANCH")
-          git tag "$TAG_NAME" "$NEW_COMMIT"
+
+          if [ -n "${{ github.event.inputs.tag_commit }}" ]; then
+            SELECT_COMMIT="${{ github.event.inputs.tag_commit }}"
+          else
+            SELECT_COMMIT=$(git rev-parse origin/"$BRANCH")
+          fi
+          
+          git tag "$TAG_NAME" "$SELECT_COMMIT"
           git push origin "$TAG_NAME"
