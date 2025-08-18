@@ -12,6 +12,9 @@ on:
         required: true
         default: "main"
 
+permissions:
+  contents: write   # 👈 Needed to push tags
+
 jobs:
   retag:
     runs-on: ubuntu-latest
