@@ -3,17 +3,17 @@ name: Retag Commit
 on:
   workflow_dispatch:  # Manual trigger
     inputs:
-      tag_name:
-        description: "Tag to update"
-        required: true
-        default: "staging"
       branch:
         description: "Branch to tag"
         required: true
         default: "main"
       tag_commit:
-        description: "Specific commit to tag (optional)"
+        description: "Commit to tag (optional)"
         required: false
+      tag_name:
+        description: "Tag to update"
+        required: true
+        default: "staging"
 
 permissions:
   contents: write   # Needed to push tags
