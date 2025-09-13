@@ -24,7 +24,9 @@ env:
   # - SSH_HOST
   # - SSH_PRIVATE_KEY
   # Required variables for each environment:
-  # - REMOTE_PATH   
+  # - REMOTE_PATH
+  # Optional for staging environment:
+  # - BUILD_ARGUMENTS
 
 jobs:
   deploy:
@@ -46,7 +48,7 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run build
+        run: npm run build -- ${{ vars.BUILD_ARGUMENTS }}
 
       - name: Setup SSH
         run: |
