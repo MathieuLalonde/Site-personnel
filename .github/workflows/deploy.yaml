@@ -1,16 +1,41 @@
-name: Deploy with Rsync over SSH
+name: Build and deploy with Rsync over SSH
 
 on:
   push:
     branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: "Commit SHA/tag to use (optional):"
+        required: false
+      environment:
+        description: "Environment to deploy to:"
+        required: true
+        type: choice
+        options:
+          - staging
+          - prod
+
+env:
+  SELECTED_COMMIT: ${{ inputs.commit_sha || github.sha }}
+  SSH_PORT: 18765
+  # Required secrets:
+  # - SSH_USER
+  # - SSH_HOST
+  # - SSH_PRIVATE_KEY
+  # Required variables for each environment:
+  # - REMOTE_PATH   
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment || 'staging' }}
 
     steps:
-      - name: Checkout code
+      - name: Checkout selected commit
         uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SELECTED_COMMIT }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,15 +52,16 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p 18765 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          chmod 400 ~/.ssh/id_rsa
+          ssh-keyscan -p $SSH_PORT -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy via Rsync
         run: |
+          [ -n "${{ vars.REMOTE_PATH }}" ] || exit 1
           rsync -chavz --delete --keep-dirlinks \
-            -e "ssh -p 18765" \
+            -e "ssh -p $SSH_PORT" \
             ./dist/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH_STAGING }}
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/www/${{ vars.REMOTE_PATH }}/public_html/
 
         # -c compares file changes by checksum, not modification time
         # -h (or --human-readable) outputs numbers in a more human readable format
@@ -44,3 +70,35 @@ jobs:
         # -z (or --compress) Compresses file data during transfer
         # --delete deletes files from the destination that aren’t found in the source (anymore)
         # -n (or --dry-run): Performs a trial run without actually making any changes
+
+  tagging:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo at deployed commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ env.SELECTED_COMMIT }}
+
+      - name: Configure Git (bot)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Move environment pointer tag
+        run: |
+          set -euo pipefail
+          TAG="${{ inputs.environment || 'staging' }}"         # dev / staging / prod
+          SHA=$(git rev-parse HEAD)
+          git fetch --tags
+          git tag -d "$TAG" 2>/dev/null || true
+          if git ls-remote --tags origin | grep -q "refs/tags/$TAG$"; then
+            git push origin :refs/tags/"$TAG"
+          fi
+          git tag -a "$TAG" -m "Deploy $TAG @ $SHA"
+          git push origin "refs/tags/$TAG"        
