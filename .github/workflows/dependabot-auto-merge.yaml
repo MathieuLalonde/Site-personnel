@@ -67,25 +67,19 @@ jobs:
         with:
           github-token: ${{ secrets.AUTO_MERGE_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
-            const { owner, repo } = context.repo;
-            const number = context.payload.pull_request.number;
+            const pr = context.payload.pull_request;
+            if (!pr) { core.notice("No PR → skip"); process.exit(0); }
 
-            async function getPR() {
-              return (await github.rest.pulls.get({ owner, repo, pull_number: number })).data;
-            }
+            const data = (await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number
+            })).data;
 
-            let tries = 10;
-            let prData;
-            while (tries-- > 0) {
-              prData = await getPR();
-              if (prData.mergeable_state && prData.mergeable_state !== 'unknown') break;
-              await new Promise(r => setTimeout(r, 3000));
-            }
-
-            core.setOutput("mergeable", prData.mergeable);
-            core.setOutput("mergeable_state", prData.mergeable_state);
-            core.setOutput("head_ref", prData.head.ref);
-            core.setOutput("sha", prData.head.sha);
+            core.setOutput("mergeable", data.mergeable || false);
+            core.setOutput("mergeable_state", data.mergeable_state || "unknown");
+            core.setOutput("head_ref", data.head?.ref || "");
+            core.setOutput("sha", data.head?.sha || "");
 
       - name: Verify checks and statuses
         id: checks
@@ -93,27 +87,32 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { owner, repo } = context.repo;
             const sha = "${{ steps.pr.outputs.sha }}";
+            if (!sha) { core.notice("No SHA → skip"); process.exit(0); }
 
-            const combined = await github.rest.repos.getCombinedStatusForRef({ owner, repo, ref: sha });
-            const statuses = combined.statuses || [];
-            const statusesOK = (combined.state === 'success' || statuses.length === 0);
+            const combined = await github.rest.repos.getCombinedStatusForRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: sha
+            });
+
+            const statusesOK = combined.state === 'success' || (combined.statuses || []).length === 0;
 
             let checksOK = true;
             try {
-              const checks = await github.rest.checks.listForRef({ owner, repo, ref: sha, filter: 'latest' });
               const ok = new Set(['success','neutral','skipped']);
-              checksOK = checks.data.check_runs.every(cr => ok.has(cr.conclusion || 'success'));
-            } catch (e) {
-              core.warning(`Checks API not fully available: ${e.message}`);
-            }
+              const runs = (await github.rest.checks.listForRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: sha,
+                filter: 'latest'
+              })).data.check_runs || [];
 
-            core.info(`statusesOK: ${statusesOK}, checksOK: ${checksOK}`);
+              checksOK = runs.every(cr => ok.has(cr.conclusion || 'success'));
+            } catch {}
 
             if (!statusesOK || !checksOK) {
-              core.notice(`Checks failed → skipping merge
-              statusesOK: ${statusesOK}, checksOK: ${checksOK}`);
+              core.notice(`Checks not passing → skip merge`);
               process.exit(0);
             }
 
