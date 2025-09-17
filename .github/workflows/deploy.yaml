@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: Checkout selected commit
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ env.SELECTED_COMMIT }}
 
@@ -84,7 +84,7 @@ jobs:
 
     steps:
       - name: Checkout repo at deployed commit
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           ref: ${{ env.SELECTED_COMMIT }}
