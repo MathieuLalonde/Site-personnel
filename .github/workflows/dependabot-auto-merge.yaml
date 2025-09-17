@@ -37,9 +37,16 @@ jobs:
             const updateType = "${{ steps.meta.outputs.update-type }}";
 
             // Dependabot metadata
-            const base = pr.base.repo.default_branch;
-            const depName = pr.title.match(/bump (\S+) from/)[1]; // crude parse
-            const depVersion = pr.title.match(/ to ([0-9]+\.[0-9]+\.[0-9]+)/)[1];
+            const nameMatch = pr.title.match(/bump (\S+) from/);
+            const versionMatch = pr.title.match(/ to ([0-9]+\.[0-9]+\.[0-9]+)/);
+
+            const depName = nameMatch ? nameMatch[1] : null;
+            const depVersion = versionMatch ? versionMatch[1] : null;
+
+            if (!depName || !depVersion) {
+              core.notice(`Could not parse dependency or version from PR title '${pr.title}' → skipping`);
+              process.exit(0); // safe skip
+            }
 
             // If it's a major update → skip
             if (updateType === "version-update:semver-major") {
@@ -48,8 +55,8 @@ jobs:
             }
 
             // If it's semver-minor/patch BUT major is 0 → skip too
-            const major = depVersion.split(".")[0];
-            if (major === "0") {
+            const major = parseInt(depVersion.split(".")[0], 10);
+            if (major === 0) {
               core.notice(`0.x update for ${depName} (${depVersion}) → manual review required.`);
               process.exit(0);
             }
