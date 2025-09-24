@@ -3,8 +3,9 @@ name: Dependabot Auto-merge
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
-  check_suite:
-    types: [completed]
+  pull_request_target:
+    types: [synchronize, reopened, ready_for_review]
+  workflow_dispatch:
 
 permissions:
   pull-requests: write
@@ -18,7 +19,9 @@ concurrency:
 
 jobs:
   automerge:
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    if: |
+      (github.event_name == 'pull_request' && github.event.pull_request.user.login == 'dependabot[bot]') ||
+      (github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +30,7 @@ jobs:
         uses: dependabot/fetch-metadata@v2
 
       - name: Skip major and 0.x minor/patch updates
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         id: skip
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -63,7 +66,7 @@ jobs:
 
       - name: Wait until PR is mergeable
         id: pr
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.AUTO_MERGE_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -76,14 +79,14 @@ jobs:
               pull_number: pr.number
             })).data;
 
-            core.setOutput("mergeable", data.mergeable || false);
+            core.setOutput("mergeable", data.mergeable === null ? "unknown" : data.mergeable.toString());
             core.setOutput("mergeable_state", data.mergeable_state || "unknown");
             core.setOutput("head_ref", data.head?.ref || "");
             core.setOutput("sha", data.head?.sha || "");
 
       - name: Verify checks and statuses
         id: checks
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -121,7 +124,7 @@ jobs:
         if: |
           steps.meta.outputs.update-type == 'version-update:semver-patch' ||
           steps.meta.outputs.update-type == 'version-update:semver-minor'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.AUTO_MERGE_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -135,7 +138,7 @@ jobs:
 
       - name: Delete branch (Best effort)
         if: ${{ steps.merge.outputs.merged == 'true' || false }}
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
