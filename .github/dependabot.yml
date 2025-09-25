@@ -4,26 +4,9 @@ updates:
   - package-ecosystem: "npm"
     directory: "/frontend"
     schedule:
-      interval: "daily"
-
-    # Only bump patch and minor updates automatically
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
-    # Separate PRs per dependency to avoid multi-line conflicts
-    commit-message:
-      prefix: "chore(deps)"
-      include: scope
+      interval: "weekly"
     open-pull-requests-limit: 10
-    versioning-strategy: "increase"
-
-    # Separate major bumps for manual review
-    allow:
-      - dependency-type: "direct"
-
-    # Optional grouping for related packages (like eslint) if you want
-    # group-name: "eslint"  # comment out if you want single PR per package
+    rebase-strategy: auto
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
