@@ -1,13 +1,10 @@
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import { routes } from './routes';
 
-/** Glitch duplicates headings for the effect; assert inside #main only. */
-function expectNotFoundInMain() {
-  const main = document.getElementById('main');
-  expect(main).toBeTruthy();
-  const { getAllByText } = within(main!);
-  expect(getAllByText(/Page inexistante/i).length).toBeGreaterThan(0);
+/** Glitch duplicates headings; 404 is fullscreen (no #main). */
+function expectNotFoundContent() {
+  expect(screen.getAllByText(/Page inexistante/i).length).toBeGreaterThan(0);
 }
 
 describe('app routes', () => {
@@ -16,7 +13,7 @@ describe('app routes', () => {
     render(<RouterProvider router={router} />);
 
     expect(await screen.findByRole('heading', { name: /Oups/i })).toBeInTheDocument();
-    expectNotFoundInMain();
+    expectNotFoundContent();
   });
 
   it('renders not-found for unknown paths', async () => {
@@ -24,7 +21,7 @@ describe('app routes', () => {
     render(<RouterProvider router={router} />);
 
     await screen.findByRole('heading', { name: /Oups/i });
-    expectNotFoundInMain();
+    expectNotFoundContent();
   });
 
   it('shows 404 content for an unknown blog slug', async () => {
@@ -34,7 +31,7 @@ describe('app routes', () => {
     render(<RouterProvider router={router} />);
 
     await screen.findByRole('heading', { name: /Oups/i });
-    expectNotFoundInMain();
+    expectNotFoundContent();
   });
 
   it('renders not-found under /webdev for unknown child paths', async () => {
@@ -42,7 +39,7 @@ describe('app routes', () => {
     render(<RouterProvider router={router} />);
 
     await screen.findByRole('heading', { name: /Oups/i });
-    expectNotFoundInMain();
+    expectNotFoundContent();
   });
 
   it('renders the introduction page', async () => {

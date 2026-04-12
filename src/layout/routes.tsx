@@ -46,23 +46,28 @@ export const routes: RouteObject[] = [
       { path: 'coordonnees', element: <ContactPage /> },
 
       { path: 'styleguide', element: <StyleGuide /> },
-
-      { path: '404', element: <NotFoundPage /> },
-      { path: '*', element: <NotFoundPage /> },
     ],
   },
 
+  /** Fullscreen 404 (no site header/nav); must stay outside Layout. */
+  { path: '404', element: <NotFoundPage />, errorElement: <ErrorPage /> },
+  { path: '*', element: <NotFoundPage />, errorElement: <ErrorPage /> },
+
   {
     path: 'webdev',
-    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Portfolio /> },
-      { path: 'cerveau', element: <Cerveau /> },
-      { path: 'relaxation', element: <Relaxation /> },
-      { path: 'satellite', element: <Satellite /> },
-      { path: 'vaisseau', element: <Vaisseau /> },
-      { path: 'multiplayer', element: <Multiplayer /> },
+      {
+        element: <Layout />,
+        children: [
+          { index: true, element: <Portfolio /> },
+          { path: 'cerveau', element: <Cerveau /> },
+          { path: 'relaxation', element: <Relaxation /> },
+          { path: 'satellite', element: <Satellite /> },
+          { path: 'vaisseau', element: <Vaisseau /> },
+          { path: 'multiplayer', element: <Multiplayer /> },
+        ],
+      },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
