@@ -1,7 +1,7 @@
-const Blank = () => {
+function Blank() {
   return (
     <></>
-  )
+  );
 }
 
-export default Blank
+export default Blank;

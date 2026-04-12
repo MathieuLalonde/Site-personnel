@@ -1,33 +1,31 @@
+import { RiExternalLinkFill } from 'react-icons/ri';
 import AboutCard from '../components/AboutCard';
-import PageTitle from '../components/PageTitle';
-import TVLogos from '../components/TVLogos';
-
-import { RiExternalLinkFill } from "react-icons/ri";
-
 import BlogHeader from '../components/BlogHeader';
+
 import Glitch from '../components/glitch';
-import PostList from '../components/PostList';
+
 import MedDot from '../components/MedDot';
+import PageTitle from '../components/PageTitle';
+import PostList from '../components/PostList';
+import TVLogos from '../components/TVLogos';
 import VideoPlayer from '../components/VideoPlayer';
 
-
-
-const Montage = () => {
+function Montage() {
   return (
     <>
       <PageTitle>Montage</PageTitle>
 
       <article>
-        <BlogHeader photo={'../mirroir.webp'}>
+        <BlogHeader photo="../mirroir.webp">
           <div>
             <Glitch>
               <h1>Montage.</h1>
-              <div className='subheading'>Comment je suis arrivé ici.</div>
+              <div className="subheading">Comment je suis arrivé ici.</div>
             </Glitch>
           </div>
         </BlogHeader>
 
-        <div className='container'>
+        <div className="container">
           <p>
             Voilà déjà plus de 20 ans déjà que j’œuvre dans les médias à titre de monteur et de réalisateur-monteur dans les domaines du documentaire, de la publicité, de la corpo et du magazine&nbsp;télé.
           </p>
@@ -45,8 +43,7 @@ const Montage = () => {
           <TVLogos />
         </div>
 
-
-        <section className='portfolio-montage'>
+        <section className="portfolio-montage">
           <div>
             <h3>
               Campagne de socio-financement
@@ -58,19 +55,22 @@ const Montage = () => {
               Réalisation, caméra, montage, couleur, mix sonore (...et une grande partie des photos)
             </p>
             <p>
-              Le défi ici était de concevoir une vidéo promotionelle autour de photographies d'évènements sans trop en perdre l'énergie et le mouvement. 
+              Le défi ici était de concevoir une vidéo promotionelle autour de photographies d'évènements sans trop en perdre l'énergie et le mouvement.
             </p>
 
             <p>
               Visizonnez d'autres publicités et corpos sur
-              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              <a href="https://www.youtube.com/@mathieulalonde" target="_blank">
+                {' '}
+                YouTube
+                <RiExternalLinkFill />
               </a>
             </p>
           </div>
-            <VideoPlayer src="https://player.vimeo.com/video/1004492200?h=d4a2cd0241" />
+          <VideoPlayer src="https://player.vimeo.com/video/1004492200?h=d4a2cd0241" />
         </section>
 
-        <section className='portfolio-montage'>
+        <section className="portfolio-montage">
           <VideoPlayer src="https://www.youtube.com/embed/NRX_yeGoMw0?si=B2U7cm6sNQvWAT8q" />
           <div>
             <h3>
@@ -85,19 +85,28 @@ const Montage = () => {
             <p>
               Portraits de pères et de fils unis par la passion de leur métier commun. Chaque épisode trace les contours, l'histoire et l'évolution du métier qui les fait vivre et auquel ils ont tous deux donné un visage humain.
             </p>
-          
+
             <p>
-              Visionnez la série complète gratuitement sur <a href='https://www.tv5unis.ca/de-pere-en-fils/saisons/1' target='_blank'> TV5 Unis <RiExternalLinkFill /></a>
+              Visionnez la série complète gratuitement sur
+              {' '}
+              <a href="https://www.tv5unis.ca/de-pere-en-fils/saisons/1" target="_blank">
+                {' '}
+                TV5 Unis
+                <RiExternalLinkFill />
+              </a>
             </p>
             <p>
-              Visizonnez d'autres extraits documentaires sur 
-              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              Visizonnez d'autres extraits documentaires sur
+              <a href="https://www.youtube.com/@mathieulalonde" target="_blank">
+                {' '}
+                YouTube
+                <RiExternalLinkFill />
               </a>
             </p>
           </div>
         </section>
 
-        <section className='portfolio-montage'>
+        <section className="portfolio-montage">
           <div>
             <h3>
               Série magazine
@@ -114,15 +123,18 @@ const Montage = () => {
 
             <p>
               Visizonnez d'autres extraits magazine sur
-              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              <a href="https://www.youtube.com/@mathieulalonde" target="_blank">
+                {' '}
+                YouTube
+                <RiExternalLinkFill />
               </a>
             </p>
           </div>
           <VideoPlayer src="https://www.youtube.com/embed/zF-ljMchNKs?si=26ygjQ4XTp7h1tz5" />
         </section>
 
-        <section className='portfolio-montage'>
-            <VideoPlayer src="https://www.youtube.com/embed/hG2L0N7FVPk?si=D60Hwy7lB-kVoeA6" />
+        <section className="portfolio-montage">
+          <VideoPlayer src="https://www.youtube.com/embed/hG2L0N7FVPk?si=D60Hwy7lB-kVoeA6" />
           <div>
             <h3>Série docu-réalité</h3>
             <h2>
@@ -132,18 +144,21 @@ const Montage = () => {
               Montage
             </p>
             <p>
-              Cette série était tournée à 6 caméras dont un drone et 3 GoPros pour capturer tous les aspects d'une course, mais à la fin, l'histoire passe toujours par l'émotion. 
+              Cette série était tournée à 6 caméras dont un drone et 3 GoPros pour capturer tous les aspects d'une course, mais à la fin, l'histoire passe toujours par l'émotion.
             </p>
 
             <p>
               Visizonnez d'autres extraits documentaires sur
-              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              <a href="https://www.youtube.com/@mathieulalonde" target="_blank">
+                {' '}
+                YouTube
+                <RiExternalLinkFill />
               </a>
             </p>
           </div>
         </section>
- 
-        <section className='portfolio-montage'>
+
+        <section className="portfolio-montage">
           <div>
             <h3>Série magazine jeunesse</h3>
             <h2>
@@ -159,19 +174,27 @@ const Montage = () => {
             </p>
 
             <p>
-              Visionnez les premières saisons gratuitement sur <a href='https://www.tfo.org/serie/brigade-animo/002032433' target='_blank'>TFO <RiExternalLinkFill /></a>
+              Visionnez les premières saisons gratuitement sur
+              {' '}
+              <a href="https://www.tfo.org/serie/brigade-animo/002032433" target="_blank">
+                TFO
+                <RiExternalLinkFill />
+              </a>
             </p>
             <p>
               Visizonnez d'autres extraits magazine sur
-              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              <a href="https://www.youtube.com/@mathieulalonde" target="_blank">
+                {' '}
+                YouTube
+                <RiExternalLinkFill />
               </a>
             </p>
           </div>
-            <VideoPlayer src="https://www.youtube.com/embed/8qpk6wW0LuQ?si=jkk9-AvAxsX-sYpa" />
+          <VideoPlayer src="https://www.youtube.com/embed/8qpk6wW0LuQ?si=jkk9-AvAxsX-sYpa" />
         </section>
 
-        <section className='portfolio-montage'>
-            <VideoPlayer src="https://www.youtube.com/embed/_WGSCVTkvzg?si=cDWxh34mfzIQ236A" />
+        <section className="portfolio-montage">
+          <VideoPlayer src="https://www.youtube.com/embed/_WGSCVTkvzg?si=cDWxh34mfzIQ236A" />
           <div>
             <h3>
               Publicité (version longue)
@@ -188,13 +211,16 @@ const Montage = () => {
 
             <p>
               Visizonnez d'autres publicités et corpos sur
-              <a href='https://www.youtube.com/@mathieulalonde' target='_blank'> YouTube <RiExternalLinkFill />
+              <a href="https://www.youtube.com/@mathieulalonde" target="_blank">
+                {' '}
+                YouTube
+                <RiExternalLinkFill />
               </a>
             </p>
           </div>
         </section>
 
-        <div className='container'>
+        <div className="container">
           <p>
             Et pour le dessert, une deuxième démo qui met de l'avant mes tallants de monteur online, de séries magazines et d'effets visuels... Des clones, des fantômes, de la neige, de feu et des explosions !!
           </p>
@@ -207,26 +233,22 @@ const Montage = () => {
 
       <MedDot />
 
-      <div className='container'>
-
-
-
+      <div className="container">
 
         {/* <h3>Quelques vidéos</h3> */}
 
         {/* <VideoStore /> */}
 
-
         <h2>Dernièrement, sur le blogue :</h2>
 
         <div className="postlist--bestof">
-          <PostList label='montage' quantity={3} />
+          <PostList label="montage" quantity={3} />
         </div>
 
         <AboutCard />
       </div>
     </>
   );
-};
+}
 
 export default Montage;

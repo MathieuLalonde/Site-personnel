@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 interface Props {
-  children: ReactNode;
-  onClose: () => void;
+  children: ReactNode
+  onClose: () => void
 }
 
-const Alert = ({ children, onClose }: Props) => {
+function Alert({ children, onClose }: Props) {
   return (
     <div className="alert alert-danger alert-dismissible">
       {children}
@@ -14,4 +14,4 @@ const Alert = ({ children, onClose }: Props) => {
   );
 }
 
-export default Alert
+export default Alert;

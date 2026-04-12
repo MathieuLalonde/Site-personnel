@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import PageTitle from "../../components/PageTitle";
-import Multi from '../../assets/images/portfolio/multiplayer.webp'
+import { Link } from 'react-router-dom';
+import Multi from '../../assets/images/portfolio/multiplayer.webp';
+import PageTitle from '../../components/PageTitle';
 
-const Multiplayer = () => {
+function Multiplayer() {
   return (
     <div className="container">
       <PageTitle>Multiplayer Adventure</PageTitle>
       <article>
         <ul className="breadcrumb">
-          <li><Link to="/portfolio" >Portfolio</Link></li>
+          <li><Link to="/portfolio">Portfolio</Link></li>
           <li>JavaScript</li>
           <li>Jeu vidéo 2D</li>
         </ul>
@@ -21,7 +21,15 @@ const Multiplayer = () => {
         <h2>Description</h2>
 
         <p>
-          Jeu <em>JavaScript</em> conçu en trois sprints <em>Agile</em> au sein d'une équipe de programmeurs à partir d’une base de code
+          Jeu
+          {' '}
+          <em>JavaScript</em>
+          {' '}
+          conçu en trois sprints
+          {' '}
+          <em>Agile</em>
+          {' '}
+          au sein d'une équipe de programmeurs à partir d’une base de code
           non-optimale préexistante.
         </p>
 
@@ -43,23 +51,41 @@ const Multiplayer = () => {
           </li>
         </ul>
 
-
         <h2>Instructions</h2>
 
         <p>
           Rendez-vous sur
-          <code><a href="http://mpa.mathieulalonde.com" target='_blank'> mpa.mathieulalonde.com</a></code>,
-          choisissez votre niveau de difficulté et sélectionnez <code>play</code>; c'est aussi simple que ça !</p>
+          <code><a href="http://mpa.mathieulalonde.com" target="_blank"> mpa.mathieulalonde.com</a></code>
+          ,
+          choisissez votre niveau de difficulté et sélectionnez
+          <code>play</code>
+          ; c'est aussi simple que ça !
+        </p>
 
         <p>
-          Les touches <code>A</code> et <code>D</code> permettent d'avancer, l'<code>espace</code> de sauter,
-          et <code>E</code> d'attaquer ses ennemis.
+          Les touches
+          {' '}
+          <code>A</code>
+          {' '}
+          et
+          {' '}
+          <code>D</code>
+          {' '}
+          permettent d'avancer, l'
+          <code>espace</code>
+          {' '}
+          de sauter,
+          et
+          {' '}
+          <code>E</code>
+          {' '}
+          d'attaquer ses ennemis.
         </p>
 
         <p></p>
       </article>
     </div>
-  )
-};
+  );
+}
 
-export default Multiplayer
+export default Multiplayer;

@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 interface Props {
-  items: string[];
-  heading: string;
-  onSelectItem: (item: string) => void;
+  items: string[]
+  heading: string
+  onSelectItem: (item: string) => void
 }
 
 function ListGroup({ items, heading, onSelectItem }: Props) {

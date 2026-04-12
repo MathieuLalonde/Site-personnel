@@ -1,28 +1,28 @@
-import { createBrowserRouter } from "react-router-dom";
+import type { RouteObject } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 // Pages principales :
-import BlogPage from "../pages/BlogPage";
-import BlogTemplatePage from "../pages/BlogTemplatePage";
-import ContactPage from "../pages/ContactPage";
-import ErrorPage from "../pages/ErrorPage";
-import HomePage from "../pages/HomePage";
-import Layout from "./Layout";
-import Montage from "../pages/Montage"
-// Travaux (portfolio):
-import Cerveau from "../pages/travaux/Cerveau";
-import Portfolio from "../pages/PortfolioPage";
-import Relaxation from "../pages/travaux/Relaxation";
-import Satellite from "../pages/travaux/Satellite";
-import Vaisseau from "../pages/travaux/Vaisseau";
+import BlogPage from '../pages/BlogPage';
+import BlogTemplatePage from '../pages/BlogTemplatePage';
+import ContactPage from '../pages/ContactPage';
+import ErrorPage from '../pages/ErrorPage';
+import HomePage from '../pages/HomePage';
+import Montage from '../pages/Montage';
+import NotFoundPage from '../pages/NotFoundPage';
+import Photo from '../pages/Photo';
+import Portfolio from '../pages/PortfolioPage';
 // Autres pages :
-import StyleGuide from "../pages/StyleGuide";
-import Multiplayer from "../pages/travaux/Multiplayer";
-import Splash from "./Splash";
-import Photo from "../pages/Photo";
+import StyleGuide from '../pages/StyleGuide';
+// Travaux (portfolio):
+import Cerveau from '../pages/travaux/Cerveau';
+import Multiplayer from '../pages/travaux/Multiplayer';
+import Relaxation from '../pages/travaux/Relaxation';
+import Satellite from '../pages/travaux/Satellite';
+import Vaisseau from '../pages/travaux/Vaisseau';
+import Layout from './Layout';
+import Splash from './Splash';
 
-
-
-const router = createBrowserRouter([
+export const routes: RouteObject[] = [
 
   {
     path: '/',
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
-    ]
+    ],
   },
   {
     element: <Layout />,
@@ -46,7 +46,10 @@ const router = createBrowserRouter([
       { path: 'coordonnees', element: <ContactPage /> },
 
       { path: 'styleguide', element: <StyleGuide /> },
-    ]
+
+      { path: '404', element: <NotFoundPage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
   },
 
   {
@@ -59,11 +62,13 @@ const router = createBrowserRouter([
       { path: 'relaxation', element: <Relaxation /> },
       { path: 'satellite', element: <Satellite /> },
       { path: 'vaisseau', element: <Vaisseau /> },
-      { path: 'multiplayer', element: <Multiplayer /> },      
-    ]
+      { path: 'multiplayer', element: <Multiplayer /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
   },
 
+];
 
-]);
+const router = createBrowserRouter(routes);
 
 export default router;

@@ -1,25 +1,26 @@
 import { Link } from 'react-router-dom';
 
 interface Props {
-  children: string[];
+  children: string[]
 }
 
-const Labels = ({ children }: Props) => {
+function Labels({ children }: Props) {
   return (
-    <div className='labels'>
-      {children.length && children.sort().map((label, i) => {
+    <div className="labels">
+      {children.length && children.sort().map((label) => {
         return (
-          // p.s. using i as the key is considered bad practice.
-          <span key={i}>
+          <span key={label}>
             <Link to={`/blog?label=${label}`}>
-              <span className={`label label_${label}`}># {label}</span>
+              <span className={`label label_${label}`}>
+                #
+                {label}
+              </span>
             </Link>
           </span>
-        )
-      })
-      }
+        );
+      })}
     </div>
-  )
+  );
 }
 
-export default Labels
+export default Labels;

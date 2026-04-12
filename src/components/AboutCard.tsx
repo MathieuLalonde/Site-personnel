@@ -1,7 +1,7 @@
-import { IconContext } from "react-icons";
+import { IconContext } from 'react-icons';
 
 // import { BiCameraMovie } from "react-icons/bi";
-import { FaImdb } from "react-icons/fa"
+import { FaImdb } from 'react-icons/fa';
 import {
   FaFlickr,
   FaGithub,
@@ -9,11 +9,11 @@ import {
   FaLocationDot,
   FaPhone,
   FaVimeo,
-  FaYoutube
-} from "react-icons/fa6";
+  FaYoutube,
+} from 'react-icons/fa6';
 // import { FiExternalLink } from "react-icons/fi";
 // import { Gi3DGlasses } from "react-icons/gi"
-import { IoMdMail } from "react-icons/io";
+import { IoMdMail } from 'react-icons/io';
 // import { IoCutSharp } from "react-icons/io5";
 // import { MdAlternateEmail } from "react-icons/md";
 // import { GrDocumentPdf } from "react-icons/gr";
@@ -21,43 +21,59 @@ import { IoMdMail } from "react-icons/io";
 import Selfie from '../assets/images/selfie_sm.webp';
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
-const AboutCard = ({ className }: Props) => {
+function AboutCard({ className }: Props) {
   return (
     <aside className={`about_card ${className}`}>
 
-      <img src={Selfie} className='selfie' alt="Photo de Mathieu"></img>
+      <img src={Selfie} className="selfie" alt="Photo de Mathieu"></img>
 
       <div>
 
         <h3>
           Mathieu Lalonde
         </h3>
-        Développeur&nbsp;logiciel (B.Sc.A.) <br /> Monteur&nbsp;documentaire <br /> Passioné&nbsp;de&nbsp;technologie
+        Développeur&nbsp;logiciel (B.Sc.A.)
+        {' '}
+        <br />
+        {' '}
+        Monteur&nbsp;documentaire
+        {' '}
+        <br />
+        {' '}
+        Passioné&nbsp;de&nbsp;technologie
         <hr />
         <div className="about_coordonnes">
           <div className="about_coor_icon">
             <IoMdMail size="15" title="Courriel" />
           </div>
           <div>
-            moi<span className="obfuscate"> so .long </span>
-            @<span className="obfuscate"> and </span>
-            mathieu<span className="obfuscate"> thanks </span>
-            lalonde<span className="obfuscate"> for </span>
-            .<span className="obfuscate"> @all </span>
-            com<span className="obfuscate"> the fish. </span>
+            moi
+            <span className="obfuscate"> so .long </span>
+            @
+            <span className="obfuscate"> and </span>
+            mathieu
+            <span className="obfuscate"> thanks </span>
+            lalonde
+            <span className="obfuscate"> for </span>
+            .
+            <span className="obfuscate"> @all </span>
+            com
+            <span className="obfuscate"> the fish. </span>
           </div>
 
           <div className="about_coor_icon">
             <FaPhone size="13" title="Téléphone" />
           </div>
           <div>
-            514&#8209;842<span className="obfuscate">6 * 9 </span>
-            &#8209;7<span className="obfuscate"> = 42</span>178
+            514&#8209;842
+            <span className="obfuscate">6 * 9 </span>
+            &#8209;7
+            <span className="obfuscate"> = 42</span>
+            178
           </div>
-
 
           <div className="about_coor_icon">
             <FaLocationDot size="15" title="Adresse" />
@@ -76,7 +92,7 @@ const AboutCard = ({ className }: Props) => {
             <a href="/CV_Mathieu_Lalonde_Monteur.pdf" target="_blank">
               Français
             </a>
-            &nbsp;/&nbsp; 
+            &nbsp;/&nbsp;
             <a href="/CV_Mathieu_Lalonde_Editor.pdf" target="_blank">
               English
             </a>
@@ -99,9 +115,7 @@ const AboutCard = ({ className }: Props) => {
 
       </div>
 
-
-
-      <IconContext.Provider value={{ size: "25" }}>
+      <IconContext value={{ size: '25' }}>
         <div className="about_link_icon_flex">
           <a href="https://linkedin.com/in/mathieu-lalonde" target="_blank">
             <FaLinkedin className="about_link_icon" title="LinkedIn" />
@@ -123,10 +137,10 @@ const AboutCard = ({ className }: Props) => {
           </a>
           {/*  <Gi3DGlasses />  */}
         </div>
-      </IconContext.Provider>
+      </IconContext>
 
     </aside>
-  )
+  );
 }
 
-export default AboutCard
+export default AboutCard;

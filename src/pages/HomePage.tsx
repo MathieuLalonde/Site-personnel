@@ -1,39 +1,23 @@
-import { useState, useEffect } from "react";
+import AboutCard from '../components/AboutCard';
+
+import MedDot from '../components/MedDot';
 // import { Link } from "react-router-dom";
 import PageTitle from '../components/PageTitle';
-
+import PostList from '../components/PostList';
 import VideoPlayer from '../components/VideoPlayer';
-import AboutCard from '../components/AboutCard';
-import PostList from "../components/PostList";
-import MedDot from "../components/MedDot";
 
-const HomePage = () => {
-  const [count, setCount] = useState(0);
-  const [splashVariant, setSplashVariant] = useState(0);
-  const words: String[] = ["Créer. ", "Coder. ", "Collaborer. ", "Communiquer. ", "Captiver. ", "Concevoir. "];
-
-  useEffect(() => {
-    // Setting the interval
-    const interval = setInterval(() => {
-      count + 1 < words.length ? setCount(count + 1) : setCount(0);
-      splashVariant < 1 ? setSplashVariant(1) : setSplashVariant(0);
-    }, 1200);
-
-    // Clearing the interval
-    return () => clearInterval(interval);
-  }, [count]);
-
+function HomePage() {
   return (
     <>
       <PageTitle></PageTitle>
 
       <article>
-        <div className='container'>
-          <h1 id='intro'>Introduction.</h1>
-          <div className='subheading'>Permettez-moi de me présenter.</div>
+        <div className="container">
+          <h1 id="intro">Introduction.</h1>
+          <div className="subheading">Permettez-moi de me présenter.</div>
 
           <p>
-            Bonjour, c'est moi Mathieu. Je suis un passionné de technologie; monteur, vidéaste, développeur web, 
+            Bonjour, c'est moi Mathieu. Je suis un passionné de technologie; monteur, vidéaste, développeur web,
             et parfois même photographe et graphiste sur les bords...
           </p>
           {/* <p>
@@ -48,7 +32,6 @@ const HomePage = () => {
           <VideoPlayer src="https://www.youtube.com/embed/Nj51ciLQonI?si=ZqinYkaZO1-4j8vg" />
           <p>
 
-            
             Entre temps, j'ai étendu mes horizons jusqu'à la photographie et le développement web.
 
             Je viens tout juste de compléter un baccalauréat en informatique et génie logiciel et je veux toujours en apprendre encore plus !
@@ -71,7 +54,7 @@ const HomePage = () => {
 
       <MedDot />
 
-      <section className='container'>
+      <section className="container">
         <h2>Dernièrement, sur le blogue :</h2>
 
         <div className="postlist--bestof">
@@ -79,11 +62,11 @@ const HomePage = () => {
         </div>
       </section>
 
-      <div className='container'>
+      <div className="container">
         <AboutCard />
       </div>
     </>
   );
-};
+}
 
 export default HomePage;

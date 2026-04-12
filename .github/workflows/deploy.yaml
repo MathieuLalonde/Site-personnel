@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
     inputs:
       commit_sha:
-        description: "Commit SHA/tag to use (optional):"
+        description: 'Commit SHA/tag to use (optional):'
         required: false
       environment:
-        description: "Environment to deploy to:"
+        description: 'Environment to deploy to:'
         required: true
         type: choice
         options:
@@ -105,4 +105,4 @@ jobs:
             git push origin :refs/tags/"$TAG"
           fi
           git tag -a "$TAG" -m "Deploy $TAG @ $SHA"
-          git push origin "refs/tags/$TAG"        
+          git push origin "refs/tags/$TAG"

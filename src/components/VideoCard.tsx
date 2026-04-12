@@ -1,6 +1,6 @@
-import './VideoPlayer.css'
-import './VideoCard.css'
-import Dot from '../assets/dot.svg'
+import Dot from '../assets/dot.svg';
+import './VideoPlayer.css';
+import './VideoCard.css';
 
 // interface Props {
 //     children: JSX.Element | JSX.Element[];
@@ -15,14 +15,12 @@ import Dot from '../assets/dot.svg'
 // external ?: boolean;
 
 // const VideoCard = ({ children }: Props) => {
-const VideoCard = () => {
-
+function VideoCard() {
   // get thumbnail
 
   return (
-    <div className='videocard'>
-      <img className='videothumb' src={'https://img.youtube.com/vi/S9uIVSWPfIQ/0.jpg'} ></img>
-
+    <div className="videocard">
+      <img className="videothumb" src="https://img.youtube.com/vi/S9uIVSWPfIQ/0.jpg"></img>
 
       <br />
       <img src={Dot} />
@@ -46,7 +44,7 @@ const VideoCard = () => {
                 />
             </div> */}
     </div>
-  )
+  );
 }
 
-export default VideoCard
+export default VideoCard;

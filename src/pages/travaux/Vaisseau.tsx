@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
-import PageTitle from "../../components/PageTitle";
+import { Link } from 'react-router-dom';
+import PageTitle from '../../components/PageTitle';
 
-const Vaisseau = () => {
+function Vaisseau() {
   return (
     <div className="container">
       <PageTitle>Vaisseau spatial</PageTitle>
       <article>
         <ul className="breadcrumb">
-          <li><Link to="/portfolio" >Portfolio</Link></li>
+          <li><Link to="/portfolio">Portfolio</Link></li>
           <li>JavaScript</li>
           <li>Animation</li>
         </ul>
@@ -27,7 +27,7 @@ const Vaisseau = () => {
         <p>L'animation peut être contrôlée comme un jeu vidéo en utilisant les touches WASD pour déplacer le vaisseau et la touche ESPACE pour accélérer sa vitesse de déplacement.</p>
       </article>
     </div>
-  )
-};
+  );
+}
 
-export default Vaisseau
+export default Vaisseau;

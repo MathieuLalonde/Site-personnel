@@ -1,29 +1,27 @@
 import AboutCard from '../components/AboutCard';
-import PageTitle from '../components/PageTitle';
-
 import BlogHeader from '../components/BlogHeader';
+
 import Glitch from '../components/glitch';
-import PostList from '../components/PostList';
 import MedDot from '../components/MedDot';
+import PageTitle from '../components/PageTitle';
+import PostList from '../components/PostList';
 
-
-
-const Photo = () => {
+function Photo() {
   return (
     <>
       <PageTitle>Photographie</PageTitle>
 
       <article>
-        <BlogHeader photo={'../mirroir.webp'}>
+        <BlogHeader photo="../mirroir.webp">
           <div>
             <Glitch>
               <h1>Photographie.</h1>
-              <div className='subheading'>Capturer l'instant.</div>
+              <div className="subheading">Capturer l'instant.</div>
             </Glitch>
           </div>
         </BlogHeader>
 
-        <div className='container'>
+        <div className="container">
 
           <p>
             adfasdf
@@ -42,23 +40,19 @@ const Photo = () => {
 
       <MedDot />
 
-      <div className='container'>
-
-
-
-
+      <div className="container">
 
         <br />
         <h2>Dernièrement, sur le blogue :</h2>
 
         <div className="postlist--bestof">
-          <PostList label='montage' quantity={3} />
+          <PostList label="montage" quantity={3} />
         </div>
 
         <AboutCard />
       </div>
     </>
   );
-};
+}
 
 export default Photo;

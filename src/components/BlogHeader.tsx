@@ -1,13 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 
 interface Props {
-  children?: React.ReactNode | React.ReactNode[];
-  photo?: String;
+  children?: React.ReactNode | React.ReactNode[]
+  photo?: string
 };
 
-const BlogHeader = ({ photo = "statique.webp", children }: Props) => {
+function BlogHeader({ photo = 'statique.webp', children }: Props) {
   return (
-    <div className='blog-header'
+    <div
+      className="blog-header"
       style={{
         backgroundImage: `
             linear-gradient(
@@ -15,13 +16,14 @@ const BlogHeader = ({ photo = "statique.webp", children }: Props) => {
               rgba(0, 0, 0, 0.6) 25%,
               rgba(0, 0, 0) ),
             url(/${photo})`,
-        backgroundPosition: '50% 45%'
-      }}>
-      <div className='blog-header__container'>
+        backgroundPosition: '50% 45%',
+      }}
+    >
+      <div className="blog-header__container">
         {children}
       </div>
     </div>
   );
-};
+}
 
-export default BlogHeader
+export default BlogHeader;

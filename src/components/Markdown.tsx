@@ -1,30 +1,30 @@
-import MarkdownToJsx from "markdown-to-jsx";
+import MarkdownToJsx from 'markdown-to-jsx';
 
-import RichArticlePreBloc from "./RichArticlePreBlock"
-import VideoPlayer from "./VideoPlayer";
-import Glitch from "../components/glitch"
+import Glitch from '../components/glitch';
+import RichArticlePreBloc from './RichArticlePreBlock';
+import VideoPlayer from './VideoPlayer';
 
 interface Props {
-  children: string;
+  children: string
 }
 
-const Markdown = ({children}: Props) => {
+function Markdown({ children }: Props) {
   return (
     <>
       <MarkdownToJsx
         children={children}
         options={{
           namedCodesToUnicode: {
-            laquo: '\u00AB',  //  «
-            raquo: '\u00BB',  //  »
-            nbsp: '\u00A0',   //  non-breaking-space
+            laquo: '\u00AB', //  «
+            raquo: '\u00BB', //  »
+            nbsp: '\u00A0', //  non-breaking-space
             ndash: '\u2013',
             mdash: '\u2014',
           },
           overrides: {
             pre: RichArticlePreBloc,
-            VideoPlayer: VideoPlayer,
-            Glitch: Glitch,
+            VideoPlayer,
+            Glitch,
             // code: Code,
             // Code: Code,
           },
@@ -32,6 +32,6 @@ const Markdown = ({children}: Props) => {
       />
     </>
   );
-};
+}
 
 export default Markdown;

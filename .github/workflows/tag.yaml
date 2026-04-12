@@ -1,18 +1,18 @@
 name: Retag Commit
 
 on:
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch: # Manual trigger
     inputs:
       tag_commit:
-        description: "Commit to tag (optional - not for workflow-modifying commits)"
+        description: Commit to tag (optional - not for workflow-modifying commits)
         required: false
       tag_name:
-            description: "New tag to add"
-            required: true
-            default: "dev"
+        description: New tag to add
+        required: true
+        default: dev
 
 permissions:
-  contents: write   # Needed to push tags
+  contents: write # Needed to push tags
 
 jobs:
   retag:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
-          fetch-depth: 0  # Needed to get all history for tags
+          fetch-depth: 0 # Needed to get all history for tags
           fetch-tags: true # also fetch all tags
 
       - name: Configure Git

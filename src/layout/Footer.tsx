@@ -1,8 +1,8 @@
 // import { Link } from "react-router-dom";
 
-import Logo from '../assets/logo.svg'
+import Logo from '../assets/logo.svg';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer>
       <a href="/introduction">
@@ -11,6 +11,6 @@ const Footer = () => {
       © Mathieu Lalonde
     </footer>
   );
-};
+}
 
 export default Footer;
