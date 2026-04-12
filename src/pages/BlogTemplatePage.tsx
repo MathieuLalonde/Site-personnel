@@ -9,7 +9,7 @@ import Labels from '../components/Labels';
 
 import Markdown from '../components/Markdown';
 import PageTitle from '../components/PageTitle';
-import postList from '../posts.json';
+import { postList } from '../posts';
 
 function BlogTemplatePage() {
   const params = useParams();

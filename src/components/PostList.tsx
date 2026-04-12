@@ -1,5 +1,5 @@
 import MarkdownToJsx from 'markdown-to-jsx';
-import postlist from '../posts.json';
+import { postList } from '../posts';
 import Blank from './Blank'; // Replaces VideoPlayer to diable embeded videos
 import Labels from './Labels';
 
@@ -12,13 +12,13 @@ interface Props {
 // https://github.com/willjw3/react-markdown-blog/blob/master/src/components/postlist.js
 function PostList({ label = '', quantity }: Props) {
   const search = () => {
-    return postlist.filter(
+    return postList.filter(
       (post) =>
         post.categories.includes(label.toLowerCase())
     );
   };
 
-  const results = label ? search() : postlist;
+  const results = label ? search() : postList;
   const qty = quantity || results.length;
 
   return (
