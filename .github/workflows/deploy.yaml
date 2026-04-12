@@ -1,8 +1,12 @@
 name: Build and deploy with Rsync over SSH
 
+# Automatic deploy runs only after a successful "CI" workflow on main/master (see workflow_run).
+# Manual runs deploy only (no duplicate lint/test/build gate — run CI on the same commit first if needed).
+
 on:
-  push:
-    branches: [main, master]
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
   workflow_dispatch:
     inputs:
       commit_sha:
@@ -17,7 +21,6 @@ on:
           - prod
 
 env:
-  SELECTED_COMMIT: ${{ inputs.commit_sha || github.sha }}
   SSH_PORT: 18765
   # Required secrets:
   # - SSH_USER
@@ -31,23 +34,32 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment || 'staging' }}
+    # Manual: always. Automatic: only after CI succeeded on main/master (same commit is deployed via head_sha).
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run'
+        && github.event.workflow_run.conclusion == 'success'
+        && (github.event.workflow_run.head_branch == 'main' || github.event.workflow_run.head_branch == 'master'))
+
+    environment: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'staging' }}
+
+    env:
+      SELECTED_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.event.inputs.commit_sha || github.sha }}
 
     steps:
       - name: Checkout selected commit
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ env.SELECTED_COMMIT }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: 22
+          cache: npm
 
       - name: Install dependencies
-        run: |
-          rm -f package-lock.json
-          npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build -- ${{ vars.BUILD_ARGUMENTS }}
@@ -79,12 +91,17 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     if: ${{ success() }}
+
+    env:
+      SELECTED_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.event.inputs.commit_sha || github.sha }}
+      DEPLOY_TAG: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'staging' }}
+
     permissions:
       contents: write
 
     steps:
       - name: Checkout repo at deployed commit
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ref: ${{ env.SELECTED_COMMIT }}
@@ -97,7 +114,7 @@ jobs:
       - name: Move environment pointer tag
         run: |
           set -euo pipefail
-          TAG="${{ inputs.environment || 'staging' }}"         # dev / staging / prod
+          TAG="${{ env.DEPLOY_TAG }}"
           SHA=$(git rev-parse HEAD)
           git fetch --tags
           git tag -d "$TAG" 2>/dev/null || true
