@@ -16,7 +16,11 @@ const ErrorPage = () => {
     <>
       <PageTitle noSiteName>{errorName}</PageTitle>
 
-      <div className="bigdot">
+      <div className="flex flex-col 
+         bg-[url('@/assets/dot.svg')] bg-no-repeat bg-left-top 
+         bg-[length:160%] bg-[position:-20%_6rem]
+         w-screen h-screen
+         left-[20%] top-24">
         <div className="errortextbloc">
 
           <Glitch><h1>Oups...</h1>
