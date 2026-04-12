@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# # Prevent commits to main branch - enable if working on multiple branches and not just main
+# branch="$(git symbolic-ref --short HEAD 2>/dev/null)" || exit 0
+#
+# if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
+#   echo ""
+#   echo "❌ You cannot commit directly to $branch. Please create a feature branch."
+#   echo ""
+#   exit 1
+# fi
+
+npm exec lint-staged
