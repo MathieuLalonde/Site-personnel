@@ -45,13 +45,17 @@ body {
 body {
   margin: 0;
 
-  background: radial-gradient(circle, #303030 0%, #252525 60%, #1b1917 100%);
-  // Pour réduire le banding sur Firefox :
-  background: -moz-radial-gradient(hsl(15, 0.5%, 14%), hsl(15, 0.5%, 14%));
+  /* Use background-image so a second shorthand doesn’t replace the gradient (build/minify-safe). */
+  background-image: radial-gradient(circle, #303030 0%, #252525 60%, #1b1917 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 
   overflow-y: scroll; // Adds scrollbar gutter to short pages to stop resiging due to scrollbar
+
+  /* Réduit le banding sur Firefox seulement (ne pas écraser le dégradé dans les autres moteurs). */
+  @supports (-moz-appearance: none) {
+    background-image: -moz-radial-gradient(hsl(15, 0.5%, 14%), hsl(15, 0.5%, 14%));
+  }
 }
 
 img.blogphoto {

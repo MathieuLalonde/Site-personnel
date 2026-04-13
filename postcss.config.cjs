@@ -5,8 +5,11 @@ const cssnano = require('cssnano');
 module.exports = {
   plugins: [
     purgecss({
-      content: ['./src/**/*.html', './src/**/*.tsx', './src/**/*.ts'],
-      safelist: ['body', 'html', 'root'],
+      // index.html lives at repo root (not under src) — must be scanned or `body` / `html` rules get purged.
+      content: ['./index.html', './src/**/*.html', './src/**/*.tsx', './src/**/*.ts'],
+      safelist: {
+        greedy: [/^body$/, /^html$/, /^#root$/],
+      },
     }),
     autoprefixer(),
     cssnano(),
