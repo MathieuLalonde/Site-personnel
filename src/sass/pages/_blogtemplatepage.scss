@@ -43,6 +43,31 @@
   margin-bottom: 5rem;
 }
 
+/* Deux images côte à côte (50 % / 50 %) dans le Markdown — usage :
+   <div className="blogphoto-row">
+     <img src="..." alt="..." className="blogphoto" />
+     <img src="..." alt="..." className="blogphoto" />
+   </div>
+*/
+.blogphoto-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.25rem;
+  align-items: start;
+  img.blogphoto {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @media (max-width: 35rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
 @include mq(large) {
   .content_grid {
     display: grid;
